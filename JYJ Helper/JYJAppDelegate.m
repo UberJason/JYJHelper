@@ -10,9 +10,28 @@
 
 @implementation JYJAppDelegate
 
+-(UINavigationController *)baseNavController {
+    if(!_baseNavController)
+        _baseNavController = [[UINavigationController alloc] init];
+    
+    return _baseNavController;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    UIViewController *test = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"test"];
+    
+    NSLog(@"instantiated");
+    
+    [self.window makeKeyAndVisible];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.window.rootViewController presentViewController:test animated:YES completion:nil];
+    });
+
+
     return YES;
 }
 							
