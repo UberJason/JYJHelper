@@ -21,14 +21,15 @@
 {
     // Override point for customization after application launch.
     
-    UIViewController *test = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"test"];
+    JYJNextBusViewController *webView = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"webView"];
+    webView.homeRequested = YES;
     
     NSLog(@"instantiated");
     
     [self.window makeKeyAndVisible];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.window.rootViewController presentViewController:test animated:YES completion:nil];
+        [self.window.rootViewController presentViewController:webView animated:YES completion:nil];
     });
 
 

@@ -35,6 +35,7 @@ typedef enum {
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.navigationController.navigationBar.barTintColor = [UIColor emeraldFlatColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -60,10 +61,6 @@ typedef enum {
         return @"WMATA";
     
     return @"ERROR";
-}
-
--(IBAction)doneWithWebView:(UIStoryboardSegue *)segue {
-    NSLog(@"Done with segue");
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

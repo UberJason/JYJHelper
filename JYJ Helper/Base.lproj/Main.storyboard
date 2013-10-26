@@ -60,7 +60,7 @@
         <!--Next Bus View Controller - Title-->
         <scene sceneID="ib7-wt-TP6">
             <objects>
-                <viewController id="iOj-JB-z4v" customClass="JYJNextBusViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webView" id="iOj-JB-z4v" customClass="JYJNextBusViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xL8-va-Nyv"/>
                         <viewControllerLayoutGuide type="bottom" id="JoF-sV-vkI"/>
@@ -99,7 +99,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="w7d-EP-mM8"/>
                                     <barButtonItem systemItem="stop" id="U3K-JW-qHq">
                                         <connections>
-                                            <segue destination="Jcp-SZ-4Lu" kind="unwind" unwindAction="doneWithWebView:" id="gYw-aT-waG"/>
+                                            <action selector="dismiss:" destination="iOj-JB-z4v" id="Fb0-hV-EOv"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -130,7 +130,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGD-8g-0SL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Jcp-SZ-4Lu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1808" y="166"/>
         </scene>

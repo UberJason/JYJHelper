@@ -12,6 +12,5 @@
 @interface JYJBaseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
--(IBAction)doneWithWebView:(UIStoryboardSegue *)segue;
 
 @end

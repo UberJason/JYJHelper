@@ -53,6 +53,10 @@
     
     [self.webView reload];
 }
+- (IBAction)dismiss:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 
 @end

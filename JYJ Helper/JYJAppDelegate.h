@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JYJNextBusViewController.h"
 
 @interface JYJAppDelegate : UIResponder <UIApplicationDelegate>
 
