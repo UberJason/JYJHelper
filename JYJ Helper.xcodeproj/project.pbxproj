@@ -14,13 +14,14 @@
 		96248D51181B720100101651 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D50181B720100101651 /* main.m */; };
 		96248D55181B720100101651 /* JYJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D54181B720100101651 /* JYJAppDelegate.m */; };
 		96248D58181B720100101651 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96248D56181B720100101651 /* Main.storyboard */; };
-		96248D5B181B720100101651 /* JYJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D5A181B720100101651 /* JYJViewController.m */; };
+		96248D5B181B720100101651 /* JYJBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D5A181B720100101651 /* JYJBaseViewController.m */; };
 		96248D5D181B720100101651 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96248D5C181B720100101651 /* Images.xcassets */; };
 		96248D64181B720100101651 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D63181B720100101651 /* XCTest.framework */; };
 		96248D65181B720100101651 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D44181B720100101651 /* Foundation.framework */; };
 		96248D66181B720100101651 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D48181B720100101651 /* UIKit.framework */; };
 		96248D6E181B720100101651 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96248D6C181B720100101651 /* InfoPlist.strings */; };
 		96248D70181B720100101651 /* JYJ_HelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D6F181B720100101651 /* JYJ_HelperTests.m */; };
+		96248D7B181B769000101651 /* JYJNextBusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D7A181B769000101651 /* JYJNextBusViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +46,16 @@
 		96248D53181B720100101651 /* JYJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYJAppDelegate.h; sourceTree = "<group>"; };
 		96248D54181B720100101651 /* JYJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYJAppDelegate.m; sourceTree = "<group>"; };
 		96248D57181B720100101651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		96248D59181B720100101651 /* JYJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYJViewController.h; sourceTree = "<group>"; };
-		96248D5A181B720100101651 /* JYJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYJViewController.m; sourceTree = "<group>"; };
+		96248D59181B720100101651 /* JYJBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYJBaseViewController.h; sourceTree = "<group>"; };
+		96248D5A181B720100101651 /* JYJBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYJBaseViewController.m; sourceTree = "<group>"; };
 		96248D5C181B720100101651 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		96248D62181B720100101651 /* JYJ HelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JYJ HelperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96248D63181B720100101651 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		96248D6B181B720100101651 /* JYJ HelperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JYJ HelperTests-Info.plist"; sourceTree = "<group>"; };
 		96248D6D181B720100101651 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		96248D6F181B720100101651 /* JYJ_HelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYJ_HelperTests.m; sourceTree = "<group>"; };
+		96248D79181B769000101651 /* JYJNextBusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJNextBusViewController.h; sourceTree = "<group>"; };
+		96248D7A181B769000101651 /* JYJNextBusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJNextBusViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +118,10 @@
 				96248D53181B720100101651 /* JYJAppDelegate.h */,
 				96248D54181B720100101651 /* JYJAppDelegate.m */,
 				96248D56181B720100101651 /* Main.storyboard */,
-				96248D59181B720100101651 /* JYJViewController.h */,
-				96248D5A181B720100101651 /* JYJViewController.m */,
+				96248D79181B769000101651 /* JYJNextBusViewController.h */,
+				96248D7A181B769000101651 /* JYJNextBusViewController.m */,
+				96248D59181B720100101651 /* JYJBaseViewController.h */,
+				96248D5A181B720100101651 /* JYJBaseViewController.m */,
 				96248D5C181B720100101651 /* Images.xcassets */,
 				96248D4B181B720100101651 /* Supporting Files */,
 			);
@@ -252,7 +257,8 @@
 			files = (
 				96248D55181B720100101651 /* JYJAppDelegate.m in Sources */,
 				96248D51181B720100101651 /* main.m in Sources */,
-				96248D5B181B720100101651 /* JYJViewController.m in Sources */,
+				96248D7B181B769000101651 /* JYJNextBusViewController.m in Sources */,
+				96248D5B181B720100101651 /* JYJBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
