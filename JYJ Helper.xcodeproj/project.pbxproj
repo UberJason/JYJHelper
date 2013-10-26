@@ -22,6 +22,12 @@
 		96248D6E181B720100101651 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96248D6C181B720100101651 /* InfoPlist.strings */; };
 		96248D70181B720100101651 /* JYJ_HelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D6F181B720100101651 /* JYJ_HelperTests.m */; };
 		96248D7B181B769000101651 /* JYJNextBusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D7A181B769000101651 /* JYJNextBusViewController.m */; };
+		96248D83181B8A1E00101651 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 96248D7D181B8A1E00101651 /* .gitignore */; };
+		96248D84181B8A1E00101651 /* FlatUIColor.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 96248D7E181B8A1E00101651 /* FlatUIColor.podspec */; };
+		96248D85181B8A1E00101651 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 96248D7F181B8A1E00101651 /* LICENSE */; };
+		96248D86181B8A1E00101651 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 96248D80181B8A1E00101651 /* README.md */; };
+		96248D87181B8A1E00101651 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D82181B8A1E00101651 /* UIColor+FlatUI.m */; };
+		96248D90181B8BCF00101651 /* bus-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96248D8F181B8BCE00101651 /* bus-48@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,13 @@
 		96248D6F181B720100101651 /* JYJ_HelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYJ_HelperTests.m; sourceTree = "<group>"; };
 		96248D79181B769000101651 /* JYJNextBusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJNextBusViewController.h; sourceTree = "<group>"; };
 		96248D7A181B769000101651 /* JYJNextBusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJNextBusViewController.m; sourceTree = "<group>"; };
+		96248D7D181B8A1E00101651 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		96248D7E181B8A1E00101651 /* FlatUIColor.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlatUIColor.podspec; sourceTree = "<group>"; };
+		96248D7F181B8A1E00101651 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		96248D80181B8A1E00101651 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		96248D81181B8A1E00101651 /* UIColor+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatUI.h"; sourceTree = "<group>"; };
+		96248D82181B8A1E00101651 /* UIColor+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatUI.m"; sourceTree = "<group>"; };
+		96248D8F181B8BCE00101651 /* bus-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bus-48@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +98,7 @@
 		96248D38181B720100101651 = {
 			isa = PBXGroup;
 			children = (
+				96248D7C181B8A1E00101651 /* CocoaFlatUIColor */,
 				96248D4A181B720100101651 /* JYJ Helper */,
 				96248D69181B720100101651 /* JYJ HelperTests */,
 				96248D43181B720100101651 /* Frameworks */,
@@ -115,6 +129,7 @@
 		96248D4A181B720100101651 /* JYJ Helper */ = {
 			isa = PBXGroup;
 			children = (
+				96248D88181B8ABB00101651 /* images */,
 				96248D53181B720100101651 /* JYJAppDelegate.h */,
 				96248D54181B720100101651 /* JYJAppDelegate.m */,
 				96248D56181B720100101651 /* Main.storyboard */,
@@ -155,6 +170,27 @@
 				96248D6C181B720100101651 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96248D7C181B8A1E00101651 /* CocoaFlatUIColor */ = {
+			isa = PBXGroup;
+			children = (
+				96248D7D181B8A1E00101651 /* .gitignore */,
+				96248D7E181B8A1E00101651 /* FlatUIColor.podspec */,
+				96248D7F181B8A1E00101651 /* LICENSE */,
+				96248D80181B8A1E00101651 /* README.md */,
+				96248D81181B8A1E00101651 /* UIColor+FlatUI.h */,
+				96248D82181B8A1E00101651 /* UIColor+FlatUI.m */,
+			);
+			path = CocoaFlatUIColor;
+			sourceTree = "<group>";
+		};
+		96248D88181B8ABB00101651 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				96248D8F181B8BCE00101651 /* bus-48@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,8 +270,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96248D85181B8A1E00101651 /* LICENSE in Resources */,
+				96248D84181B8A1E00101651 /* FlatUIColor.podspec in Resources */,
+				96248D83181B8A1E00101651 /* .gitignore in Resources */,
+				96248D86181B8A1E00101651 /* README.md in Resources */,
 				96248D5D181B720100101651 /* Images.xcassets in Resources */,
 				96248D4F181B720100101651 /* InfoPlist.strings in Resources */,
+				96248D90181B8BCF00101651 /* bus-48@2x.png in Resources */,
 				96248D58181B720100101651 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96248D87181B8A1E00101651 /* UIColor+FlatUI.m in Sources */,
 				96248D55181B720100101651 /* JYJAppDelegate.m in Sources */,
 				96248D51181B720100101651 /* main.m in Sources */,
 				96248D7B181B769000101651 /* JYJNextBusViewController.m in Sources */,
