@@ -38,14 +38,14 @@
     
     if(self.homeRequested) {
         [self.webView loadRequest:[NSURLRequest requestWithURL:self.bus23AHome]];
-        self.title = @"23A Home";
+        self.navBar.topItem.title = @"23A Home";
     }
     else {
         [self.webView loadRequest:[NSURLRequest requestWithURL:self.bus23AWork]];
-        self.title = @"23A Work";
+        self.navBar.topItem.title = @"23A Work";
     }
     
-    self.navigationController.toolbarHidden = NO;
+    self.navBar.barTintColor = [UIColor yellowColor];
     
 }
 - (IBAction)reload:(id)sender {

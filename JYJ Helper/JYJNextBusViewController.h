@@ -10,6 +10,8 @@
 
 @interface JYJNextBusViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic) BOOL homeRequested;
 

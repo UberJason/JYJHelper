@@ -21,15 +21,15 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="busCell" textLabel="lvt-t6-p44" style="IBUITableViewCellStyleDefault" id="xd4-Ap-hdd">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="busCell" textLabel="lvt-t6-p44" style="IBUITableViewCellStyleDefault" id="xd4-Ap-hdd">
                                         <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xd4-Ap-hdd">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lvt-t6-p44">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -38,7 +38,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="iOj-JB-z4v" kind="push" identifier="pushWebView" id="fad-8B-dhE"/>
+                                            <segue destination="iOj-JB-z4v" kind="modal" identifier="pushWebView" modalTransitionStyle="crossDissolve" id="FuI-gA-Mpy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -69,43 +69,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqx-OV-U2e">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Fqc-xX-0f9"/>
+                                </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Title" id="abf-nr-DfX"/>
+                                </items>
+                            </navigationBar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baF-V2-4Lo">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zx4-pr-PDJ">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="refresh" id="ixC-l5-sHT">
+                                        <connections>
+                                            <action selector="reload:" destination="iOj-JB-z4v" id="QZh-fN-Aif"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="w7d-EP-mM8"/>
+                                    <barButtonItem systemItem="stop" id="U3K-JW-qHq">
+                                        <connections>
+                                            <segue destination="Jcp-SZ-4Lu" kind="unwind" unwindAction="doneWithWebView:" id="gYw-aT-waG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="baF-V2-4Lo" firstAttribute="leading" secondItem="YIR-JG-96V" secondAttribute="leading" id="B3I-ST-TMs"/>
-                            <constraint firstAttribute="bottom" secondItem="baF-V2-4Lo" secondAttribute="bottom" id="OSK-FP-2QY"/>
-                            <constraint firstItem="baF-V2-4Lo" firstAttribute="top" secondItem="YIR-JG-96V" secondAttribute="top" id="gFu-Wu-Esc"/>
-                            <constraint firstAttribute="trailing" secondItem="baF-V2-4Lo" secondAttribute="trailing" id="zWQ-W1-E1u"/>
+                            <constraint firstItem="baF-V2-4Lo" firstAttribute="top" secondItem="tqx-OV-U2e" secondAttribute="bottom" id="1ez-HF-Rcx"/>
+                            <constraint firstAttribute="bottom" secondItem="Zx4-pr-PDJ" secondAttribute="bottom" id="2Ru-lm-kIa"/>
+                            <constraint firstAttribute="trailing" secondItem="tqx-OV-U2e" secondAttribute="trailing" id="S0M-YD-keW"/>
+                            <constraint firstItem="baF-V2-4Lo" firstAttribute="leading" secondItem="Zx4-pr-PDJ" secondAttribute="leading" id="SEI-KL-nmI"/>
+                            <constraint firstItem="baF-V2-4Lo" firstAttribute="leading" secondItem="YIR-JG-96V" secondAttribute="leading" id="X0a-ex-W9d"/>
+                            <constraint firstItem="baF-V2-4Lo" firstAttribute="leading" secondItem="tqx-OV-U2e" secondAttribute="leading" id="XOW-U2-B28"/>
+                            <constraint firstItem="Zx4-pr-PDJ" firstAttribute="top" secondItem="baF-V2-4Lo" secondAttribute="bottom" id="Xvx-EK-OUK"/>
+                            <constraint firstItem="tqx-OV-U2e" firstAttribute="trailing" secondItem="baF-V2-4Lo" secondAttribute="trailing" id="irl-LU-n3l"/>
+                            <constraint firstItem="Zx4-pr-PDJ" firstAttribute="trailing" secondItem="baF-V2-4Lo" secondAttribute="trailing" id="p1Q-VK-lIz"/>
+                            <constraint firstItem="baF-V2-4Lo" firstAttribute="top" secondItem="tqx-OV-U2e" secondAttribute="bottom" id="uUA-bO-rCb"/>
+                            <constraint firstItem="tqx-OV-U2e" firstAttribute="top" secondItem="YIR-JG-96V" secondAttribute="top" id="vJb-k2-GWs"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem systemItem="refresh" id="l2h-F6-FqI">
-                            <connections>
-                                <action selector="reload:" destination="iOj-JB-z4v" id="YkH-Dh-Keh"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="1rR-IQ-thz"/>
-                        <barButtonItem systemItem="stop" id="uWl-v4-4lS">
-                            <connections>
-                                <segue destination="Jcp-SZ-4Lu" kind="unwind" unwindAction="doneWithWebView:" id="hP8-bl-Qcl"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="JUf-1e-9fc"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="navBar" destination="tqx-OV-U2e" id="ytQ-e3-k2A"/>
+                        <outlet property="toolbar" destination="Zx4-pr-PDJ" id="iQV-3l-ZW4"/>
                         <outlet property="webView" destination="baF-V2-4Lo" id="7r7-eZ-J7K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGD-8g-0SL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Jcp-SZ-4Lu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1642" y="166"/>
+            <point key="canvasLocation" x="1808" y="166"/>
         </scene>
         <!--Navigation Controller - Buses-->
         <scene sceneID="HUx-i4-09x">
