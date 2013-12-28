@@ -321,7 +321,7 @@
         <scene sceneID="Q3a-iY-tLr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KSg-3k-bmD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tracking" id="7Su-Bi-eSX"/>
+                    <tabBarItem key="tabBarItem" title="Tracking" image="list-48.png" id="7Su-Bi-eSX"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="q8b-y0-Ltu">
@@ -340,6 +340,7 @@
     </scenes>
     <resources>
         <image name="bus-48.png" width="24" height="24"/>
+        <image name="list-48.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

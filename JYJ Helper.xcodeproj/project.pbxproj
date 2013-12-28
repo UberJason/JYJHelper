@@ -30,6 +30,7 @@
 		96248D90181B8BCF00101651 /* bus-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96248D8F181B8BCE00101651 /* bus-48@2x.png */; };
 		96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */; };
 		96A0EA77186F5DE6005711E5 /* JYJAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA76186F5DE6005711E5 /* JYJAddCell.m */; };
+		96A0EA7B186F7E1A005711E5 /* list-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A0EA7A186F7E1A005711E5 /* list-48@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJTrackingViewController.m; sourceTree = "<group>"; };
 		96A0EA75186F5DE6005711E5 /* JYJAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJAddCell.h; sourceTree = "<group>"; };
 		96A0EA76186F5DE6005711E5 /* JYJAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJAddCell.m; sourceTree = "<group>"; };
+		96A0EA7A186F7E1A005711E5 /* list-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-48@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				96248D8F181B8BCE00101651 /* bus-48@2x.png */,
+				96A0EA7A186F7E1A005711E5 /* list-48@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				96248D84181B8A1E00101651 /* FlatUIColor.podspec in Resources */,
 				96248D83181B8A1E00101651 /* .gitignore in Resources */,
 				96248D86181B8A1E00101651 /* README.md in Resources */,
+				96A0EA7B186F7E1A005711E5 /* list-48@2x.png in Resources */,
 				96248D5D181B720100101651 /* Images.xcassets in Resources */,
 				96248D4F181B720100101651 /* InfoPlist.strings in Resources */,
 				96248D90181B8BCF00101651 /* bus-48@2x.png in Resources */,

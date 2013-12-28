@@ -34,8 +34,8 @@
     if(!self.trackedObjectsList) {
         NSLog(@"None, so I'm making it");
         self.trackedObjectsList = [@[
-                                     @{@"title" : @"Gas", @"queue": [@[] mutableCopy] },
-                                     @{@"title" : @"Popeyes", @"queue" : [@[] mutableCopy] }
+                                     @{@"title" : @"Gas", @"queue": [@[@"Jason"] mutableCopy] },
+                                     @{@"title" : @"Popeyes", @"queue" : [@[@"Jason"] mutableCopy] }
                                      
                                      ] mutableCopy];
        [[NSUserDefaults standardUserDefaults] setObject:self.trackedObjectsList forKey:@"trackedObjectList"];
