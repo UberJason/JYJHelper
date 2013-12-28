@@ -48,6 +48,8 @@
 {
     // Override point for customization after application launch.
     
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
     [self setMorningAndAfternoonRanges];
     
     if([self isWeekday:[self.currentDateComponents weekday]] && ([self isMorning:[self.currentDateComponents hour]] || [self isAfternoon:[self.currentDateComponents hour]])) {
