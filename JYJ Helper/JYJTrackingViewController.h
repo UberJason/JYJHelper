@@ -12,5 +12,6 @@
 @interface JYJTrackingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) NSInteger currentSectionAboutToBeDeleted;
 
 @end
