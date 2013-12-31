@@ -46,7 +46,8 @@
     }
     
     self.navBar.barTintColor = [UIColor emeraldFlatColor];
-    
+    [self.navBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    self.navBar.barStyle = UIBarStyleBlackTranslucent;
 }
 - (IBAction)reload:(id)sender {
     NSLog(@"reload");
