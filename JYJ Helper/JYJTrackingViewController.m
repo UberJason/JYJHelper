@@ -29,7 +29,6 @@ typedef enum {
     
     self.navigationController.navigationBar.barTintColor = [UIColor belizeHoleFlatColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

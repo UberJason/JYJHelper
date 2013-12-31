@@ -37,7 +37,7 @@ typedef enum {
     
     self.navigationController.navigationBar.barTintColor = [UIColor emeraldFlatColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+
 }
 
 -(void)viewWillAppear:(BOOL)animated {
