@@ -34,6 +34,9 @@
 		96C6316B1946A7F400CDAF6F /* gear-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C6316A1946A7F400CDAF6F /* gear-50@2x.png */; };
 		96C6316E1946A84E00CDAF6F /* JYJBusSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C6316D1946A84E00CDAF6F /* JYJBusSettingsViewController.m */; };
 		96C631711946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C631701946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m */; };
+		96E0422D1947C64B000902CF /* jyj_flat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422B1947C64B000902CF /* jyj_flat@2x.png */; };
+		96E0422E1947C64B000902CF /* jyj@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422C1947C64B000902CF /* jyj@2x.png */; };
+		96E042301947CB85000902CF /* airplane-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422F1947CB85000902CF /* airplane-48@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		96C6316D1946A84E00CDAF6F /* JYJBusSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJBusSettingsViewController.m; sourceTree = "<group>"; };
 		96C6316F1946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelAndSwitchCellTableViewCell.h; sourceTree = "<group>"; };
 		96C631701946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelAndSwitchCellTableViewCell.m; sourceTree = "<group>"; };
+		96E0422B1947C64B000902CF /* jyj_flat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jyj_flat@2x.png"; sourceTree = "<group>"; };
+		96E0422C1947C64B000902CF /* jyj@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jyj@2x.png"; sourceTree = "<group>"; };
+		96E0422F1947CB85000902CF /* airplane-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane-48@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +218,9 @@
 		96248D88181B8ABB00101651 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				96E0422F1947CB85000902CF /* airplane-48@2x.png */,
+				96E0422B1947C64B000902CF /* jyj_flat@2x.png */,
+				96E0422C1947C64B000902CF /* jyj@2x.png */,
 				96C6316A1946A7F400CDAF6F /* gear-50@2x.png */,
 				96248D8F181B8BCE00101651 /* bus-48@2x.png */,
 				96A0EA7A186F7E1A005711E5 /* list-48@2x.png */,
@@ -299,11 +308,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E042301947CB85000902CF /* airplane-48@2x.png in Resources */,
+				96E0422E1947C64B000902CF /* jyj@2x.png in Resources */,
 				96C6316B1946A7F400CDAF6F /* gear-50@2x.png in Resources */,
 				96248D85181B8A1E00101651 /* LICENSE in Resources */,
 				96248D84181B8A1E00101651 /* FlatUIColor.podspec in Resources */,
 				96248D83181B8A1E00101651 /* .gitignore in Resources */,
 				96248D86181B8A1E00101651 /* README.md in Resources */,
+				96E0422D1947C64B000902CF /* jyj_flat@2x.png in Resources */,
 				96A0EA7B186F7E1A005711E5 /* list-48@2x.png in Resources */,
 				96248D5D181B720100101651 /* Images.xcassets in Resources */,
 				96248D4F181B720100101651 /* InfoPlist.strings in Resources */,

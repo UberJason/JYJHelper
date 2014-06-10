@@ -27,8 +27,8 @@ typedef enum {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.navigationController.navigationBar.barTintColor = [UIColor belizeHoleFlatColor];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    self.navigationBar.barTintColor = [UIColor belizeHoleFlatColor];
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
