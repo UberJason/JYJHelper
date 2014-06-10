@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wX-8K-fq4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wX-8K-fq4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Base View Controller - Bus Stops-->
+        <!--Main Bus View Controller - Bus Stops-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="JYJBaseViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="JYJMainBusViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yid-Oj-GZo"/>
                         <viewControllerLayoutGuide type="bottom" id="ths-p0-okR"/>
@@ -48,6 +48,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Bus Stops" id="RtA-Rt-PXu">
                         <barButtonItem key="backBarButtonItem" title=" " id="miX-3s-2o5"/>
+                        <barButtonItem key="rightBarButtonItem" image="gear-50.png" id="OGU-t0-uyO">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="DQ7-AF-Bs1" kind="modal" identifier="modalBusSettings" id="0OK-Dr-UsN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="RDu-BS-qrl" id="Qsy-E7-zOl"/>
@@ -56,6 +62,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1184" y="166"/>
+        </scene>
+        <!--Bus Settings View Controller-->
+        <scene sceneID="7YL-s0-OMR">
+            <objects>
+                <viewController id="DQ7-AF-Bs1" customClass="JYJBusSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="drz-H1-4dT"/>
+                        <viewControllerLayoutGuide type="bottom" id="8uX-C3-4lL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XQT-HP-CEK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="PfN-sF-hGU">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="I0X-RX-L4z" customClass="LabelAndSwitchCellTableViewCell">
+                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I0X-RX-L4z" id="3Yj-cW-FGC">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Auto-Display Bus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nce-kU-LkI">
+                                                    <rect key="frame" x="20" y="11" width="134" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fek-e7-cN3">
+                                                    <rect key="frame" x="251" y="6" width="51" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="switchPressed:" destination="I0X-RX-L4z" eventType="valueChanged" id="Iuy-dm-qiK"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="control" destination="Fek-e7-cN3" id="J6c-LB-7hZ"/>
+                                            <outlet property="label" destination="3Yj-cW-FGC" id="QNO-gK-Cuz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sa-GS-f9e">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="ZI0-pf-W8y"/>
+                                    <constraint firstAttribute="width" constant="320" id="rUu-JG-Dfv"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Bus Settings" id="vqu-Qy-71d">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="26k-Di-3DJ">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="donePressed:" destination="DQ7-AF-Bs1" id="piC-e2-g7y"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2sa-GS-f9e" firstAttribute="top" secondItem="XQT-HP-CEK" secondAttribute="top" id="0ne-mo-WCH"/>
+                            <constraint firstItem="PfN-sF-hGU" firstAttribute="leading" secondItem="XQT-HP-CEK" secondAttribute="leading" id="3gZ-gw-geb"/>
+                            <constraint firstAttribute="trailing" secondItem="PfN-sF-hGU" secondAttribute="trailing" id="BrR-eC-3Rn"/>
+                            <constraint firstItem="2sa-GS-f9e" firstAttribute="leading" secondItem="XQT-HP-CEK" secondAttribute="leading" id="EzB-if-ueK"/>
+                            <constraint firstItem="PfN-sF-hGU" firstAttribute="top" secondItem="XQT-HP-CEK" secondAttribute="top" constant="64" id="H4f-wM-oUR"/>
+                            <constraint firstAttribute="bottom" secondItem="PfN-sF-hGU" secondAttribute="bottom" id="m3w-ik-XhF"/>
+                            <constraint firstAttribute="trailing" secondItem="2sa-GS-f9e" secondAttribute="trailing" id="qOi-Gl-26H"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="2sa-GS-f9e" id="dNX-SS-goQ"/>
+                        <outlet property="tableView" destination="PfN-sF-hGU" id="GQB-67-dYq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9vc-Kx-sY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1814" y="-228"/>
         </scene>
         <!--Next Bus View Controller - Title-->
         <scene sceneID="ib7-wt-TP6">
@@ -131,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGD-8g-0SL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808" y="166"/>
+            <point key="canvasLocation" x="1814" y="456"/>
         </scene>
         <!--Navigation Controller - Buses-->
         <scene sceneID="HUx-i4-09x">
@@ -340,6 +433,7 @@
     </scenes>
     <resources>
         <image name="bus-48.png" width="24" height="24"/>
+        <image name="gear-50.png" width="25" height="25"/>
         <image name="list-48.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

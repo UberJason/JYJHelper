@@ -11,6 +11,7 @@
 @interface JYJNextBusViewController ()
 
 @property (strong, nonatomic) NSURL *bus23AHome;
+@property (strong, nonatomic) NSURL *bus23THome;
 @property (strong, nonatomic) NSURL *bus23AWork;
 
 @end
@@ -26,23 +27,37 @@
 
 -(NSURL *)bus23AWork {
     if(!_bus23AWork) {
-                _bus23AWork = [NSURL URLWithString: @"http://www.nextbus.com/wireless/miniPrediction.shtml?a=wmata&r=23A&d=23A_23A_1&s=14172"];
+        _bus23AWork = [NSURL URLWithString: @"http://www.nextbus.com/wireless/miniPrediction.shtml?a=wmata&r=23A&d=23A_23A_1&s=14172"];
     }
     return _bus23AWork;
+}
+
+-(NSURL *)bus23THome {
+    if(!_bus23THome) {
+        _bus23THome = [NSURL URLWithString:@"http://www.nextbus.com/wireless/miniPrediction.shtml?a=wmata&r=23T&d=23T_23T_0&s=7385"];
+    }
+    return _bus23THome;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    if(self.homeRequested) {
-        [self.webView loadRequest:[NSURLRequest requestWithURL:self.bus23AHome]];
-        self.navBar.topItem.title = @"23A Home";
-    }
-    else {
-        [self.webView loadRequest:[NSURLRequest requestWithURL:self.bus23AWork]];
-        self.navBar.topItem.title = @"23A Work";
+
+    switch(self.homeRequested) {
+        case BusSelectedHome23A:
+            [self.webView loadRequest:[NSURLRequest requestWithURL:self.bus23AHome]];
+            self.navBar.topItem.title = @"23A Home";
+            break;
+        case BusSelectedHome23T:
+            [self.webView loadRequest:[NSURLRequest requestWithURL:self.bus23THome]];
+            self.navBar.topItem.title = @"23T Home";
+            break;
+        case BusSelectedWork:
+            [self.webView loadRequest:[NSURLRequest requestWithURL:self.bus23AWork]];
+            self.navBar.topItem.title = @"23A Work";
+            break;
+            
     }
     
     self.navBar.barTintColor = [UIColor emeraldFlatColor];

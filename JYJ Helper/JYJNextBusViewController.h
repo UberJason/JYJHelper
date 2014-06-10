@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "UIColor+FlatUI.h"
+#import "JYJMainBusViewController.h"
 
 @interface JYJNextBusViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-@property (nonatomic) BOOL homeRequested;
+@property (nonatomic) BusSelected homeRequested;
 
 @end

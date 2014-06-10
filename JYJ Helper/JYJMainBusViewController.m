@@ -6,24 +6,20 @@
 //  Copyright (c) 2013 Jason Ji. All rights reserved.
 //
 
-#import "JYJBaseViewController.h"
+#import "JYJMainBusViewController.h"
+#import "JYJNextBusViewController.h"
 
-typedef enum {
-    BusSelectedHome,
-    BusSelectedWork
-} BusSelected;
-
-@interface JYJBaseViewController ()
+@interface JYJMainBusViewController ()
 
 @property (strong, nonatomic) NSArray *busStops;
 
 @end
 
-@implementation JYJBaseViewController
+@implementation JYJMainBusViewController
 
 -(NSArray *)busStops {
     if(!_busStops)
-        _busStops = @[@"23A Home", @"23A Work"];
+        _busStops = @[@"23A Home", @"23T Home", @"23A Work"];
     return _busStops;
 }
 
@@ -48,7 +44,7 @@ typedef enum {
 #pragma mark - table view delegate/datasource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -70,7 +66,7 @@ typedef enum {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         JYJNextBusViewController *newController = (JYJNextBusViewController *)segue.destinationViewController;
-        newController.homeRequested = indexPath.row == BusSelectedHome;
+        newController.homeRequested = (BusSelected)indexPath.row;
     }
     
 }

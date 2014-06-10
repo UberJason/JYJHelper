@@ -14,7 +14,7 @@
 		96248D51181B720100101651 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D50181B720100101651 /* main.m */; };
 		96248D55181B720100101651 /* JYJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D54181B720100101651 /* JYJAppDelegate.m */; };
 		96248D58181B720100101651 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96248D56181B720100101651 /* Main.storyboard */; };
-		96248D5B181B720100101651 /* JYJBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D5A181B720100101651 /* JYJBaseViewController.m */; };
+		96248D5B181B720100101651 /* JYJMainBusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D5A181B720100101651 /* JYJMainBusViewController.m */; };
 		96248D5D181B720100101651 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96248D5C181B720100101651 /* Images.xcassets */; };
 		96248D64181B720100101651 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D63181B720100101651 /* XCTest.framework */; };
 		96248D65181B720100101651 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D44181B720100101651 /* Foundation.framework */; };
@@ -31,6 +31,9 @@
 		96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */; };
 		96A0EA77186F5DE6005711E5 /* JYJAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA76186F5DE6005711E5 /* JYJAddCell.m */; };
 		96A0EA7B186F7E1A005711E5 /* list-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A0EA7A186F7E1A005711E5 /* list-48@2x.png */; };
+		96C6316B1946A7F400CDAF6F /* gear-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C6316A1946A7F400CDAF6F /* gear-50@2x.png */; };
+		96C6316E1946A84E00CDAF6F /* JYJBusSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C6316D1946A84E00CDAF6F /* JYJBusSettingsViewController.m */; };
+		96C631711946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C631701946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +58,8 @@
 		96248D53181B720100101651 /* JYJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYJAppDelegate.h; sourceTree = "<group>"; };
 		96248D54181B720100101651 /* JYJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYJAppDelegate.m; sourceTree = "<group>"; };
 		96248D57181B720100101651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		96248D59181B720100101651 /* JYJBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYJBaseViewController.h; sourceTree = "<group>"; };
-		96248D5A181B720100101651 /* JYJBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYJBaseViewController.m; sourceTree = "<group>"; };
+		96248D59181B720100101651 /* JYJMainBusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYJMainBusViewController.h; sourceTree = "<group>"; };
+		96248D5A181B720100101651 /* JYJMainBusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYJMainBusViewController.m; sourceTree = "<group>"; };
 		96248D5C181B720100101651 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		96248D62181B720100101651 /* JYJ HelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JYJ HelperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96248D63181B720100101651 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -77,6 +80,11 @@
 		96A0EA75186F5DE6005711E5 /* JYJAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJAddCell.h; sourceTree = "<group>"; };
 		96A0EA76186F5DE6005711E5 /* JYJAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJAddCell.m; sourceTree = "<group>"; };
 		96A0EA7A186F7E1A005711E5 /* list-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-48@2x.png"; sourceTree = "<group>"; };
+		96C6316A1946A7F400CDAF6F /* gear-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear-50@2x.png"; sourceTree = "<group>"; };
+		96C6316C1946A84E00CDAF6F /* JYJBusSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJBusSettingsViewController.h; sourceTree = "<group>"; };
+		96C6316D1946A84E00CDAF6F /* JYJBusSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJBusSettingsViewController.m; sourceTree = "<group>"; };
+		96C6316F1946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelAndSwitchCellTableViewCell.h; sourceTree = "<group>"; };
+		96C631701946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelAndSwitchCellTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,18 +145,22 @@
 		96248D4A181B720100101651 /* JYJ Helper */ = {
 			isa = PBXGroup;
 			children = (
+				96248D56181B720100101651 /* Main.storyboard */,
 				96248D88181B8ABB00101651 /* images */,
 				96248D53181B720100101651 /* JYJAppDelegate.h */,
 				96248D54181B720100101651 /* JYJAppDelegate.m */,
-				96248D56181B720100101651 /* Main.storyboard */,
 				96A0EA75186F5DE6005711E5 /* JYJAddCell.h */,
 				96A0EA76186F5DE6005711E5 /* JYJAddCell.m */,
+				96C6316F1946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.h */,
+				96C631701946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m */,
+				96C6316C1946A84E00CDAF6F /* JYJBusSettingsViewController.h */,
+				96C6316D1946A84E00CDAF6F /* JYJBusSettingsViewController.m */,
 				96A0EA72186F2D2C005711E5 /* JYJTrackingViewController.h */,
 				96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */,
 				96248D79181B769000101651 /* JYJNextBusViewController.h */,
 				96248D7A181B769000101651 /* JYJNextBusViewController.m */,
-				96248D59181B720100101651 /* JYJBaseViewController.h */,
-				96248D5A181B720100101651 /* JYJBaseViewController.m */,
+				96248D59181B720100101651 /* JYJMainBusViewController.h */,
+				96248D5A181B720100101651 /* JYJMainBusViewController.m */,
 				96248D5C181B720100101651 /* Images.xcassets */,
 				96248D4B181B720100101651 /* Supporting Files */,
 			);
@@ -200,6 +212,7 @@
 		96248D88181B8ABB00101651 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				96C6316A1946A7F400CDAF6F /* gear-50@2x.png */,
 				96248D8F181B8BCE00101651 /* bus-48@2x.png */,
 				96A0EA7A186F7E1A005711E5 /* list-48@2x.png */,
 			);
@@ -251,7 +264,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = JYJ;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Jason Ji";
 				TargetAttributes = {
 					96248D40181B720100101651 = {
@@ -286,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96C6316B1946A7F400CDAF6F /* gear-50@2x.png in Resources */,
 				96248D85181B8A1E00101651 /* LICENSE in Resources */,
 				96248D84181B8A1E00101651 /* FlatUIColor.podspec in Resources */,
 				96248D83181B8A1E00101651 /* .gitignore in Resources */,
@@ -313,12 +327,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96C6316E1946A84E00CDAF6F /* JYJBusSettingsViewController.m in Sources */,
 				96248D87181B8A1E00101651 /* UIColor+FlatUI.m in Sources */,
+				96C631711946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m in Sources */,
 				96248D55181B720100101651 /* JYJAppDelegate.m in Sources */,
 				96248D51181B720100101651 /* main.m in Sources */,
 				96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */,
 				96248D7B181B769000101651 /* JYJNextBusViewController.m in Sources */,
-				96248D5B181B720100101651 /* JYJBaseViewController.m in Sources */,
+				96248D5B181B720100101651 /* JYJMainBusViewController.m in Sources */,
 				96A0EA77186F5DE6005711E5 /* JYJAddCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,7 +389,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -412,7 +427,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -476,7 +490,6 @@
 		96248D77181B720100101651 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JYJ Helper.app/JYJ Helper";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -499,7 +512,6 @@
 		96248D78181B720100101651 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JYJ Helper.app/JYJ Helper";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

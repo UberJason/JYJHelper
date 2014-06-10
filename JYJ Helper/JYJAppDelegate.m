@@ -9,8 +9,8 @@
 #import "JYJAppDelegate.h"
 
 #define DEFAULT_MIN_MORNING_HOUR 6
-#define DEFAULT_MAX_MORNING_HOUR 8
-#define DEFAULT_MIN_AFTERNOON_HOUR 14
+#define DEFAULT_MAX_MORNING_HOUR 9
+#define DEFAULT_MIN_AFTERNOON_HOUR 15
 #define DEFAULT_MAX_AFTERNOON_HOUR 18
 
 @interface JYJAppDelegate ()
@@ -50,18 +50,27 @@
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
-    [self setMorningAndAfternoonRanges];
     
-    if([self isWeekday:[self.currentDateComponents weekday]] && ([self isMorning:[self.currentDateComponents hour]] || [self isAfternoon:[self.currentDateComponents hour]])) {
-        JYJNextBusViewController *webView = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"webView"];
-        webView.homeRequested = [self isMorning:[self.currentDateComponents hour]];
-        [self.window makeKeyAndVisible];
+    // A hack to quickly set a value for bool key if it exists - value is stored internally as NSNumber
+    // http://stackoverflow.com/questions/9971811/how-do-i-test-if-bool-exists-in-nsuserdefaults-user-settings
+    if(![[NSUserDefaults standardUserDefaults] objectForKey:@"autoShowBus"])
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"autoShowBus"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"autoShowBus"]) {
+        [self setMorningAndAfternoonRanges];
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.window.rootViewController presentViewController:webView animated:YES completion:nil];
-        });
+        if([self isWeekday:[self.currentDateComponents weekday]] && ([self isMorning:[self.currentDateComponents hour]] || [self isAfternoon:[self.currentDateComponents hour]])) {
+            JYJNextBusViewController *webView = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"webView"];
+            webView.homeRequested = [self isMorning:[self.currentDateComponents hour]] ? BusSelectedHome23T : BusSelectedWork;
+            [self.window makeKeyAndVisible];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.window.rootViewController presentViewController:webView animated:YES completion:nil];
+            });
+        }
     }
-
+    
     return YES;
 }
 
@@ -73,7 +82,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
