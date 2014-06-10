@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9615211A1947CF820046A550 /* JYJFlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961521191947CF820046A550 /* JYJFlightsViewController.swift */; };
 		96248D45181B720100101651 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D44181B720100101651 /* Foundation.framework */; };
 		96248D47181B720100101651 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D46181B720100101651 /* CoreGraphics.framework */; };
 		96248D49181B720100101651 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D48181B720100101651 /* UIKit.framework */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		961521181947CF810046A550 /* JYJ Helper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JYJ Helper-Bridging-Header.h"; sourceTree = "<group>"; };
+		961521191947CF820046A550 /* JYJFlightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYJFlightsViewController.swift; sourceTree = "<group>"; };
 		96248D41181B720100101651 /* JYJ Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JYJ Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96248D44181B720100101651 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96248D46181B720100101651 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -167,8 +170,10 @@
 				96248D7A181B769000101651 /* JYJNextBusViewController.m */,
 				96248D59181B720100101651 /* JYJMainBusViewController.h */,
 				96248D5A181B720100101651 /* JYJMainBusViewController.m */,
+				961521191947CF820046A550 /* JYJFlightsViewController.swift */,
 				96248D5C181B720100101651 /* Images.xcassets */,
 				96248D4B181B720100101651 /* Supporting Files */,
+				961521181947CF810046A550 /* JYJ Helper-Bridging-Header.h */,
 			);
 			path = "JYJ Helper";
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				96248D55181B720100101651 /* JYJAppDelegate.m in Sources */,
 				96248D51181B720100101651 /* main.m in Sources */,
 				96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */,
+				9615211A1947CF820046A550 /* JYJFlightsViewController.swift in Sources */,
 				96248D7B181B769000101651 /* JYJNextBusViewController.m in Sources */,
 				96248D5B181B720100101651 /* JYJMainBusViewController.m in Sources */,
 				96A0EA77186F5DE6005711E5 /* JYJAddCell.m in Sources */,
@@ -472,13 +478,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JYJ Helper/JYJ Helper-Prefix.pch";
 				INFOPLIST_FILE = "JYJ Helper/JYJ Helper-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "JYJ Helper/JYJ Helper-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -488,13 +498,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JYJ Helper/JYJ Helper-Prefix.pch";
 				INFOPLIST_FILE = "JYJ Helper/JYJ Helper-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "JYJ Helper/JYJ Helper-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
