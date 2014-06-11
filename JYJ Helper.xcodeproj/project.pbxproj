@@ -30,6 +30,8 @@
 		96248D87181B8A1E00101651 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D82181B8A1E00101651 /* UIColor+FlatUI.m */; };
 		96248D90181B8BCF00101651 /* bus-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96248D8F181B8BCE00101651 /* bus-48@2x.png */; };
 		963CFBB81947E28400AB871B /* airplane-horizontal-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */; };
+		966892561947EFD6006A9029 /* Trip+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966892551947EFD6006A9029 /* Trip+Helpers.m */; };
+		966892591947EFE3006A9029 /* Flight+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966892581947EFE3006A9029 /* Flight+Helpers.m */; };
 		96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */; };
 		96A0EA77186F5DE6005711E5 /* JYJAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA76186F5DE6005711E5 /* JYJAddCell.m */; };
 		96A0EA7B186F7E1A005711E5 /* list-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A0EA7A186F7E1A005711E5 /* list-48@2x.png */; };
@@ -87,6 +89,10 @@
 		96248D82181B8A1E00101651 /* UIColor+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatUI.m"; sourceTree = "<group>"; };
 		96248D8F181B8BCE00101651 /* bus-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bus-48@2x.png"; sourceTree = "<group>"; };
 		963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane-horizontal-48@2x.png"; sourceTree = "<group>"; };
+		966892541947EFD6006A9029 /* Trip+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Trip+Helpers.h"; path = "Core Data/Trip+Helpers.h"; sourceTree = "<group>"; };
+		966892551947EFD6006A9029 /* Trip+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Trip+Helpers.m"; path = "Core Data/Trip+Helpers.m"; sourceTree = "<group>"; };
+		966892571947EFE3006A9029 /* Flight+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Flight+Helpers.h"; path = "Core Data/Flight+Helpers.h"; sourceTree = "<group>"; };
+		966892581947EFE3006A9029 /* Flight+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Flight+Helpers.m"; path = "Core Data/Flight+Helpers.m"; sourceTree = "<group>"; };
 		96A0EA72186F2D2C005711E5 /* JYJTrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJTrackingViewController.h; path = Controllers/JYJTrackingViewController.h; sourceTree = "<group>"; };
 		96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJTrackingViewController.m; path = Controllers/JYJTrackingViewController.m; sourceTree = "<group>"; };
 		96A0EA75186F5DE6005711E5 /* JYJAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJAddCell.h; path = "UI Subclasses/JYJAddCell.h"; sourceTree = "<group>"; };
@@ -260,6 +266,10 @@
 		96E9ABA31947EC49005BE367 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				966892541947EFD6006A9029 /* Trip+Helpers.h */,
+				966892551947EFD6006A9029 /* Trip+Helpers.m */,
+				966892571947EFE3006A9029 /* Flight+Helpers.h */,
+				966892581947EFE3006A9029 /* Flight+Helpers.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -410,6 +420,8 @@
 				96248D87181B8A1E00101651 /* UIColor+FlatUI.m in Sources */,
 				96C631711946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m in Sources */,
 				96248D55181B720100101651 /* JYJAppDelegate.m in Sources */,
+				966892561947EFD6006A9029 /* Trip+Helpers.m in Sources */,
+				966892591947EFE3006A9029 /* Flight+Helpers.m in Sources */,
 				96248D51181B720100101651 /* main.m in Sources */,
 				96E9ABA61947ECEF005BE367 /* JYJFlightTableViewCell.swift in Sources */,
 				96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */,
