@@ -19,7 +19,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/JYJTrackingViewController.m"
+            filePath = "JYJ Helper/Controllers/JYJTrackingViewController.m"
             timestampString = "410186543.332077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -35,7 +35,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/JYJTrackingViewController.m"
+            filePath = "JYJ Helper/Controllers/JYJTrackingViewController.m"
             timestampString = "410186543.332077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -51,7 +51,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/JYJBusSettingsViewController.m"
+            filePath = "JYJ Helper/Controllers/JYJBusSettingsViewController.m"
             timestampString = "424062613.455366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -67,13 +67,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/JYJBusSettingsViewController.m"
+            filePath = "JYJ Helper/Controllers/JYJBusSettingsViewController.m"
             timestampString = "424062613.455366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
             endingLineNumber = "49"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JYJ Helper/Controllers/JYJFlightsViewController.swift"
+            timestampString = "424142446.30967"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

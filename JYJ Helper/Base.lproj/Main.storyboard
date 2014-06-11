@@ -256,6 +256,78 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="eu1-KQ-DC9"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="flightCell" rowHeight="88" id="7xB-hn-KWp" customClass="JYJFlightTableViewCell" customModule="JYJ_Helper" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7xB-hn-KWp" id="jBO-Kx-Jkf">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UA 999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yo8-jK-ief">
+                                                    <rect key="frame" x="20" y="5" width="57" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IAD to SFO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjz-KP-C02">
+                                                    <rect key="frame" x="237" y="28" width="63" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="June 13, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzA-XD-2zv">
+                                                    <rect key="frame" x="20" y="28" width="79" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:55 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfc-IU-30d">
+                                                    <rect key="frame" x="21" y="57" width="74" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:38 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbM-aM-55e">
+                                                    <rect key="frame" x="215" y="57" width="85" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airplane-horizontal-48.png" translatesAutoresizingMaskIntoConstraints="NO" id="ipj-ro-9Vc">
+                                                    <rect key="frame" x="148" y="57" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="eC4-96-mJh"/>
+                                                        <constraint firstAttribute="height" constant="24" id="g2X-Yg-g59"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VzA-XD-2zv" firstAttribute="leading" secondItem="jBO-Kx-Jkf" secondAttribute="leading" constant="20" id="7jA-KU-Sgo"/>
+                                                <constraint firstAttribute="bottom" secondItem="ipj-ro-9Vc" secondAttribute="bottom" constant="6" id="LUQ-6q-EIc"/>
+                                                <constraint firstAttribute="bottom" secondItem="dbM-aM-55e" secondAttribute="bottom" constant="6" id="Oqk-US-Cf4"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yo8-jK-ief" secondAttribute="trailing" constant="20" id="Puk-if-5Gw"/>
+                                                <constraint firstItem="dbM-aM-55e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ipj-ro-9Vc" secondAttribute="trailing" constant="8" id="R19-Aj-d2d"/>
+                                                <constraint firstItem="yo8-jK-ief" firstAttribute="leading" secondItem="jBO-Kx-Jkf" secondAttribute="leading" constant="20" symbolic="YES" id="R7t-4D-1xQ"/>
+                                                <constraint firstItem="Cjz-KP-C02" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VzA-XD-2zv" secondAttribute="trailing" constant="20" id="aeU-6B-poJ"/>
+                                                <constraint firstItem="ipj-ro-9Vc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wfc-IU-30d" secondAttribute="trailing" constant="8" id="bf5-wJ-pa3"/>
+                                                <constraint firstAttribute="bottom" secondItem="wfc-IU-30d" secondAttribute="bottom" constant="6" id="d0R-wk-S1R"/>
+                                                <constraint firstItem="yo8-jK-ief" firstAttribute="top" secondItem="jBO-Kx-Jkf" secondAttribute="top" constant="5" id="dvz-zf-sZs"/>
+                                                <constraint firstAttribute="trailing" secondItem="dbM-aM-55e" secondAttribute="trailing" constant="20" id="hwo-bT-8cT"/>
+                                                <constraint firstItem="wfc-IU-30d" firstAttribute="leading" secondItem="jBO-Kx-Jkf" secondAttribute="leading" constant="21" id="iSS-wV-tWd"/>
+                                                <constraint firstAttribute="centerX" secondItem="ipj-ro-9Vc" secondAttribute="centerX" id="idg-JU-vtt"/>
+                                                <constraint firstAttribute="trailing" secondItem="Cjz-KP-C02" secondAttribute="trailing" constant="20" id="ltq-OM-DQ5"/>
+                                                <constraint firstItem="VzA-XD-2zv" firstAttribute="top" secondItem="yo8-jK-ief" secondAttribute="bottom" constant="2" id="oZ7-Si-MTO"/>
+                                                <constraint firstItem="Cjz-KP-C02" firstAttribute="top" secondItem="yo8-jK-ief" secondAttribute="bottom" constant="2" id="rof-R6-QIZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="airportsLabel" destination="Cjz-KP-C02" id="QbO-a6-Ck6"/>
+                                            <outlet property="dateLabel" destination="VzA-XD-2zv" id="gee-1p-3ny"/>
+                                            <outlet property="endTimeLabel" destination="dbM-aM-55e" id="l79-BR-aeq"/>
+                                            <outlet property="flightTitleLabel" destination="yo8-jK-ief" id="kHW-Wo-YC1"/>
+                                            <outlet property="startTimeLabel" destination="wfc-IU-30d" id="LrD-3c-oI7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-1v-0NH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
@@ -264,7 +336,7 @@
                                     <constraint firstAttribute="height" constant="64" id="Yvg-6P-ibH"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="uqf-dJ-Gl3"/>
+                                    <navigationItem title="Flights" id="uqf-dJ-Gl3"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -281,13 +353,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Flights" image="airplane-48.png" id="4KX-Tj-a0D"/>
                     <connections>
-                        <outlet property="navigationBar" destination="3Qb-1v-0NH" id="3Qw-LG-GG5"/>
-                        <outlet property="tableView" destination="3Bh-8x-BI7" id="gCq-d0-k5z"/>
+                        <outlet property="navigationBar" destination="3Qb-1v-0NH" id="YkO-Lo-SuK"/>
+                        <outlet property="tableView" destination="3Bh-8x-BI7" id="6rM-JD-sQ2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ii-8N-WEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="672" y="875"/>
+            <point key="canvasLocation" x="672" y="874"/>
         </scene>
         <!--Tracking View Controller - Tracking-->
         <scene sceneID="QaT-rr-D4z">
@@ -448,6 +520,7 @@
     </scenes>
     <resources>
         <image name="airplane-48.png" width="24" height="24"/>
+        <image name="airplane-horizontal-48.png" width="24" height="24"/>
         <image name="bus-48.png" width="24" height="24"/>
         <image name="gear-50.png" width="25" height="25"/>
         <image name="list-48.png" width="24" height="24"/>

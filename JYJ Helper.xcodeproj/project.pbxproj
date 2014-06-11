@@ -29,6 +29,7 @@
 		96248D86181B8A1E00101651 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 96248D80181B8A1E00101651 /* README.md */; };
 		96248D87181B8A1E00101651 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D82181B8A1E00101651 /* UIColor+FlatUI.m */; };
 		96248D90181B8BCF00101651 /* bus-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96248D8F181B8BCE00101651 /* bus-48@2x.png */; };
+		963CFBB81947E28400AB871B /* airplane-horizontal-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */; };
 		96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */; };
 		96A0EA77186F5DE6005711E5 /* JYJAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA76186F5DE6005711E5 /* JYJAddCell.m */; };
 		96A0EA7B186F7E1A005711E5 /* list-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A0EA7A186F7E1A005711E5 /* list-48@2x.png */; };
@@ -38,6 +39,10 @@
 		96E0422D1947C64B000902CF /* jyj_flat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422B1947C64B000902CF /* jyj_flat@2x.png */; };
 		96E0422E1947C64B000902CF /* jyj@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422C1947C64B000902CF /* jyj@2x.png */; };
 		96E042301947CB85000902CF /* airplane-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422F1947CB85000902CF /* airplane-48@2x.png */; };
+		96E9AB9A1947EA15005BE367 /* JYJ_Helper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96E9AB981947EA15005BE367 /* JYJ_Helper.xcdatamodeld */; };
+		96E9AB9E1947EC38005BE367 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E9AB9D1947EC38005BE367 /* Trip.m */; };
+		96E9ABA11947EC39005BE367 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E9ABA01947EC39005BE367 /* Flight.m */; };
+		96E9ABA61947ECEF005BE367 /* JYJFlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9ABA51947ECEF005BE367 /* JYJFlightTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,29 +56,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		961521181947CF810046A550 /* JYJ Helper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JYJ Helper-Bridging-Header.h"; sourceTree = "<group>"; };
-		961521191947CF820046A550 /* JYJFlightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYJFlightsViewController.swift; sourceTree = "<group>"; };
+		961521181947CF810046A550 /* JYJ Helper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "JYJ Helper-Bridging-Header.h"; path = "Supporting Files/JYJ Helper-Bridging-Header.h"; sourceTree = "<group>"; };
+		961521191947CF820046A550 /* JYJFlightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJFlightsViewController.swift; path = Controllers/JYJFlightsViewController.swift; sourceTree = "<group>"; };
 		96248D41181B720100101651 /* JYJ Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JYJ Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96248D44181B720100101651 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96248D46181B720100101651 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		96248D48181B720100101651 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		96248D4C181B720100101651 /* JYJ Helper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JYJ Helper-Info.plist"; sourceTree = "<group>"; };
+		96248D4C181B720100101651 /* JYJ Helper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "JYJ Helper-Info.plist"; path = "Supporting Files/JYJ Helper-Info.plist"; sourceTree = "<group>"; };
 		96248D4E181B720100101651 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		96248D50181B720100101651 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		96248D52181B720100101651 /* JYJ Helper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JYJ Helper-Prefix.pch"; sourceTree = "<group>"; };
-		96248D53181B720100101651 /* JYJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYJAppDelegate.h; sourceTree = "<group>"; };
-		96248D54181B720100101651 /* JYJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYJAppDelegate.m; sourceTree = "<group>"; };
+		96248D50181B720100101651 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
+		96248D52181B720100101651 /* JYJ Helper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "JYJ Helper-Prefix.pch"; path = "Supporting Files/JYJ Helper-Prefix.pch"; sourceTree = "<group>"; };
+		96248D53181B720100101651 /* JYJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JYJAppDelegate.h; path = "Supporting Files/JYJAppDelegate.h"; sourceTree = "<group>"; };
+		96248D54181B720100101651 /* JYJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JYJAppDelegate.m; path = "Supporting Files/JYJAppDelegate.m"; sourceTree = "<group>"; };
 		96248D57181B720100101651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		96248D59181B720100101651 /* JYJMainBusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYJMainBusViewController.h; sourceTree = "<group>"; };
-		96248D5A181B720100101651 /* JYJMainBusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYJMainBusViewController.m; sourceTree = "<group>"; };
+		96248D59181B720100101651 /* JYJMainBusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JYJMainBusViewController.h; path = Controllers/JYJMainBusViewController.h; sourceTree = "<group>"; };
+		96248D5A181B720100101651 /* JYJMainBusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JYJMainBusViewController.m; path = Controllers/JYJMainBusViewController.m; sourceTree = "<group>"; };
 		96248D5C181B720100101651 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		96248D62181B720100101651 /* JYJ HelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JYJ HelperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96248D63181B720100101651 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		96248D6B181B720100101651 /* JYJ HelperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JYJ HelperTests-Info.plist"; sourceTree = "<group>"; };
 		96248D6D181B720100101651 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		96248D6F181B720100101651 /* JYJ_HelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYJ_HelperTests.m; sourceTree = "<group>"; };
-		96248D79181B769000101651 /* JYJNextBusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJNextBusViewController.h; sourceTree = "<group>"; };
-		96248D7A181B769000101651 /* JYJNextBusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJNextBusViewController.m; sourceTree = "<group>"; };
+		96248D79181B769000101651 /* JYJNextBusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJNextBusViewController.h; path = Controllers/JYJNextBusViewController.h; sourceTree = "<group>"; };
+		96248D7A181B769000101651 /* JYJNextBusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJNextBusViewController.m; path = Controllers/JYJNextBusViewController.m; sourceTree = "<group>"; };
 		96248D7D181B8A1E00101651 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		96248D7E181B8A1E00101651 /* FlatUIColor.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlatUIColor.podspec; sourceTree = "<group>"; };
 		96248D7F181B8A1E00101651 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -81,19 +86,26 @@
 		96248D81181B8A1E00101651 /* UIColor+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatUI.h"; sourceTree = "<group>"; };
 		96248D82181B8A1E00101651 /* UIColor+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatUI.m"; sourceTree = "<group>"; };
 		96248D8F181B8BCE00101651 /* bus-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bus-48@2x.png"; sourceTree = "<group>"; };
-		96A0EA72186F2D2C005711E5 /* JYJTrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJTrackingViewController.h; sourceTree = "<group>"; };
-		96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJTrackingViewController.m; sourceTree = "<group>"; };
-		96A0EA75186F5DE6005711E5 /* JYJAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJAddCell.h; sourceTree = "<group>"; };
-		96A0EA76186F5DE6005711E5 /* JYJAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJAddCell.m; sourceTree = "<group>"; };
+		963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane-horizontal-48@2x.png"; sourceTree = "<group>"; };
+		96A0EA72186F2D2C005711E5 /* JYJTrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJTrackingViewController.h; path = Controllers/JYJTrackingViewController.h; sourceTree = "<group>"; };
+		96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJTrackingViewController.m; path = Controllers/JYJTrackingViewController.m; sourceTree = "<group>"; };
+		96A0EA75186F5DE6005711E5 /* JYJAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJAddCell.h; path = "UI Subclasses/JYJAddCell.h"; sourceTree = "<group>"; };
+		96A0EA76186F5DE6005711E5 /* JYJAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJAddCell.m; path = "UI Subclasses/JYJAddCell.m"; sourceTree = "<group>"; };
 		96A0EA7A186F7E1A005711E5 /* list-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-48@2x.png"; sourceTree = "<group>"; };
 		96C6316A1946A7F400CDAF6F /* gear-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear-50@2x.png"; sourceTree = "<group>"; };
-		96C6316C1946A84E00CDAF6F /* JYJBusSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJBusSettingsViewController.h; sourceTree = "<group>"; };
-		96C6316D1946A84E00CDAF6F /* JYJBusSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJBusSettingsViewController.m; sourceTree = "<group>"; };
-		96C6316F1946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelAndSwitchCellTableViewCell.h; sourceTree = "<group>"; };
-		96C631701946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelAndSwitchCellTableViewCell.m; sourceTree = "<group>"; };
+		96C6316C1946A84E00CDAF6F /* JYJBusSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJBusSettingsViewController.h; path = Controllers/JYJBusSettingsViewController.h; sourceTree = "<group>"; };
+		96C6316D1946A84E00CDAF6F /* JYJBusSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJBusSettingsViewController.m; path = Controllers/JYJBusSettingsViewController.m; sourceTree = "<group>"; };
+		96C6316F1946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelAndSwitchCellTableViewCell.h; path = "UI Subclasses/LabelAndSwitchCellTableViewCell.h"; sourceTree = "<group>"; };
+		96C631701946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelAndSwitchCellTableViewCell.m; path = "UI Subclasses/LabelAndSwitchCellTableViewCell.m"; sourceTree = "<group>"; };
 		96E0422B1947C64B000902CF /* jyj_flat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jyj_flat@2x.png"; sourceTree = "<group>"; };
 		96E0422C1947C64B000902CF /* jyj@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jyj@2x.png"; sourceTree = "<group>"; };
 		96E0422F1947CB85000902CF /* airplane-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane-48@2x.png"; sourceTree = "<group>"; };
+		96E9AB991947EA15005BE367 /* JYJ_Helper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JYJ_Helper.xcdatamodel; sourceTree = "<group>"; };
+		96E9AB9C1947EC38005BE367 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Trip.h; path = "Core Data/Trip.h"; sourceTree = "<group>"; };
+		96E9AB9D1947EC38005BE367 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Trip.m; path = "Core Data/Trip.m"; sourceTree = "<group>"; };
+		96E9AB9F1947EC39005BE367 /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flight.h; path = "Core Data/Flight.h"; sourceTree = "<group>"; };
+		96E9ABA01947EC39005BE367 /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Flight.m; path = "Core Data/Flight.m"; sourceTree = "<group>"; };
+		96E9ABA51947ECEF005BE367 /* JYJFlightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJFlightTableViewCell.swift; path = "UI Subclasses/JYJFlightTableViewCell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,25 +167,11 @@
 			isa = PBXGroup;
 			children = (
 				96248D56181B720100101651 /* Main.storyboard */,
+				96E9ABA41947ECC1005BE367 /* Controllers */,
+				96E9ABA71947ECF5005BE367 /* UI Subclasses */,
 				96248D88181B8ABB00101651 /* images */,
-				96248D53181B720100101651 /* JYJAppDelegate.h */,
-				96248D54181B720100101651 /* JYJAppDelegate.m */,
-				96A0EA75186F5DE6005711E5 /* JYJAddCell.h */,
-				96A0EA76186F5DE6005711E5 /* JYJAddCell.m */,
-				96C6316F1946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.h */,
-				96C631701946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m */,
-				96C6316C1946A84E00CDAF6F /* JYJBusSettingsViewController.h */,
-				96C6316D1946A84E00CDAF6F /* JYJBusSettingsViewController.m */,
-				96A0EA72186F2D2C005711E5 /* JYJTrackingViewController.h */,
-				96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */,
-				96248D79181B769000101651 /* JYJNextBusViewController.h */,
-				96248D7A181B769000101651 /* JYJNextBusViewController.m */,
-				96248D59181B720100101651 /* JYJMainBusViewController.h */,
-				96248D5A181B720100101651 /* JYJMainBusViewController.m */,
-				961521191947CF820046A550 /* JYJFlightsViewController.swift */,
-				96248D5C181B720100101651 /* Images.xcassets */,
+				96E9AB9B1947EA23005BE367 /* Core Data */,
 				96248D4B181B720100101651 /* Supporting Files */,
-				961521181947CF810046A550 /* JYJ Helper-Bridging-Header.h */,
 			);
 			path = "JYJ Helper";
 			sourceTree = "<group>";
@@ -181,6 +179,10 @@
 		96248D4B181B720100101651 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				961521181947CF810046A550 /* JYJ Helper-Bridging-Header.h */,
+				96248D53181B720100101651 /* JYJAppDelegate.h */,
+				96248D54181B720100101651 /* JYJAppDelegate.m */,
+				96248D5C181B720100101651 /* Images.xcassets */,
 				96248D4C181B720100101651 /* JYJ Helper-Info.plist */,
 				96248D4D181B720100101651 /* InfoPlist.strings */,
 				96248D50181B720100101651 /* main.m */,
@@ -223,6 +225,7 @@
 		96248D88181B8ABB00101651 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */,
 				96E0422F1947CB85000902CF /* airplane-48@2x.png */,
 				96E0422B1947C64B000902CF /* jyj_flat@2x.png */,
 				96E0422C1947C64B000902CF /* jyj@2x.png */,
@@ -231,6 +234,62 @@
 				96A0EA7A186F7E1A005711E5 /* list-48@2x.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		96E9AB9B1947EA23005BE367 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				96E9AB981947EA15005BE367 /* JYJ_Helper.xcdatamodeld */,
+				96E9ABA31947EC49005BE367 /* Categories */,
+				96E9ABA21947EC3F005BE367 /* Entities */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		96E9ABA21947EC3F005BE367 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				96E9AB9F1947EC39005BE367 /* Flight.h */,
+				96E9ABA01947EC39005BE367 /* Flight.m */,
+				96E9AB9C1947EC38005BE367 /* Trip.h */,
+				96E9AB9D1947EC38005BE367 /* Trip.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		96E9ABA31947EC49005BE367 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		96E9ABA41947ECC1005BE367 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				96C6316C1946A84E00CDAF6F /* JYJBusSettingsViewController.h */,
+				96C6316D1946A84E00CDAF6F /* JYJBusSettingsViewController.m */,
+				96A0EA72186F2D2C005711E5 /* JYJTrackingViewController.h */,
+				96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */,
+				96248D79181B769000101651 /* JYJNextBusViewController.h */,
+				96248D7A181B769000101651 /* JYJNextBusViewController.m */,
+				96248D59181B720100101651 /* JYJMainBusViewController.h */,
+				96248D5A181B720100101651 /* JYJMainBusViewController.m */,
+				961521191947CF820046A550 /* JYJFlightsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		96E9ABA71947ECF5005BE367 /* UI Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				96A0EA75186F5DE6005711E5 /* JYJAddCell.h */,
+				96A0EA76186F5DE6005711E5 /* JYJAddCell.m */,
+				96C6316F1946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.h */,
+				96C631701946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m */,
+				96E9ABA51947ECEF005BE367 /* JYJFlightTableViewCell.swift */,
+			);
+			name = "UI Subclasses";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +384,7 @@
 				96248D5D181B720100101651 /* Images.xcassets in Resources */,
 				96248D4F181B720100101651 /* InfoPlist.strings in Resources */,
 				96248D90181B8BCF00101651 /* bus-48@2x.png in Resources */,
+				963CFBB81947E28400AB871B /* airplane-horizontal-48@2x.png in Resources */,
 				96248D58181B720100101651 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,14 +404,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E9AB9E1947EC38005BE367 /* Trip.m in Sources */,
 				96C6316E1946A84E00CDAF6F /* JYJBusSettingsViewController.m in Sources */,
 				96248D87181B8A1E00101651 /* UIColor+FlatUI.m in Sources */,
+				96E9AB9A1947EA15005BE367 /* JYJ_Helper.xcdatamodeld in Sources */,
 				96C631711946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m in Sources */,
 				96248D55181B720100101651 /* JYJAppDelegate.m in Sources */,
 				96248D51181B720100101651 /* main.m in Sources */,
+				96E9ABA61947ECEF005BE367 /* JYJFlightTableViewCell.swift in Sources */,
 				96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */,
 				9615211A1947CF820046A550 /* JYJFlightsViewController.swift in Sources */,
 				96248D7B181B769000101651 /* JYJNextBusViewController.m in Sources */,
+				96E9ABA11947EC39005BE367 /* Flight.m in Sources */,
 				96248D5B181B720100101651 /* JYJMainBusViewController.m in Sources */,
 				96A0EA77186F5DE6005711E5 /* JYJAddCell.m in Sources */,
 			);
@@ -482,12 +546,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JYJ Helper/JYJ Helper-Prefix.pch";
-				INFOPLIST_FILE = "JYJ Helper/JYJ Helper-Info.plist";
+				GCC_PREFIX_HEADER = "JYJ Helper/Supporting Files/JYJ Helper-Prefix.pch";
+				INFOPLIST_FILE = "JYJ Helper/Supporting Files/JYJ Helper-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "JYJ Helper/JYJ Helper-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "JYJ Helper/Supporting Files/JYJ Helper-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
@@ -502,12 +566,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JYJ Helper/JYJ Helper-Prefix.pch";
-				INFOPLIST_FILE = "JYJ Helper/JYJ Helper-Info.plist";
+				GCC_PREFIX_HEADER = "JYJ Helper/Supporting Files/JYJ Helper-Prefix.pch";
+				INFOPLIST_FILE = "JYJ Helper/Supporting Files/JYJ Helper-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "JYJ Helper/JYJ Helper-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "JYJ Helper/Supporting Files/JYJ Helper-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -583,6 +647,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		96E9AB981947EA15005BE367 /* JYJ_Helper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				96E9AB991947EA15005BE367 /* JYJ_Helper.xcdatamodel */,
+			);
+			currentVersion = 96E9AB991947EA15005BE367 /* JYJ_Helper.xcdatamodel */;
+			path = JYJ_Helper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 96248D39181B720100101651 /* Project object */;
 }
