@@ -14,11 +14,11 @@
 @interface Flight : NSManagedObject
 
 @property (nonatomic, retain) NSString * airline;
+@property (nonatomic, retain) NSDate * arrivalTime;
+@property (nonatomic, retain) NSDate * date;
+@property (nonatomic, retain) NSDate * departureTime;
 @property (nonatomic, retain) NSString * destinationAirportCode;
 @property (nonatomic, retain) NSString * originAirportCode;
-@property (nonatomic, retain) NSDate * arrivalTime;
-@property (nonatomic, retain) NSDate * departureTime;
-@property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) Trip *trip;
 
 @end

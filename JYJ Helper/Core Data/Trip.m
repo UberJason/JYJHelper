@@ -7,13 +7,14 @@
 //
 
 #import "Trip.h"
+#import "Flight.h"
 
 
 @implementation Trip
 
+@dynamic endDate;
 @dynamic name;
 @dynamic startDate;
-@dynamic endDate;
 @dynamic flights;
 
 @end

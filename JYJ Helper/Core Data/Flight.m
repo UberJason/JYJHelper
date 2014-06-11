@@ -13,11 +13,11 @@
 @implementation Flight
 
 @dynamic airline;
+@dynamic arrivalTime;
+@dynamic date;
+@dynamic departureTime;
 @dynamic destinationAirportCode;
 @dynamic originAirportCode;
-@dynamic arrivalTime;
-@dynamic departureTime;
-@dynamic date;
 @dynamic trip;
 
 @end
