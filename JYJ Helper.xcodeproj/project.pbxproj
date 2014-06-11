@@ -32,6 +32,7 @@
 		963CFBB81947E28400AB871B /* airplane-horizontal-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */; };
 		966892561947EFD6006A9029 /* Trip+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966892551947EFD6006A9029 /* Trip+Helpers.m */; };
 		966892591947EFE3006A9029 /* Flight+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966892581947EFE3006A9029 /* Flight+Helpers.m */; };
+		969F66071947F9EA00F9A48F /* JYJFlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969F66061947F9EA00F9A48F /* JYJFlightTableViewCell.xib */; };
 		96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */; };
 		96A0EA77186F5DE6005711E5 /* JYJAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA76186F5DE6005711E5 /* JYJAddCell.m */; };
 		96A0EA7B186F7E1A005711E5 /* list-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A0EA7A186F7E1A005711E5 /* list-48@2x.png */; };
@@ -93,6 +94,7 @@
 		966892551947EFD6006A9029 /* Trip+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Trip+Helpers.m"; path = "Core Data/Trip+Helpers.m"; sourceTree = "<group>"; };
 		966892571947EFE3006A9029 /* Flight+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Flight+Helpers.h"; path = "Core Data/Flight+Helpers.h"; sourceTree = "<group>"; };
 		966892581947EFE3006A9029 /* Flight+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Flight+Helpers.m"; path = "Core Data/Flight+Helpers.m"; sourceTree = "<group>"; };
+		969F66061947F9EA00F9A48F /* JYJFlightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JYJFlightTableViewCell.xib; path = Views/JYJFlightTableViewCell.xib; sourceTree = "<group>"; };
 		96A0EA72186F2D2C005711E5 /* JYJTrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJTrackingViewController.h; path = Controllers/JYJTrackingViewController.h; sourceTree = "<group>"; };
 		96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJTrackingViewController.m; path = Controllers/JYJTrackingViewController.m; sourceTree = "<group>"; };
 		96A0EA75186F5DE6005711E5 /* JYJAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJAddCell.h; path = "UI Subclasses/JYJAddCell.h"; sourceTree = "<group>"; };
@@ -111,7 +113,7 @@
 		96E0422B1947C64B000902CF /* jyj_flat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jyj_flat@2x.png"; sourceTree = "<group>"; };
 		96E0422C1947C64B000902CF /* jyj@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jyj@2x.png"; sourceTree = "<group>"; };
 		96E0422F1947CB85000902CF /* airplane-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane-48@2x.png"; sourceTree = "<group>"; };
-		96E9ABA51947ECEF005BE367 /* JYJFlightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJFlightTableViewCell.swift; path = "UI Subclasses/JYJFlightTableViewCell.swift"; sourceTree = "<group>"; };
+		96E9ABA51947ECEF005BE367 /* JYJFlightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJFlightTableViewCell.swift; path = Views/JYJFlightTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				96248D56181B720100101651 /* Main.storyboard */,
+				969F66081947F9F300F9A48F /* Views */,
 				96E9ABA41947ECC1005BE367 /* Controllers */,
 				96E9ABA71947ECF5005BE367 /* UI Subclasses */,
 				96248D88181B8ABB00101651 /* images */,
@@ -242,6 +245,15 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		969F66081947F9F300F9A48F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96E9ABA51947ECEF005BE367 /* JYJFlightTableViewCell.swift */,
+				969F66061947F9EA00F9A48F /* JYJFlightTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		96E9AB9B1947EA23005BE367 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,7 +309,6 @@
 				96A0EA76186F5DE6005711E5 /* JYJAddCell.m */,
 				96C6316F1946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.h */,
 				96C631701946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m */,
-				96E9ABA51947ECEF005BE367 /* JYJFlightTableViewCell.swift */,
 			);
 			name = "UI Subclasses";
 			sourceTree = "<group>";
@@ -385,6 +396,7 @@
 				96E042301947CB85000902CF /* airplane-48@2x.png in Resources */,
 				96E0422E1947C64B000902CF /* jyj@2x.png in Resources */,
 				96C6316B1946A7F400CDAF6F /* gear-50@2x.png in Resources */,
+				969F66071947F9EA00F9A48F /* JYJFlightTableViewCell.xib in Resources */,
 				96248D85181B8A1E00101651 /* LICENSE in Resources */,
 				96248D84181B8A1E00101651 /* FlatUIColor.podspec in Resources */,
 				96248D83181B8A1E00101651 /* .gitignore in Resources */,

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JYJFlightTableViewCell"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UA 999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNR-Pg-L2L">
+                    <rect key="frame" x="20" y="5" width="57" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="June 13, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFW-mS-Dvd">
+                    <rect key="frame" x="20" y="28" width="79" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:55 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zti-VH-fsD">
+                    <rect key="frame" x="20" y="58" width="74" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:38 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfV-Q1-wws">
+                    <rect key="frame" x="215" y="58" width="85" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airplane-horizontal-48.png" translatesAutoresizingMaskIntoConstraints="NO" id="yP9-3X-Iwr">
+                    <rect key="frame" x="148" y="58" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="cr2-0h-KoA"/>
+                        <constraint firstAttribute="height" constant="24" id="rF0-eW-zJI"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IAD to SFO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N36-XL-wRe">
+                    <rect key="frame" x="237" y="28" width="63" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cfV-Q1-wws" secondAttribute="trailing" constant="20" symbolic="YES" id="5Ss-eG-NeH"/>
+                <constraint firstItem="yP9-3X-Iwr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zti-VH-fsD" secondAttribute="trailing" constant="20" id="Ddv-9k-01A"/>
+                <constraint firstAttribute="bottom" secondItem="Zti-VH-fsD" secondAttribute="bottom" constant="6" id="EN1-m2-UpQ"/>
+                <constraint firstItem="WNR-Pg-L2L" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="F4U-FD-SGp"/>
+                <constraint firstItem="cfV-Q1-wws" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yP9-3X-Iwr" secondAttribute="trailing" constant="8" id="GgQ-KK-xfa"/>
+                <constraint firstAttribute="centerX" secondItem="yP9-3X-Iwr" secondAttribute="centerX" id="OBk-Eh-4nH"/>
+                <constraint firstAttribute="bottom" secondItem="yP9-3X-Iwr" secondAttribute="bottom" constant="6" id="TBY-9g-WWf"/>
+                <constraint firstItem="YFW-mS-Dvd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="Th9-xb-tvH"/>
+                <constraint firstItem="N36-XL-wRe" firstAttribute="top" secondItem="WNR-Pg-L2L" secondAttribute="bottom" constant="2" id="ToY-Oo-nIz"/>
+                <constraint firstItem="Zti-VH-fsD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="WJQ-BY-Zu8"/>
+                <constraint firstAttribute="trailing" secondItem="N36-XL-wRe" secondAttribute="trailing" constant="20" symbolic="YES" id="Zj4-mm-Hgu"/>
+                <constraint firstItem="N36-XL-wRe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YFW-mS-Dvd" secondAttribute="trailing" constant="8" id="lQK-S7-6N9"/>
+                <constraint firstItem="WNR-Pg-L2L" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="sS2-dV-2z4"/>
+                <constraint firstAttribute="bottom" secondItem="cfV-Q1-wws" secondAttribute="bottom" constant="6" id="yo0-9o-adC"/>
+                <constraint firstItem="YFW-mS-Dvd" firstAttribute="top" secondItem="WNR-Pg-L2L" secondAttribute="bottom" constant="2" id="zdh-Ak-4yW"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="airplane-horizontal-48.png" width="24" height="24"/>
+    </resources>
+</document>
