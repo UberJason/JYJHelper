@@ -47,13 +47,13 @@ class JYJTripsTableViewController: JYJAbstractPageContentViewController {
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 2;
+        return 1;
     }
 
     override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
         var cell: UITableViewCell = tableView!.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell;
 
-        cell.textLabel.text = "Item \(indexPath.row)";
+        cell.textLabel.text = "June Trip - June 13 to June 23";
         // Configure the cell...
 
         return cell;
