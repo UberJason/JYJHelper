@@ -60,6 +60,7 @@
             
     }
     
+    self.navBar.delegate = self;
     self.navBar.barTintColor = [UIColor emeraldFlatColor];
     [self.navBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
@@ -72,6 +73,10 @@
 - (IBAction)dismiss:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     
+}
+
+-(UIBarPosition)positionForBar:(id<UIBarPositioning>)bar {
+    return UIBarPositionTopAttached;
 }
 
 

@@ -37,7 +37,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="iOj-JB-z4v" kind="modal" identifier="pushWebView" modalTransitionStyle="crossDissolve" id="FuI-gA-Mpy"/>
+                                            <segue destination="iOj-JB-z4v" kind="modal" identifier="pushWebView" modalTransitionStyle="coverVertical" id="FuI-gA-Mpy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -107,11 +107,13 @@
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sa-GS-f9e">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="ZI0-pf-W8y"/>
                                     <constraint firstAttribute="width" constant="320" id="rUu-JG-Dfv"/>
                                 </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Bus Settings" id="vqu-Qy-71d">
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="26k-Di-3DJ">
@@ -126,8 +128,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2sa-GS-f9e" firstAttribute="top" secondItem="XQT-HP-CEK" secondAttribute="top" id="0ne-mo-WCH"/>
                             <constraint firstItem="PfN-sF-hGU" firstAttribute="leading" secondItem="XQT-HP-CEK" secondAttribute="leading" id="3gZ-gw-geb"/>
+                            <constraint firstItem="2sa-GS-f9e" firstAttribute="top" secondItem="drz-H1-4dT" secondAttribute="bottom" id="5IU-8z-Lb1"/>
                             <constraint firstAttribute="trailing" secondItem="PfN-sF-hGU" secondAttribute="trailing" id="BrR-eC-3Rn"/>
                             <constraint firstItem="2sa-GS-f9e" firstAttribute="leading" secondItem="XQT-HP-CEK" secondAttribute="leading" id="EzB-if-ueK"/>
                             <constraint firstItem="PfN-sF-hGU" firstAttribute="top" secondItem="XQT-HP-CEK" secondAttribute="top" constant="64" id="H4f-wM-oUR"/>
@@ -143,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vc-Kx-sY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="-228"/>
+            <point key="canvasLocation" x="1774" y="-240"/>
         </scene>
         <!--Next Bus View Controller - Title-->
         <scene sceneID="ib7-wt-TP6">
@@ -158,51 +160,42 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqx-OV-U2e">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="Fqc-xX-0f9"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <textAttributes key="titleTextAttributes">
                                     <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="abf-nr-DfX"/>
+                                    <navigationItem title="Title" id="abf-nr-DfX">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="ixC-l5-sHT">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="reload:" destination="iOj-JB-z4v" id="QZh-fN-Aif"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="U3K-JW-qHq">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="dismiss:" destination="iOj-JB-z4v" id="Fb0-hV-EOv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baF-V2-4Lo">
                                 <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zx4-pr-PDJ">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <items>
-                                    <barButtonItem systemItem="refresh" id="ixC-l5-sHT">
-                                        <connections>
-                                            <action selector="reload:" destination="iOj-JB-z4v" id="QZh-fN-Aif"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="w7d-EP-mM8"/>
-                                    <barButtonItem systemItem="stop" id="U3K-JW-qHq">
-                                        <connections>
-                                            <action selector="dismiss:" destination="iOj-JB-z4v" id="Fb0-hV-EOv"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="baF-V2-4Lo" firstAttribute="top" secondItem="tqx-OV-U2e" secondAttribute="bottom" id="1ez-HF-Rcx"/>
-                            <constraint firstAttribute="bottom" secondItem="Zx4-pr-PDJ" secondAttribute="bottom" id="2Ru-lm-kIa"/>
+                            <constraint firstItem="tqx-OV-U2e" firstAttribute="top" secondItem="xL8-va-Nyv" secondAttribute="bottom" id="NmY-mc-RhE"/>
                             <constraint firstAttribute="trailing" secondItem="tqx-OV-U2e" secondAttribute="trailing" id="S0M-YD-keW"/>
-                            <constraint firstItem="baF-V2-4Lo" firstAttribute="leading" secondItem="Zx4-pr-PDJ" secondAttribute="leading" id="SEI-KL-nmI"/>
                             <constraint firstItem="baF-V2-4Lo" firstAttribute="leading" secondItem="YIR-JG-96V" secondAttribute="leading" id="X0a-ex-W9d"/>
                             <constraint firstItem="baF-V2-4Lo" firstAttribute="leading" secondItem="tqx-OV-U2e" secondAttribute="leading" id="XOW-U2-B28"/>
-                            <constraint firstItem="Zx4-pr-PDJ" firstAttribute="top" secondItem="baF-V2-4Lo" secondAttribute="bottom" id="Xvx-EK-OUK"/>
                             <constraint firstItem="tqx-OV-U2e" firstAttribute="trailing" secondItem="baF-V2-4Lo" secondAttribute="trailing" id="irl-LU-n3l"/>
-                            <constraint firstItem="Zx4-pr-PDJ" firstAttribute="trailing" secondItem="baF-V2-4Lo" secondAttribute="trailing" id="p1Q-VK-lIz"/>
+                            <constraint firstItem="JoF-sV-vkI" firstAttribute="top" secondItem="baF-V2-4Lo" secondAttribute="bottom" id="lO7-Zm-9dC"/>
                             <constraint firstItem="baF-V2-4Lo" firstAttribute="top" secondItem="tqx-OV-U2e" secondAttribute="bottom" id="uUA-bO-rCb"/>
-                            <constraint firstItem="tqx-OV-U2e" firstAttribute="top" secondItem="YIR-JG-96V" secondAttribute="top" id="vJb-k2-GWs"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -210,7 +203,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="navBar" destination="tqx-OV-U2e" id="ytQ-e3-k2A"/>
-                        <outlet property="toolbar" destination="Zx4-pr-PDJ" id="iQV-3l-ZW4"/>
                         <outlet property="webView" destination="baF-V2-4Lo" id="7r7-eZ-J7K"/>
                     </connections>
                 </viewController>
@@ -250,67 +242,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSZ-2k-gnD">
+                                <rect key="frame" x="0.0" y="99" width="320" height="420"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-1v-0NH">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="MyC-Xv-6hN"/>
-                                    <constraint firstAttribute="height" constant="64" id="Yvg-6P-ibH"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <navigationItem title="Flights" id="uqf-dJ-Gl3">
+                                    <navigationItem title="Travel" id="uqf-dJ-Gl3">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zyd-oP-KnG">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peN-mr-s0M">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3QK-Sa-j13"/>
-                                    <barButtonItem style="plain" id="uhB-pw-YcG">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="VuW-Mp-FSD">
-                                            <rect key="frame" x="98" y="8" width="123" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <segments>
-                                                <segment title="Trips"/>
-                                                <segment title="Flights"/>
-                                            </segments>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </segmentedControl>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IEi-Ih-6B3"/>
-                                </items>
-                            </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSZ-2k-gnD">
-                                <rect key="frame" x="0.0" y="108" width="320" height="411"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQj-5z-gs2">
+                                <rect key="frame" x="0.0" y="64" width="320" height="35"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7aA-Mk-4FB">
+                                        <rect key="frame" x="99" y="0.0" width="123" height="29"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="5xw-ac-JCr"/>
+                                    <constraint firstAttribute="centerX" secondItem="7aA-Mk-4FB" secondAttribute="centerX" id="aZJ-bB-7nv"/>
+                                    <constraint firstItem="7aA-Mk-4FB" firstAttribute="top" secondItem="kQj-5z-gs2" secondAttribute="top" id="ddi-QF-AxZ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3Qb-1v-0NH" firstAttribute="leading" secondItem="wuO-2b-72S" secondAttribute="leading" id="4Qn-Tr-Vsd"/>
-                            <constraint firstItem="peN-mr-s0M" firstAttribute="leading" secondItem="wuO-2b-72S" secondAttribute="leading" id="8b6-3F-bW2"/>
-                            <constraint firstItem="RSZ-2k-gnD" firstAttribute="top" secondItem="peN-mr-s0M" secondAttribute="bottom" id="CP3-Me-RG5"/>
+                            <constraint firstItem="RSZ-2k-gnD" firstAttribute="top" secondItem="kQj-5z-gs2" secondAttribute="bottom" id="3sd-6X-RPO"/>
+                            <constraint firstItem="kQj-5z-gs2" firstAttribute="leading" secondItem="wuO-2b-72S" secondAttribute="leading" id="5si-Fv-sgY"/>
                             <constraint firstItem="iRx-4l-T6n" firstAttribute="top" secondItem="RSZ-2k-gnD" secondAttribute="bottom" id="Hid-MR-qRC"/>
                             <constraint firstItem="RSZ-2k-gnD" firstAttribute="leading" secondItem="wuO-2b-72S" secondAttribute="leading" id="Ivc-24-X4N"/>
-                            <constraint firstItem="3Qb-1v-0NH" firstAttribute="top" secondItem="wuO-2b-72S" secondAttribute="top" id="NAh-dr-ziq"/>
-                            <constraint firstAttribute="trailing" secondItem="3Qb-1v-0NH" secondAttribute="trailing" id="Pj9-Bf-y2Z"/>
-                            <constraint firstItem="3Qb-1v-0NH" firstAttribute="leading" secondItem="wuO-2b-72S" secondAttribute="leading" id="QAj-gn-LU0"/>
-                            <constraint firstAttribute="trailing" secondItem="3Qb-1v-0NH" secondAttribute="trailing" id="SXz-TM-kfS"/>
-                            <constraint firstItem="3Qb-1v-0NH" firstAttribute="top" secondItem="wuO-2b-72S" secondAttribute="top" id="evb-gc-36V"/>
-                            <constraint firstAttribute="trailing" secondItem="peN-mr-s0M" secondAttribute="trailing" id="feH-Iu-7Lv"/>
+                            <constraint firstItem="3Qb-1v-0NH" firstAttribute="top" secondItem="qKf-pO-w4S" secondAttribute="bottom" id="ORo-or-SGu"/>
+                            <constraint firstAttribute="trailing" secondItem="kQj-5z-gs2" secondAttribute="trailing" id="auz-Be-oIL"/>
+                            <constraint firstItem="3Qb-1v-0NH" firstAttribute="leading" secondItem="wuO-2b-72S" secondAttribute="leading" id="bBX-2z-pP1"/>
                             <constraint firstAttribute="trailing" secondItem="RSZ-2k-gnD" secondAttribute="trailing" id="t8u-BK-OWe"/>
-                            <constraint firstItem="peN-mr-s0M" firstAttribute="top" secondItem="3Qb-1v-0NH" secondAttribute="bottom" id="ysj-zk-Kqh"/>
+                            <constraint firstItem="kQj-5z-gs2" firstAttribute="top" secondItem="3Qb-1v-0NH" secondAttribute="bottom" id="tCw-xe-OiH"/>
+                            <constraint firstAttribute="trailing" secondItem="3Qb-1v-0NH" secondAttribute="trailing" id="wIZ-ab-ueo"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Flights" image="airplane-48.png" id="4KX-Tj-a0D"/>
                     <connections>
+                        <outlet property="barView" destination="kQj-5z-gs2" id="Frc-WC-yWq"/>
                         <outlet property="containerView" destination="RSZ-2k-gnD" id="FjZ-7T-rnP"/>
                         <outlet property="navigationBar" destination="3Qb-1v-0NH" id="YkO-Lo-SuK"/>
-                        <outlet property="segmentedControl" destination="VuW-Mp-FSD" id="aki-VV-vNi"/>
-                        <outlet property="toolbar" destination="peN-mr-s0M" id="GEQ-NZ-JR7"/>
+                        <outlet property="segmentedControl" destination="7aA-Mk-4FB" id="azu-9D-Y5p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ii-8N-WEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -557,11 +543,7 @@
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pK3-qa-vw0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="Xot-kE-MnT"/>
-                                    <constraint firstAttribute="height" constant="64" id="enq-k3-Mua"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Tracking" id="ntQ-kt-X7w"/>
                                 </items>
@@ -569,10 +551,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="pK3-qa-vw0" firstAttribute="top" secondItem="UUh-lN-9Jx" secondAttribute="bottom" id="2SA-fF-zGv"/>
+                            <constraint firstItem="pK3-qa-vw0" firstAttribute="leading" secondItem="Sqo-JQ-14a" secondAttribute="leading" id="81N-yU-5ll"/>
                             <constraint firstItem="6Ti-Xl-0BM" firstAttribute="leading" secondItem="Sqo-JQ-14a" secondAttribute="leading" id="BXg-jN-7cS"/>
-                            <constraint firstItem="pK3-qa-vw0" firstAttribute="top" secondItem="Sqo-JQ-14a" secondAttribute="top" id="Mrx-u7-7wk"/>
-                            <constraint firstItem="pK3-qa-vw0" firstAttribute="leading" secondItem="Sqo-JQ-14a" secondAttribute="leading" id="ahM-bF-Ya7"/>
-                            <constraint firstAttribute="trailing" secondItem="pK3-qa-vw0" secondAttribute="trailing" id="cGh-8B-JYY"/>
+                            <constraint firstItem="6Ti-Xl-0BM" firstAttribute="top" secondItem="pK3-qa-vw0" secondAttribute="bottom" id="BtG-tD-sy7"/>
+                            <constraint firstAttribute="trailing" secondItem="pK3-qa-vw0" secondAttribute="trailing" id="PJi-fS-zrt"/>
+                            <constraint firstItem="pK3-qa-vw0" firstAttribute="top" secondItem="UUh-lN-9Jx" secondAttribute="bottom" id="WeJ-sB-s8m"/>
                             <constraint firstItem="6Ti-Xl-0BM" firstAttribute="top" secondItem="Sqo-JQ-14a" secondAttribute="top" constant="64" id="mNv-q0-tkT"/>
                             <constraint firstAttribute="bottom" secondItem="6Ti-Xl-0BM" secondAttribute="bottom" id="qjg-hV-Svd"/>
                             <constraint firstAttribute="trailing" secondItem="6Ti-Xl-0BM" secondAttribute="trailing" id="r6G-AU-VIK"/>

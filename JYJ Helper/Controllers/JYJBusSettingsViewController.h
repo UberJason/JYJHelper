@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LabelAndSwitchCellTableViewCell.h"
 
-@interface JYJBusSettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SwitchCellDelegate>
+@interface JYJBusSettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationBarDelegate, SwitchCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;

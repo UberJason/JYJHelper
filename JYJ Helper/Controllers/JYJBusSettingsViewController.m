@@ -25,6 +25,7 @@
     self.tableView.dataSource = self;
 
     self.navigationBar.barTintColor = [UIColor emeraldFlatColor];
+    self.navigationBar.delegate = self;
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
 }
@@ -60,5 +61,8 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+-(UIBarPosition)positionForBar:(id<UIBarPositioning>)bar {
+    return UIBarPositionTopAttached;
+}
 
 @end

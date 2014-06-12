@@ -8,10 +8,10 @@
 
 import UIKit
 
-class JYJFlightsBaseViewController: UIViewController, UIToolbarDelegate {
+class JYJFlightsBaseViewController: UIViewController, UIToolbarDelegate, UINavigationBarDelegate {
     
     @IBOutlet var navigationBar : UINavigationBar
-    @IBOutlet var toolbar : UIToolbar
+    @IBOutlet var barView : UIView
     @IBOutlet var segmentedControl : UISegmentedControl
     @IBOutlet var containerView : UIView
     
@@ -24,7 +24,7 @@ class JYJFlightsBaseViewController: UIViewController, UIToolbarDelegate {
     @lazy var flightsVC: JYJFlightsTableViewController = {
         return self.storyboard.instantiateViewControllerWithIdentifier("flightsVC") as JYJFlightsTableViewController;
         }();
-
+    
     
     init(coder aDecoder: NSCoder!) {
         pageController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil);
@@ -35,15 +35,16 @@ class JYJFlightsBaseViewController: UIViewController, UIToolbarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationBar.delegate = self;
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()];
         navigationBar.barTintColor = UIColor.pomegranateFlatColor();
+        navigationBar.translucent = false;
         
-        toolbar.delegate = self;
-        toolbar.barTintColor = UIColor.pomegranateFlatColor();
+        barView.backgroundColor = UIColor.pomegranateFlatColor();
         
         pageController.delegate = self;
         pageController.dataSource = self;
-
+        
         myViewControllers.append(self.tripsVC);
         myViewControllers.append(self.flightsVC);
         
@@ -60,9 +61,9 @@ class JYJFlightsBaseViewController: UIViewController, UIToolbarDelegate {
     }
     
     func positionForBar(bar: UIBarPositioning!) -> UIBarPosition {
-        return UIBarPosition.Top;
+        return UIBarPosition.TopAttached;
     }
-
+    
     override func viewDidAppear(animated: Bool)  {
         super.viewDidAppear(animated);
         
@@ -72,9 +73,7 @@ class JYJFlightsBaseViewController: UIViewController, UIToolbarDelegate {
 extension JYJFlightsBaseViewController : UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     func pageViewController(pageViewController: UIPageViewController!, viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController? {
-        println("vc BEFORE vc called");
         let vc = viewController as JYJAbstractPageContentViewController;
-        println(vc.pageIndex);
         if(vc.pageIndex == 0) {
             return nil;
         }
@@ -84,7 +83,6 @@ extension JYJFlightsBaseViewController : UIPageViewControllerDataSource, UIPageV
         
     }
     func pageViewController(pageViewController: UIPageViewController!, viewControllerAfterViewController viewController: UIViewController!) -> UIViewController? {
-        println("vc AFTER vc called");
         let vc = viewController as JYJAbstractPageContentViewController;
         if(vc.pageIndex == self.myViewControllers.count-1) {
             return nil;

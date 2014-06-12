@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "JYJMainBusViewController.h"
 
-@interface JYJNextBusViewController : UIViewController
+@interface JYJNextBusViewController : UIViewController <UINavigationBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;

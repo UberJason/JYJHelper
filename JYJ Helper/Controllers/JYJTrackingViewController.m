@@ -26,7 +26,8 @@ typedef enum {
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+
+    self.navigationBar.delegate = self;
     self.navigationBar.barTintColor = [UIColor belizeHoleFlatColor];
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
@@ -46,6 +47,12 @@ typedef enum {
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
+}
+
+#pragma mark - UINavigationBarDelegate
+
+-(UIBarPosition)positionForBar:(id<UIBarPositioning>)bar {
+    return UIBarPositionTopAttached;
 }
 
 #pragma mark - table view delegate/data source methods
