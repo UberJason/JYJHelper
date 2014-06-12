@@ -10,6 +10,12 @@ import UIKit
 
 class JYJFlightTableViewCell: UITableViewCell {
 
+    @IBOutlet var flightLabel : UILabel
+    @IBOutlet var dateLabel : UILabel
+    @IBOutlet var airportsLabel : UILabel
+    @IBOutlet var departureTimeLabel : UILabel
+    @IBOutlet var arrivalTimeLabel : UILabel
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

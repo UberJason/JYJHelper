@@ -238,10 +238,10 @@
             </objects>
             <point key="canvasLocation" x="672" y="166"/>
         </scene>
-        <!--Flights View Controller - Flights-->
+        <!--Flights Base View Controller - Flights-->
         <scene sceneID="d8o-Wm-Ghp">
             <objects>
-                <viewController id="ubV-RU-GpS" customClass="JYJFlightsViewController" customModule="JYJ_Helper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ubV-RU-GpS" customClass="JYJFlightsBaseViewController" customModule="JYJ_Helper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qKf-pO-w4S"/>
                         <viewControllerLayoutGuide type="bottom" id="iRx-4l-T6n"/>
@@ -250,51 +250,128 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Bh-8x-BI7">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="eu1-KQ-DC9"/>
-                                </constraints>
-                            </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-1v-0NH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="MyC-Xv-6hN"/>
                                     <constraint firstAttribute="height" constant="64" id="Yvg-6P-ibH"/>
                                 </constraints>
+                                <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem title="Flights" id="uqf-dJ-Gl3">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zyd-oP-KnG">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <segue destination="ZDx-om-cDR" kind="modal" identifier="addNewFlight" id="wji-ei-x16"/>
-                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peN-mr-s0M">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3QK-Sa-j13"/>
+                                    <barButtonItem style="plain" id="uhB-pw-YcG">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="VuW-Mp-FSD">
+                                            <rect key="frame" x="98" y="8" width="123" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Trips"/>
+                                                <segment title="Flights"/>
+                                            </segments>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IEi-Ih-6B3"/>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSZ-2k-gnD">
+                                <rect key="frame" x="0.0" y="108" width="320" height="411"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3Qb-1v-0NH" firstAttribute="leading" secondItem="wuO-2b-72S" secondAttribute="leading" id="4Qn-Tr-Vsd"/>
+                            <constraint firstItem="peN-mr-s0M" firstAttribute="leading" secondItem="wuO-2b-72S" secondAttribute="leading" id="8b6-3F-bW2"/>
+                            <constraint firstItem="RSZ-2k-gnD" firstAttribute="top" secondItem="peN-mr-s0M" secondAttribute="bottom" id="CP3-Me-RG5"/>
+                            <constraint firstItem="iRx-4l-T6n" firstAttribute="top" secondItem="RSZ-2k-gnD" secondAttribute="bottom" id="Hid-MR-qRC"/>
+                            <constraint firstItem="RSZ-2k-gnD" firstAttribute="leading" secondItem="wuO-2b-72S" secondAttribute="leading" id="Ivc-24-X4N"/>
                             <constraint firstItem="3Qb-1v-0NH" firstAttribute="top" secondItem="wuO-2b-72S" secondAttribute="top" id="NAh-dr-ziq"/>
+                            <constraint firstAttribute="trailing" secondItem="3Qb-1v-0NH" secondAttribute="trailing" id="Pj9-Bf-y2Z"/>
                             <constraint firstItem="3Qb-1v-0NH" firstAttribute="leading" secondItem="wuO-2b-72S" secondAttribute="leading" id="QAj-gn-LU0"/>
                             <constraint firstAttribute="trailing" secondItem="3Qb-1v-0NH" secondAttribute="trailing" id="SXz-TM-kfS"/>
-                            <constraint firstItem="3Bh-8x-BI7" firstAttribute="top" secondItem="3Qb-1v-0NH" secondAttribute="bottom" id="Taz-9b-s86"/>
-                            <constraint firstItem="3Bh-8x-BI7" firstAttribute="leading" secondItem="wuO-2b-72S" secondAttribute="leading" id="adL-f6-0Xw"/>
-                            <constraint firstAttribute="bottom" secondItem="3Bh-8x-BI7" secondAttribute="bottom" id="qT7-8M-qhF"/>
-                            <constraint firstAttribute="trailing" secondItem="3Bh-8x-BI7" secondAttribute="trailing" id="wl5-IM-ffg"/>
+                            <constraint firstItem="3Qb-1v-0NH" firstAttribute="top" secondItem="wuO-2b-72S" secondAttribute="top" id="evb-gc-36V"/>
+                            <constraint firstAttribute="trailing" secondItem="peN-mr-s0M" secondAttribute="trailing" id="feH-Iu-7Lv"/>
+                            <constraint firstAttribute="trailing" secondItem="RSZ-2k-gnD" secondAttribute="trailing" id="t8u-BK-OWe"/>
+                            <constraint firstItem="peN-mr-s0M" firstAttribute="top" secondItem="3Qb-1v-0NH" secondAttribute="bottom" id="ysj-zk-Kqh"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Flights" image="airplane-48.png" id="4KX-Tj-a0D"/>
                     <connections>
+                        <outlet property="containerView" destination="RSZ-2k-gnD" id="FjZ-7T-rnP"/>
                         <outlet property="navigationBar" destination="3Qb-1v-0NH" id="YkO-Lo-SuK"/>
-                        <outlet property="tableView" destination="3Bh-8x-BI7" id="6rM-JD-sQ2"/>
+                        <outlet property="segmentedControl" destination="VuW-Mp-FSD" id="aki-VV-vNi"/>
+                        <outlet property="toolbar" destination="peN-mr-s0M" id="GEQ-NZ-JR7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ii-8N-WEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="672" y="1148"/>
+        </scene>
+        <!--Trips Table View Controller-->
+        <scene sceneID="dmZ-hW-pVq">
+            <objects>
+                <tableViewController storyboardIdentifier="tripsVC" id="eQ0-hB-ele" customClass="JYJTripsTableViewController" customModule="JYJ_Helper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="lsn-YF-oVb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="abV-Kx-ZWY" style="IBUITableViewCellStyleDefault" id="xpe-5b-79X">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xpe-5b-79X" id="di3-D5-srl">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="abV-Kx-ZWY">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eQ0-hB-ele" id="zvG-W5-KAg"/>
+                            <outlet property="delegate" destination="eQ0-hB-ele" id="w0i-Py-HPP"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="411"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mo1-AA-wxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1115" y="1189"/>
+        </scene>
+        <!--Flights Table View Controller-->
+        <scene sceneID="tYE-S9-yoZ">
+            <objects>
+                <tableViewController storyboardIdentifier="flightsVC" id="Mmu-oT-sdk" customClass="JYJFlightsTableViewController" customModule="JYJ_Helper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="IMf-0l-c8E">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Mmu-oT-sdk" id="jvV-1t-Ugk"/>
+                            <outlet property="delegate" destination="Mmu-oT-sdk" id="eDC-lg-Xn0"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="411"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eNY-om-zmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="1190"/>
         </scene>
         <!--View Controller - Add New Trip-->
         <scene sceneID="HgU-jH-793">
@@ -345,12 +422,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="flightCell" rowHeight="88" id="FBr-00-EXI">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FBr-00-EXI" id="oAv-AK-i7A">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addFlightCell" textLabel="C0K-jg-kJg" style="IBUITableViewCellStyleDefault" id="Yi7-yZ-pOr">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yi7-yZ-pOr" id="3C0-OT-ovO">
@@ -380,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJW-cJ-m5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="1146"/>
+            <point key="canvasLocation" x="2926" y="1298"/>
         </scene>
         <!--Tracking View Controller - Tracking-->
         <scene sceneID="QaT-rr-D4z">
@@ -554,7 +625,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUP-TF-MjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1198" y="1148"/>
+            <point key="canvasLocation" x="2350" y="1300"/>
         </scene>
     </scenes>
     <resources>

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9615211A1947CF820046A550 /* JYJFlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961521191947CF820046A550 /* JYJFlightsViewController.swift */; };
+		9615211A1947CF820046A550 /* JYJFlightsBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961521191947CF820046A550 /* JYJFlightsBaseViewController.swift */; };
 		96248D45181B720100101651 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D44181B720100101651 /* Foundation.framework */; };
 		96248D47181B720100101651 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D46181B720100101651 /* CoreGraphics.framework */; };
 		96248D49181B720100101651 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D48181B720100101651 /* UIKit.framework */; };
@@ -32,8 +32,12 @@
 		963CFBB81947E28400AB871B /* airplane-horizontal-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */; };
 		966892561947EFD6006A9029 /* Trip+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966892551947EFD6006A9029 /* Trip+Helpers.m */; };
 		966892591947EFE3006A9029 /* Flight+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966892581947EFE3006A9029 /* Flight+Helpers.m */; };
+		96720B7D19495C5900B8D52F /* JYJAbstractPageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96720B7C19495C5900B8D52F /* JYJAbstractPageContentViewController.swift */; };
 		969A73AB19493975001C6F70 /* j2_flat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A73AA19493975001C6F70 /* j2_flat@2x.png */; };
-		969F66071947F9EA00F9A48F /* JYJFlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969F66061947F9EA00F9A48F /* JYJFlightTableViewCell.xib */; };
+		969A73B419493C20001C6F70 /* JYJFlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A73B219493C20001C6F70 /* JYJFlightTableViewCell.swift */; };
+		969A73B519493C20001C6F70 /* JYJFlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969A73B319493C20001C6F70 /* JYJFlightTableViewCell.xib */; };
+		969A73BB19494B2B001C6F70 /* JYJFlightsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A73BA19494B2B001C6F70 /* JYJFlightsTableViewController.swift */; };
+		969A73BD19494B34001C6F70 /* JYJTripsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A73BC19494B34001C6F70 /* JYJTripsTableViewController.swift */; };
 		96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */; };
 		96A0EA77186F5DE6005711E5 /* JYJAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA76186F5DE6005711E5 /* JYJAddCell.m */; };
 		96A0EA7B186F7E1A005711E5 /* list-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A0EA7A186F7E1A005711E5 /* list-48@2x.png */; };
@@ -46,7 +50,6 @@
 		96E0422D1947C64B000902CF /* jyj_flat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422B1947C64B000902CF /* jyj_flat@2x.png */; };
 		96E0422E1947C64B000902CF /* jyj@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422C1947C64B000902CF /* jyj@2x.png */; };
 		96E042301947CB85000902CF /* airplane-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422F1947CB85000902CF /* airplane-48@2x.png */; };
-		96E9ABA61947ECEF005BE367 /* JYJFlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9ABA51947ECEF005BE367 /* JYJFlightTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +64,7 @@
 
 /* Begin PBXFileReference section */
 		961521181947CF810046A550 /* JYJ Helper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "JYJ Helper-Bridging-Header.h"; path = "Supporting Files/JYJ Helper-Bridging-Header.h"; sourceTree = "<group>"; };
-		961521191947CF820046A550 /* JYJFlightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJFlightsViewController.swift; path = Controllers/JYJFlightsViewController.swift; sourceTree = "<group>"; };
+		961521191947CF820046A550 /* JYJFlightsBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJFlightsBaseViewController.swift; path = Controllers/JYJFlightsBaseViewController.swift; sourceTree = "<group>"; };
 		96248D41181B720100101651 /* JYJ Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JYJ Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96248D44181B720100101651 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96248D46181B720100101651 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,8 +98,12 @@
 		966892551947EFD6006A9029 /* Trip+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Trip+Helpers.m"; path = "Core Data/Trip+Helpers.m"; sourceTree = "<group>"; };
 		966892571947EFE3006A9029 /* Flight+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Flight+Helpers.h"; path = "Core Data/Flight+Helpers.h"; sourceTree = "<group>"; };
 		966892581947EFE3006A9029 /* Flight+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Flight+Helpers.m"; path = "Core Data/Flight+Helpers.m"; sourceTree = "<group>"; };
+		96720B7C19495C5900B8D52F /* JYJAbstractPageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJAbstractPageContentViewController.swift; path = Controllers/JYJAbstractPageContentViewController.swift; sourceTree = "<group>"; };
 		969A73AA19493975001C6F70 /* j2_flat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "j2_flat@2x.png"; sourceTree = "<group>"; };
-		969F66061947F9EA00F9A48F /* JYJFlightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JYJFlightTableViewCell.xib; path = Views/JYJFlightTableViewCell.xib; sourceTree = "<group>"; };
+		969A73B219493C20001C6F70 /* JYJFlightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJFlightTableViewCell.swift; path = Views/JYJFlightTableViewCell.swift; sourceTree = "<group>"; };
+		969A73B319493C20001C6F70 /* JYJFlightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JYJFlightTableViewCell.xib; path = Views/JYJFlightTableViewCell.xib; sourceTree = "<group>"; };
+		969A73BA19494B2B001C6F70 /* JYJFlightsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJFlightsTableViewController.swift; path = Controllers/JYJFlightsTableViewController.swift; sourceTree = "<group>"; };
+		969A73BC19494B34001C6F70 /* JYJTripsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJTripsTableViewController.swift; path = Controllers/JYJTripsTableViewController.swift; sourceTree = "<group>"; };
 		96A0EA72186F2D2C005711E5 /* JYJTrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJTrackingViewController.h; path = Controllers/JYJTrackingViewController.h; sourceTree = "<group>"; };
 		96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJTrackingViewController.m; path = Controllers/JYJTrackingViewController.m; sourceTree = "<group>"; };
 		96A0EA75186F5DE6005711E5 /* JYJAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJAddCell.h; path = "UI Subclasses/JYJAddCell.h"; sourceTree = "<group>"; };
@@ -115,7 +122,6 @@
 		96E0422B1947C64B000902CF /* jyj_flat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jyj_flat@2x.png"; sourceTree = "<group>"; };
 		96E0422C1947C64B000902CF /* jyj@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jyj@2x.png"; sourceTree = "<group>"; };
 		96E0422F1947CB85000902CF /* airplane-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane-48@2x.png"; sourceTree = "<group>"; };
-		96E9ABA51947ECEF005BE367 /* JYJFlightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJFlightTableViewCell.swift; path = Views/JYJFlightTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,8 +257,8 @@
 		969F66081947F9F300F9A48F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				96E9ABA51947ECEF005BE367 /* JYJFlightTableViewCell.swift */,
-				969F66061947F9EA00F9A48F /* JYJFlightTableViewCell.xib */,
+				969A73B219493C20001C6F70 /* JYJFlightTableViewCell.swift */,
+				969A73B319493C20001C6F70 /* JYJFlightTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -300,7 +306,10 @@
 				96248D7A181B769000101651 /* JYJNextBusViewController.m */,
 				96248D59181B720100101651 /* JYJMainBusViewController.h */,
 				96248D5A181B720100101651 /* JYJMainBusViewController.m */,
-				961521191947CF820046A550 /* JYJFlightsViewController.swift */,
+				961521191947CF820046A550 /* JYJFlightsBaseViewController.swift */,
+				969A73BC19494B34001C6F70 /* JYJTripsTableViewController.swift */,
+				969A73BA19494B2B001C6F70 /* JYJFlightsTableViewController.swift */,
+				96720B7C19495C5900B8D52F /* JYJAbstractPageContentViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -399,9 +408,9 @@
 				96E042301947CB85000902CF /* airplane-48@2x.png in Resources */,
 				96E0422E1947C64B000902CF /* jyj@2x.png in Resources */,
 				96C6316B1946A7F400CDAF6F /* gear-50@2x.png in Resources */,
-				969F66071947F9EA00F9A48F /* JYJFlightTableViewCell.xib in Resources */,
 				96248D85181B8A1E00101651 /* LICENSE in Resources */,
 				96248D84181B8A1E00101651 /* FlatUIColor.podspec in Resources */,
+				969A73B519493C20001C6F70 /* JYJFlightTableViewCell.xib in Resources */,
 				96248D83181B8A1E00101651 /* .gitignore in Resources */,
 				96248D86181B8A1E00101651 /* README.md in Resources */,
 				96E0422D1947C64B000902CF /* jyj_flat@2x.png in Resources */,
@@ -435,13 +444,16 @@
 				96B710291947EEAB008D08B9 /* Trip.m in Sources */,
 				96248D87181B8A1E00101651 /* UIColor+FlatUI.m in Sources */,
 				96C631711946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m in Sources */,
+				969A73B419493C20001C6F70 /* JYJFlightTableViewCell.swift in Sources */,
 				96248D55181B720100101651 /* JYJAppDelegate.m in Sources */,
 				966892561947EFD6006A9029 /* Trip+Helpers.m in Sources */,
+				969A73BD19494B34001C6F70 /* JYJTripsTableViewController.swift in Sources */,
+				96720B7D19495C5900B8D52F /* JYJAbstractPageContentViewController.swift in Sources */,
 				966892591947EFE3006A9029 /* Flight+Helpers.m in Sources */,
 				96248D51181B720100101651 /* main.m in Sources */,
-				96E9ABA61947ECEF005BE367 /* JYJFlightTableViewCell.swift in Sources */,
+				969A73BB19494B2B001C6F70 /* JYJFlightsTableViewController.swift in Sources */,
 				96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */,
-				9615211A1947CF820046A550 /* JYJFlightsViewController.swift in Sources */,
+				9615211A1947CF820046A550 /* JYJFlightsBaseViewController.swift in Sources */,
 				96248D7B181B769000101651 /* JYJNextBusViewController.m in Sources */,
 				96B710261947EEAA008D08B9 /* Flight.m in Sources */,
 				96248D5B181B720100101651 /* JYJMainBusViewController.m in Sources */,
