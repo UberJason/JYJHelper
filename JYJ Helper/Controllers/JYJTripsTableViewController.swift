@@ -10,6 +10,12 @@ import UIKit
 
 class JYJTripsTableViewController: JYJAbstractPageContentViewController {
 
+    @lazy var myTrips: Trip[] = {
+        var managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
+        var fetchRequest = NSFetchRequest(entityName: "Trip");
+        return managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as Trip[];
+    }();
+    
     init(style: UITableViewStyle) {
         super.init(style: style)
         // Custom initialization
@@ -29,6 +35,8 @@ class JYJTripsTableViewController: JYJAbstractPageContentViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.tableView.registerNib(UINib(nibName: "JYJTripTableViewCell", bundle: nil), forCellReuseIdentifier: "tripCell");
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +46,14 @@ class JYJTripsTableViewController: JYJAbstractPageContentViewController {
 
     // #pragma mark - Table view data source
 
+    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+        return "My Trips";
+    }
+    
+    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        return 88;
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
@@ -47,13 +63,21 @@ class JYJTripsTableViewController: JYJAbstractPageContentViewController {
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1;
+        return self.myTrips.count;
     }
 
     override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
-        var cell: UITableViewCell = tableView!.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell;
+        var cellIdentifier = "tripCell";
+        
+        var cell: JYJTripTableViewCell = tableView!.dequeueReusableCellWithIdentifier("tripCell", forIndexPath: indexPath) as JYJTripTableViewCell;
 
-        cell.textLabel.text = "June Trip - June 13 to June 23";
+        let formatter = NSDateFormatter();
+        formatter.dateFormat = "MMMM d";
+        let trip = self.myTrips[indexPath.row];
+        
+        cell.nameLabel.text = trip.name;
+        cell.startDateLabel.text = formatter.stringFromDate(trip.startDate);
+        cell.endDateLabel.text = formatter.stringFromDate(trip.endDate);
         // Configure the cell...
 
         return cell;

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wX-8K-fq4">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
@@ -253,6 +254,9 @@
                                     <navigationItem title="Travel" id="uqf-dJ-Gl3">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zyd-oP-KnG">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="F0H-ow-aou" kind="modal" identifier="addNewTripSegue" id="Avf-im-fd2"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -261,12 +265,15 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="35"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7aA-Mk-4FB">
-                                        <rect key="frame" x="99" y="0.0" width="123" height="29"/>
+                                        <rect key="frame" x="106" y="0.0" width="109" height="29"/>
                                         <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
+                                            <segment title="Trips"/>
+                                            <segment title="Flights"/>
                                         </segments>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="controlPressed:" destination="ubV-RU-GpS" eventType="valueChanged" id="vmz-zU-g5l"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -337,7 +344,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mo1-AA-wxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1115" y="1189"/>
+            <point key="canvasLocation" x="683" y="1794.5"/>
         </scene>
         <!--Flights Table View Controller-->
         <scene sceneID="tYE-S9-yoZ">
@@ -357,87 +364,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNY-om-zmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1548" y="1190"/>
-        </scene>
-        <!--View Controller - Add New Trip-->
-        <scene sceneID="HgU-jH-793">
-            <objects>
-                <viewController id="qAb-IP-OyC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jW5-h1-tUn"/>
-                        <viewControllerLayoutGuide type="bottom" id="zUT-PC-bTm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mLj-dC-Ygh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wvw-d6-k7t">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textCell" id="53V-eU-ash">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="53V-eU-ash" id="Iim-jo-jke">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trip Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yth-T0-kau">
-                                                    <rect key="frame" x="20" y="11" width="79" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Trip Name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QfM-5l-CuV">
-                                                    <rect key="frame" x="107" y="9" width="193" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="datePickerCell" rowHeight="162" id="N5q-fT-vJB">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N5q-fT-vJB" id="u0h-cD-SXl">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NQg-qt-cUX">
-                                                    <rect key="frame" x="0.0" y="-1" width="320" height="162"/>
-                                                    <date key="date" timeIntervalSinceReferenceDate="424147171.72872198">
-                                                        <!--<__NSDate Class=2014-06-11 02:39:31 +0000 timeInterval=424147171.728722 ISO8601=2014-06-10T22:39:31.729-0400>-->
-                                                    </date>
-                                                </datePicker>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addFlightCell" textLabel="C0K-jg-kJg" style="IBUITableViewCellStyleDefault" id="Yi7-yZ-pOr">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yi7-yZ-pOr" id="3C0-OT-ovO">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Add a flight..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C0K-jg-kJg">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Wvw-d6-k7t" secondAttribute="bottom" id="2nm-ch-bAy"/>
-                            <constraint firstItem="Wvw-d6-k7t" firstAttribute="leading" secondItem="mLj-dC-Ygh" secondAttribute="leading" id="Dcj-cR-1Mx"/>
-                            <constraint firstItem="Wvw-d6-k7t" firstAttribute="top" secondItem="mLj-dC-Ygh" secondAttribute="top" id="eiL-Fj-Ohk"/>
-                            <constraint firstAttribute="trailing" secondItem="Wvw-d6-k7t" secondAttribute="trailing" id="sHF-Pc-qQX"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Add New Trip" id="T6h-tc-5O5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yJW-cJ-m5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2926" y="1298"/>
+            <point key="canvasLocation" x="1116" y="1795.5"/>
         </scene>
         <!--Tracking View Controller - Tracking-->
         <scene sceneID="QaT-rr-D4z">
@@ -545,7 +472,14 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pK3-qa-vw0">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Tracking" id="ntQ-kt-X7w"/>
+                                    <navigationItem title="Tracking" id="ntQ-kt-X7w">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PKD-4s-fms">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="addSection:" destination="3aH-Bc-Jlp" id="lef-em-Tlz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -593,23 +527,100 @@
             </objects>
             <point key="canvasLocation" x="132" y="166"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gn2-Y9-8Jd">
+        <!--Add Edit Trip Table View Controller-->
+        <scene sceneID="9BR-7A-UTl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZDx-om-cDR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kr8-lv-I0j">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController id="F0H-ow-aou" customClass="JYJAddEditTripTableViewController" customModule="JYJ_Helper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0dV-Qt-NTm"/>
+                        <viewControllerLayoutGuide type="bottom" id="XlW-wg-qOV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bGY-dK-se1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MA-ZV-F8z">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Add/Edit Trip" id="WFE-Ev-y2B">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lQ4-ix-YAr">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="cancelPressed:" destination="F0H-ow-aou" id="RHX-ye-WXA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="pep-AM-CSO">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="savePressed:" destination="F0H-ow-aou" id="2yS-tp-gq9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Ig-dr-aN2">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" id="dwx-QA-sRB" customClass="LabelAndTextFieldTableViewCell" customModule="JYJ_Helper" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dwx-QA-sRB" id="MKG-ge-pKw">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trip Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoN-Ks-ACA">
+                                                    <rect key="frame" x="20" y="11" width="79" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Trip Name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QXj-cd-hRb">
+                                                    <rect key="frame" x="143" y="8" width="157" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textField" destination="QXj-cd-hRb" id="wDS-L6-mrV"/>
+                                            <outlet property="titleLabel" destination="uoN-Ks-ACA" id="W5A-92-j5O"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addFlightCell" textLabel="sRt-hu-wUv" style="IBUITableViewCellStyleDefault" id="bU3-6n-Okj">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bU3-6n-Okj" id="74m-kB-XXH">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Add New Flight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sRt-hu-wUv">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Ig-dr-aN2" firstAttribute="top" secondItem="2MA-ZV-F8z" secondAttribute="bottom" id="9wJ-zP-dhM"/>
+                            <constraint firstItem="2MA-ZV-F8z" firstAttribute="top" secondItem="0dV-Qt-NTm" secondAttribute="bottom" id="H8X-Nq-vlO"/>
+                            <constraint firstItem="2MA-ZV-F8z" firstAttribute="leading" secondItem="bGY-dK-se1" secondAttribute="leading" id="N6h-Rs-N0P"/>
+                            <constraint firstAttribute="trailing" secondItem="2MA-ZV-F8z" secondAttribute="trailing" id="Qrp-DH-pQr"/>
+                            <constraint firstAttribute="trailing" secondItem="3Ig-dr-aN2" secondAttribute="trailing" id="Rtz-os-48g"/>
+                            <constraint firstAttribute="bottom" secondItem="3Ig-dr-aN2" secondAttribute="bottom" id="T8J-oO-fET"/>
+                            <constraint firstItem="3Ig-dr-aN2" firstAttribute="leading" secondItem="bGY-dK-se1" secondAttribute="leading" id="cBQ-wc-yly"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <segue destination="qAb-IP-OyC" kind="relationship" relationship="rootViewController" id="rFn-VL-UUH"/>
+                        <outlet property="navigationBar" destination="2MA-ZV-F8z" id="LTJ-nZ-wsd"/>
+                        <outlet property="tableView" destination="3Ig-dr-aN2" id="KHg-Kh-Xln"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BUP-TF-MjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pYj-Jc-Ct7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2350" y="1300"/>
+            <point key="canvasLocation" x="1116" y="1148"/>
         </scene>
     </scenes>
     <resources>

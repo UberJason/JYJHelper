@@ -8,7 +8,17 @@
 
 import UIKit
 
+enum FlightType: Int {
+    case Departing = 0, Leg, Arriving;
+}
+
 class JYJFlightsTableViewController: JYJAbstractPageContentViewController {
+    
+    @lazy var trips: Trip[] = {
+        var managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
+        var request = NSFetchRequest(entityName: "Trip");
+        return managedObjectContext.executeFetchRequest(request, error: nil) as Trip[];
+        }();
     
     init(style: UITableViewStyle) {
         super.init(style: style)
@@ -27,10 +37,20 @@ class JYJFlightsTableViewController: JYJAbstractPageContentViewController {
         tableView.registerNib(UINib(nibName:"JYJFlightTableViewCell", bundle: nil), forCellReuseIdentifier: "flightCell");
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+//        var flight: Flight = self.trips[0].flights[0] as Flight;
+//        
+//        var formatter = NSDateFormatter();
+//        
+//        formatter.dateFormat = "h:mm a";
+//        println(flight.departureTime.description);
+    }
+    
     // #pragma mark - Table view data source
     
     override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String {
-        return "June Trip";
+        return (self.trips[section] as Trip).name;
     }
     
     override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -40,28 +60,48 @@ class JYJFlightsTableViewController: JYJAbstractPageContentViewController {
     override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1;
+        return self.trips.count;
     }
     
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 2;
+        var trip = self.trips[section];
+        return trip.flights.count;
     }
     
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cellIdentifier = "flightCell";
         
-        var cell: JYJFlightTableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? JYJFlightTableViewCell;
+        var cell: JYJFlightTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as JYJFlightTableViewCell;
         
-        cell!.flightLabel.text = "UA 999";
-        cell!.dateLabel.text = "June 13, 2014";
-        cell!.airportsLabel.text = "IAD to SFO";
-        cell!.departureTimeLabel.text = "8:55 AM";
-        cell!.arrivalTimeLabel.text = "11:38 AM";
+        var trip = self.trips[indexPath.section];
+        var flight: Flight = trip.flights[indexPath.row] as Flight;
         
-        return cell!;
+        var formatter = NSDateFormatter();
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle;
+        
+        cell.flightLabel.text = "\(flight.airlineCode) \(flight.flightNumber)";
+        let type = flight.flightType.integerValue;
+        
+        switch(type) {
+        case FlightType.Departing.toRaw(), FlightType.Leg.toRaw():
+            cell.dateLabel.text = formatter.stringFromDate(flight.departureTime);
+        case FlightType.Arriving.toRaw():
+            cell.dateLabel.text = formatter.stringFromDate(flight.arrivalTime);
+        default:
+            cell.dateLabel.text = formatter.stringFromDate(flight.departureTime);
+            
+        }
+        //        cell.dateLabel.text = formatter.stringFromDate(flight.flightType as FlightType == Departing ? flight.departureTime );
+        cell.airportsLabel.text = "\(flight.originAirportCode) to \(flight.destinationAirportCode)";
+        
+        formatter.dateFormat = "h:mm a";
+        cell.departureTimeLabel.text = formatter.stringFromDate(flight.departureTime);
+        cell.arrivalTimeLabel.text = formatter.stringFromDate(flight.arrivalTime);
+        
+        return cell;
     }
     
 }

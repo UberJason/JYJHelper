@@ -58,7 +58,7 @@ typedef enum {
 #pragma mark - table view delegate/data source methods
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.trackedObjectsList.count+1;
+    return self.trackedObjectsList.count;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -79,9 +79,7 @@ typedef enum {
     // self.trackedObjectsList[indexPath.section][@"queue"][indexPath.row] gets the name at that row.
     
     NSString *identifier;
-    if(indexPath.section == self.trackedObjectsList.count)
-        identifier = @"addSectionCell";
-    else if(indexPath.row == [self.trackedObjectsList[indexPath.section][@"queue"] count])
+    if(indexPath.row == [self.trackedObjectsList[indexPath.section][@"queue"] count])
         identifier = @"addCell";
     else
         identifier = @"personCell";
@@ -95,8 +93,6 @@ typedef enum {
         else
             cell.textLabel.textColor = [UIColor greenSeaFlatColor];
     }
-    else if([identifier isEqualToString:@"addSectionCell"])
-        cell.textLabel.text = @"Add new section...";
     else {
         JYJAddCell *addCell = (JYJAddCell *)cell;
         [addCell.addJasonButton setTitleColor:[UIColor peterRiverFlatColor] forState:UIControlStateNormal];
@@ -109,7 +105,7 @@ typedef enum {
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section == self.trackedObjectsList.count || indexPath.row == [self.trackedObjectsList[indexPath.section][@"queue"] count])
+    if(indexPath.row == [self.trackedObjectsList[indexPath.section][@"queue"] count])
         return NO;
     else return YES;
 }
@@ -125,17 +121,25 @@ typedef enum {
     }
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    if(indexPath.section < self.trackedObjectsList.count)
+//        return;
+//    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Section" message:@"Enter new section name:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+//    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+//    alert.tag = AlertViewSelectionNewSection;
+//    [alert show];
+//    [tableView cellForRowAtIndexPath:indexPath].selected = NO;
+//}
 
-    if(indexPath.section < self.trackedObjectsList.count)
-        return;
-    
+- (IBAction)addSection:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Section" message:@"Enter new section name:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     alert.tag = AlertViewSelectionNewSection;
     [alert show];
-    [tableView cellForRowAtIndexPath:indexPath].selected = NO;
 }
+
 
 #pragma mark - UIAlertView delegate method
 

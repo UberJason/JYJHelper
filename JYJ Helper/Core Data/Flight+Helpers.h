@@ -10,6 +10,6 @@
 
 @interface Flight (Helpers)
 
-+(Flight *) flightWithAirline:(NSString *)airline date:(NSDate *)date originAirportCode:(NSString *)originAirportCode destinationAirportCode:(NSString *)destinationAirportCode departureTime:(NSDate *)departureTime arrivalTime:(NSDate *)arrivalTime inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
++(Flight *) flightWithAirline:(NSString *)airlineCode flightNumber:(NSNumber *)flightNumber flightType:(NSNumber *)flightType originAirportCode:(NSString *)originAirportCode destinationAirportCode:(NSString *)destinationAirportCode departureTime:(NSDate *)departureTime arrivalTime:(NSDate *)arrivalTime inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 @end
