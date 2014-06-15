@@ -39,8 +39,8 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
         
         if(self.type == TripType.New) {
             self.trip = NSEntityDescription.insertNewObjectForEntityForName("Trip", inManagedObjectContext: (((UIApplication.sharedApplication()).delegate) as JYJAppDelegate).managedObjectContext) as Trip;
+            self.trip.flights = NSOrderedSet();
         }
-        println("end of viewDidLoad()");
         
     }
     
@@ -59,9 +59,17 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
     }
 }
 
-extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDataSource {
+// UITableView, UITextField delegate/data source
 
-    // #pragma mark - Table view data source
+extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+    
+    func tableView(tableView: UITableView?, titleForHeaderInSection section: Int) -> String! {
+        switch(section) {
+        case 0: return "Trip Details";
+        case 1: return "Flight Information";
+        default: return "";
+        }
+    }
     
     func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
         // Return the number of sections.
@@ -70,19 +78,28 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return section == 1 ? 1 : trip.flights.count+1;
+        println("numberOfRowsInSection \(section)");
+        if(section == 0) {
+            println("1 row");
+            return 1;
+        }
+        else {
+            println("number of rows = trip.flights.count = \(trip.flights.count)");
+            return trip.flights.count+1;
+        }
     }
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         
-        println("in cellForRowAtIndexPath");
-        println("indexPath: \(indexPath.description)");
-        
+        println("cellForRowAtIndexPath: \(indexPath.description)");
         let identifier = self.identifierForRowAtIndexPath(indexPath);
-        println("identifier: "+identifier);
+        println(identifier);
         switch identifier {
+
         case "titleCell":
             var cell: LabelAndTextFieldTableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as LabelAndTextFieldTableViewCell;
+            cell.textField.delegate = self;
+            println(cell.textField.delegate.description);
             return cell;
             
         case "flightCell":
@@ -110,11 +127,9 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             cell.arrivalTimeLabel.text = formatter.stringFromDate(flight.arrivalTime);
             
             return cell;
-            
         case "addFlightCell":
             var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as UITableViewCell;
             return cell;
-            
         default:
             return UITableViewCell();
         }
@@ -122,14 +137,21 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
     }
     
     func identifierForRowAtIndexPath(indexPath: NSIndexPath) -> String {
+        println("identifierForRowAtIndexPath: \(indexPath.section)");
         switch(indexPath.section) {
         case 0:
             return "titleCell";
         case 1:
-            return indexPath.row == trip.flights.count ? "addFlightCell" : "flightCell";
+            return indexPath.row == self.trip.flights.count ? "addFlightCell" : "flightCell";
         default:
             return "";
         }
     }
-
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        println("should return?");
+        textField.resignFirstResponder();
+        return true;
+    }
+    
 }
