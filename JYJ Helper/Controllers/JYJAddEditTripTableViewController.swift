@@ -40,6 +40,10 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
         if(self.type == TripType.New) {
             self.trip = NSEntityDescription.insertNewObjectForEntityForName("Trip", inManagedObjectContext: (((UIApplication.sharedApplication()).delegate) as JYJAppDelegate).managedObjectContext) as Trip;
             self.trip.flights = NSOrderedSet();
+            self.title = "Add New Trip";
+        }
+        else {
+            self.title = "Edit Trip";
         }
         
     }
@@ -151,6 +155,7 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         println("should return?");
         textField.resignFirstResponder();
+        self.trip.name = textField.text;
         return true;
     }
     
