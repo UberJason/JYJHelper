@@ -1,17 +1,16 @@
 //
-//  TwoLabelTableViewCell.swift
+//  PickerCell.swift
 //  JYJ Helper
 //
-//  Created by Jason Ji on 6/15/14.
+//  Created by Jason Ji on 6/21/14.
 //  Copyright (c) 2014 Jason Ji. All rights reserved.
 //
 
 import UIKit
 
-class TwoLabelTableViewCell: UITableViewCell {
+class PickerCell: UITableViewCell {
 
-    @IBOutlet var leftLabel: UILabel
-    @IBOutlet var rightLabel : UILabel
+    @IBOutlet var pickerView: UIPickerView
     
     init(style: UITableViewCellStyle, reuseIdentifier: String) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

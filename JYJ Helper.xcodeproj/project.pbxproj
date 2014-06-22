@@ -29,6 +29,7 @@
 		96248D86181B8A1E00101651 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 96248D80181B8A1E00101651 /* README.md */; };
 		96248D87181B8A1E00101651 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D82181B8A1E00101651 /* UIColor+FlatUI.m */; };
 		96248D90181B8BCF00101651 /* bus-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96248D8F181B8BCE00101651 /* bus-48@2x.png */; };
+		96316BD51955F97F00A968DE /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96316BD41955F97F00A968DE /* PickerCell.swift */; };
 		963CFBB81947E28400AB871B /* airplane-horizontal-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */; };
 		963EF08A194A812B0069D5EA /* JYJTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EF088194A812B0069D5EA /* JYJTripTableViewCell.swift */; };
 		963EF08B194A812B0069D5EA /* JYJTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963EF089194A812B0069D5EA /* JYJTripTableViewCell.xib */; };
@@ -57,6 +58,7 @@
 		96E0422D1947C64B000902CF /* jyj_flat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422B1947C64B000902CF /* jyj_flat@2x.png */; };
 		96E0422E1947C64B000902CF /* jyj@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422C1947C64B000902CF /* jyj@2x.png */; };
 		96E042301947CB85000902CF /* airplane-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422F1947CB85000902CF /* airplane-48@2x.png */; };
+		96E95166195765AC00E6CFFB /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E95165195765AC00E6CFFB /* UIAlertView+Blocks.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,7 @@
 		96248D81181B8A1E00101651 /* UIColor+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatUI.h"; sourceTree = "<group>"; };
 		96248D82181B8A1E00101651 /* UIColor+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatUI.m"; sourceTree = "<group>"; };
 		96248D8F181B8BCE00101651 /* bus-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bus-48@2x.png"; sourceTree = "<group>"; };
+		96316BD41955F97F00A968DE /* PickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerCell.swift; path = "UI Subclasses/PickerCell.swift"; sourceTree = "<group>"; };
 		963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane-horizontal-48@2x.png"; sourceTree = "<group>"; };
 		963EF088194A812B0069D5EA /* JYJTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJTripTableViewCell.swift; path = Views/JYJTripTableViewCell.swift; sourceTree = "<group>"; };
 		963EF089194A812B0069D5EA /* JYJTripTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JYJTripTableViewCell.xib; path = Views/JYJTripTableViewCell.xib; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 		96E0422B1947C64B000902CF /* jyj_flat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jyj_flat@2x.png"; sourceTree = "<group>"; };
 		96E0422C1947C64B000902CF /* jyj@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jyj@2x.png"; sourceTree = "<group>"; };
 		96E0422F1947CB85000902CF /* airplane-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane-48@2x.png"; sourceTree = "<group>"; };
+		96E95164195765AC00E6CFFB /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Blocks.h"; path = "Supporting Files/UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		96E95165195765AC00E6CFFB /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Blocks.m"; path = "Supporting Files/UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				961521181947CF810046A550 /* JYJ Helper-Bridging-Header.h */,
+				96E95164195765AC00E6CFFB /* UIAlertView+Blocks.h */,
+				96E95165195765AC00E6CFFB /* UIAlertView+Blocks.m */,
 				96248D53181B720100101651 /* JYJAppDelegate.h */,
 				96248D54181B720100101651 /* JYJAppDelegate.m */,
 				96248D5C181B720100101651 /* Images.xcassets */,
@@ -343,6 +350,7 @@
 		96E9ABA71947ECF5005BE367 /* UI Subclasses */ = {
 			isa = PBXGroup;
 			children = (
+				96316BD41955F97F00A968DE /* PickerCell.swift */,
 				96B29ED8194E5C93005D5967 /* TwoLabelTableViewCell.swift */,
 				96B29EDA194E5E76005D5967 /* DatePickerCell.swift */,
 				96A0EA75186F5DE6005711E5 /* JYJAddCell.h */,
@@ -472,6 +480,7 @@
 				96B710231947EE61008D08B9 /* JYJ_Helper.xcdatamodeld in Sources */,
 				96C6316E1946A84E00CDAF6F /* JYJBusSettingsViewController.m in Sources */,
 				96B710291947EEAB008D08B9 /* Trip.m in Sources */,
+				96E95166195765AC00E6CFFB /* UIAlertView+Blocks.m in Sources */,
 				96248D87181B8A1E00101651 /* UIColor+FlatUI.m in Sources */,
 				96B29EDB194E5E76005D5967 /* DatePickerCell.swift in Sources */,
 				96C631711946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m in Sources */,
@@ -486,6 +495,7 @@
 				96D7B73C194E2E9C00DCD035 /* LabelAndTextFieldTableViewCell.swift in Sources */,
 				966C695C194D21CF000365F5 /* Flight+Helpers.m in Sources */,
 				96248D51181B720100101651 /* main.m in Sources */,
+				96316BD51955F97F00A968DE /* PickerCell.swift in Sources */,
 				966C6959194D1E35000365F5 /* Flight.m in Sources */,
 				969A73BB19494B2B001C6F70 /* JYJFlightsTableViewController.swift in Sources */,
 				966C695E194D2941000365F5 /* JYJAddEditTripTableViewController.swift in Sources */,

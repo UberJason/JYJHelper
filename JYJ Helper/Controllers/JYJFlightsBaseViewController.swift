@@ -190,4 +190,8 @@ extension JYJFlightsBaseViewController {
         }
         
     }
+    func didFinishCreatingOrEditingATrip() {
+        self.tripsVC.reloadCoreData();
+        self.flightsVC.tableView.reloadData();
+    }
 }

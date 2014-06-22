@@ -210,11 +210,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "424559564.561818"
+            timestampString = "425152131.422271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -226,13 +226,105 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JYJ Helper/Controllers/JYJAddNewFlightViewController.swift"
-            timestampString = "424570382.813122"
+            timestampString = "425156434.685466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "leftLabelForRow(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JYJ Helper/Controllers/JYJAddNewFlightViewController.swift"
+            timestampString = "425156434.685466"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JYJ_Helper.JYJAddNewFlightViewController.tableView (JYJ_Helper.JYJAddNewFlightViewController)(Swift.Optional&lt;ObjectiveC.UITableView&gt;, didSelectRowAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ()"
+                  moduleName = "JYJ Helper"
+                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddNewFlightViewController.swift"
+                  timestampString = "425094569.671116"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "240"
+                  endingLineNumber = "240"
+                  offsetFromSymbolStart = "7648">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JYJ_Helper.JYJAddNewFlightViewController.tableView (JYJ_Helper.JYJAddNewFlightViewController)(Swift.Optional&lt;ObjectiveC.UITableView&gt;, didSelectRowAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ()"
+                  moduleName = "JYJ Helper"
+                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddNewFlightViewController.swift"
+                  timestampString = "425094569.671463"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "240"
+                  endingLineNumber = "240"
+                  offsetFromSymbolStart = "7664">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JYJ Helper/Controllers/JYJTripsTableViewController.swift"
+            timestampString = "425159042.580467"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "reloadCoreData()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JYJ_Helper.JYJTripsTableViewController.reloadCoreData (JYJ_Helper.JYJTripsTableViewController)() -&gt; ()"
+                  moduleName = "JYJ Helper"
+                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJTripsTableViewController.swift"
+                  timestampString = "425158876.114467"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "596">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JYJ_Helper.JYJTripsTableViewController.reloadCoreData (JYJ_Helper.JYJTripsTableViewController)() -&gt; ()"
+                  moduleName = "JYJ Helper"
+                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJTripsTableViewController.swift"
+                  timestampString = "425158876.114584"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "632">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

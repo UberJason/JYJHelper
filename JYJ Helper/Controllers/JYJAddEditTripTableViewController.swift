@@ -8,15 +8,16 @@
 
 import UIKit
 
-enum TripType {
+enum TripViewType {
     case Edit, New;
 }
 
 class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelegate {
     
     weak var delegate: JYJFlightsBaseViewController?
+    let context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
     var trip: Trip!
-    var type: TripType = .New;
+    var type: TripViewType = .New;
     @IBOutlet var tableView : UITableView
     @IBOutlet var navigationBar : UINavigationBar
     
@@ -37,8 +38,8 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
         
         self.tableView.registerNib(UINib(nibName: "JYJFlightTableViewCell", bundle: nil), forCellReuseIdentifier: "flightCell");
         
-        if(self.type == TripType.New) {
-            self.trip = NSEntityDescription.insertNewObjectForEntityForName("Trip", inManagedObjectContext: (((UIApplication.sharedApplication()).delegate) as JYJAppDelegate).managedObjectContext) as Trip;
+        if(self.type == TripViewType.New) {
+            self.trip = NSEntityDescription.insertNewObjectForEntityForName("Trip", inManagedObjectContext: self.context) as Trip;
             self.trip.flights = NSOrderedSet();
             self.title = "Add New Trip";
         }
@@ -48,18 +49,38 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow(), animated: false);
+    }
+    
     func positionForBar(bar: UIBarPositioning!) -> UIBarPosition {
         return UIBarPosition.TopAttached;
     }
     
     @IBAction func cancelPressed(sender : AnyObject) {
-        ((UIApplication.sharedApplication().delegate) as JYJAppDelegate).managedObjectContext.rollback();
         self.delegate!.dismissViewControllerAnimated(true, completion: nil);
     }
     
     @IBAction func savePressed(sender : UIBarButtonItem) {
-        ((UIApplication.sharedApplication().delegate) as JYJAppDelegate).managedObjectContext.save(nil);
-        self.delegate!.dismissViewControllerAnimated(true, completion: nil);
+        self.view.endEditing(true);
+        if(!self.trip.name || self.trip.name == "") {
+//            let alert = UIAlertController(title: "Error", message: "You must specify a name for this trip.", preferredStyle: UIAlertControllerStyle.Alert);
+//            
+//            let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
+//                handler: { [unowned self] action in
+//                    self.dismissViewControllerAnimated(true, completion: nil);
+//                });
+//
+//            alert.addAction(action);
+//            self.presentViewController(alert, animated: true, completion: nil);
+            UIAlertView.showWithTitle("Error", message: "You must specify a name for this trip.", cancelButtonTitle: "OK", otherButtonTitles: nil, tapBlock: nil);
+        }
+        else {
+            self.context.save(nil);
+            self.delegate!.dismissViewControllerAnimated(true, completion: nil);
+            self.delegate!.didFinishCreatingOrEditingATrip();
+        }
     }
 }
 
@@ -155,8 +176,30 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         println("should return?");
         textField.resignFirstResponder();
-        self.trip.name = textField.text;
         return true;
     }
     
+    func textFieldDidEndEditing(textField: UITextField!) {
+        self.trip.name = textField.text;
+    }
+    
+}
+
+// segues
+
+extension JYJAddEditTripTableViewController {
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if(segue.identifier == "addNewFlightSegue") {
+            let controller = segue.destinationViewController as JYJAddNewFlightViewController;
+            controller.delegate = self;
+        }
+    }
+    
+    func didFinishAddingOrEditingAFlight() {
+        self.dismissViewControllerAnimated(true, completion: nil);
+    }
+    
+    func didCancelAddingOrEditingAFlight() {
+        self.dismissViewControllerAnimated(true, completion: nil);
+    }
 }

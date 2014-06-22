@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wX-8K-fq4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wX-8K-fq4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
         <!--Main Bus View Controller - Bus Stops-->
@@ -74,7 +74,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="PfN-sF-hGU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="PfN-sF-hGU">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -313,7 +313,7 @@
         <scene sceneID="dmZ-hW-pVq">
             <objects>
                 <tableViewController storyboardIdentifier="tripsVC" id="eQ0-hB-ele" customClass="JYJTripsTableViewController" customModule="JYJ_Helper" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="lsn-YF-oVb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="lsn-YF-oVb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -349,7 +349,7 @@
         <scene sceneID="tYE-S9-yoZ">
             <objects>
                 <tableViewController storyboardIdentifier="flightsVC" id="Mmu-oT-sdk" customClass="JYJFlightsTableViewController" customModule="JYJ_Helper" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="IMf-0l-c8E">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="IMf-0l-c8E">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -377,7 +377,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Ti-Xl-0BM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Ti-Xl-0BM">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -557,7 +557,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Ig-dr-aN2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Ig-dr-aN2">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -598,7 +598,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Zcx-Kx-YYt" kind="modal" id="wTz-4Y-rTx"/>
+                                            <segue destination="Zcx-Kx-YYt" kind="modal" identifier="addNewFlightSegue" id="wTz-4Y-rTx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -639,21 +639,27 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPW-n0-4t2">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Add New Flight" id="Uim-OO-cge">
+                                    <navigationItem title="Add/Edit Flight" id="Uim-OO-cge">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BwW-FE-NKD">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="cancelPressed:" destination="Zcx-Kx-YYt" id="RBA-C4-rZk"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Save" id="yQZ-pD-lMS">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="savePressed:" destination="Zcx-Kx-YYt" id="ntc-oN-jm2"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="VPh-K4-is7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="VPh-K4-is7">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textFieldCell" id="KbY-vI-0ZH" customClass="LabelAndTextFieldTableViewCell" customModule="JYJ_Helper" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textFieldCell" id="KbY-vI-0ZH" customClass="LabelAndTextFieldTableViewCell" customModule="JYJ_Helper" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KbY-vI-0ZH" id="Wa1-cR-gWI">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -679,7 +685,7 @@
                                                 <constraint firstItem="eHs-sn-0XR" firstAttribute="leading" secondItem="Wa1-cR-gWI" secondAttribute="leading" constant="20" symbolic="YES" id="aIo-vR-6vG"/>
                                                 <constraint firstAttribute="centerY" secondItem="eHs-sn-0XR" secondAttribute="centerY" id="aOV-0G-aT5"/>
                                                 <constraint firstAttribute="trailing" secondItem="JVx-SN-Qc6" secondAttribute="trailing" constant="20" symbolic="YES" id="dfX-tN-BCu"/>
-                                                <constraint firstItem="JVx-SN-Qc6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eHs-sn-0XR" secondAttribute="trailing" constant="8" id="jmF-Mo-uUz"/>
+                                                <constraint firstItem="JVx-SN-Qc6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eHs-sn-0XR" secondAttribute="trailing" priority="750" constant="8" id="jmF-Mo-uUz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -709,16 +715,16 @@
                                                 <constraint firstAttribute="centerY" secondItem="9hG-cp-jRO" secondAttribute="centerY" id="Hyc-QO-koJ"/>
                                                 <constraint firstAttribute="centerY" secondItem="ieN-Y6-So9" secondAttribute="centerY" id="gXC-uZ-hvO"/>
                                                 <constraint firstItem="ieN-Y6-So9" firstAttribute="leading" secondItem="nAz-PQ-ap0" secondAttribute="leading" constant="20" symbolic="YES" id="iym-JI-4ee"/>
-                                                <constraint firstItem="9hG-cp-jRO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ieN-Y6-So9" secondAttribute="trailing" constant="8" id="v8j-Ai-te5"/>
+                                                <constraint firstItem="9hG-cp-jRO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ieN-Y6-So9" secondAttribute="trailing" priority="750" constant="8" id="v8j-Ai-te5"/>
                                                 <constraint firstAttribute="trailing" secondItem="9hG-cp-jRO" secondAttribute="trailing" constant="20" symbolic="YES" id="vba-jP-aos"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="leftLabel" destination="nAz-PQ-ap0" id="8Ov-4e-fxy"/>
-                                            <outlet property="rightLabel" destination="nAz-PQ-ap0" id="8Xg-rV-Hcg"/>
+                                            <outlet property="leftLabel" destination="ieN-Y6-So9" id="NJj-tj-abA"/>
+                                            <outlet property="rightLabel" destination="9hG-cp-jRO" id="gNA-R3-cVE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="datePickerCell" rowHeight="163" id="oFp-dD-GSk" customClass="DatePickerCell" customModule="JYJ_Helper" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="datePickerCell" rowHeight="163" id="oFp-dD-GSk" customClass="DatePickerCell" customModule="JYJ_Helper" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oFp-dD-GSk" id="L1q-4n-Er1">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -739,8 +745,28 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="datePicker" destination="5sE-jC-EbU" id="OfY-1f-RXa"/>
-                                            <outlet property="leftLabel" destination="L1q-4n-Er1" id="MLy-8e-E85"/>
-                                            <outlet property="rightLabel" destination="L1q-4n-Er1" id="ZIv-9w-DVg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="flightTypePickerCell" rowHeight="163" id="5V5-5S-mUo" customClass="PickerCell" customModule="JYJ_Helper" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5V5-5S-mUo" id="nCe-zH-Jve">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3g-jJ-9ZN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                                                </pickerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="d3g-jJ-9ZN" secondAttribute="trailing" id="DLR-W3-wQ3"/>
+                                                <constraint firstAttribute="bottom" secondItem="d3g-jJ-9ZN" secondAttribute="bottom" id="W2K-D6-gYh"/>
+                                                <constraint firstItem="d3g-jJ-9ZN" firstAttribute="leading" secondItem="nCe-zH-Jve" secondAttribute="leading" id="Yho-JZ-tdI"/>
+                                                <constraint firstItem="d3g-jJ-9ZN" firstAttribute="top" secondItem="nCe-zH-Jve" secondAttribute="top" id="cg9-BZ-1I2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="leftLabel" destination="nCe-zH-Jve" id="jF6-JC-j8H"/>
+                                            <outlet property="pickerView" destination="d3g-jJ-9ZN" id="zWd-G0-FrT"/>
+                                            <outlet property="rightLabel" destination="nCe-zH-Jve" id="UKk-NO-Bgs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

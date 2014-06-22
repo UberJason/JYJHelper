@@ -10,7 +10,7 @@ import UIKit
 
 class JYJTripsTableViewController: JYJAbstractPageContentViewController {
 
-    @lazy var myTrips: Trip[] = {
+    var myTrips: Trip[] = {
         var managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
         var fetchRequest = NSFetchRequest(entityName: "Trip");
         return managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as Trip[];
@@ -30,11 +30,7 @@ class JYJTripsTableViewController: JYJAbstractPageContentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         self.tableView.registerNib(UINib(nibName: "JYJTripTableViewCell", bundle: nil), forCellReuseIdentifier: "tripCell");
     }
@@ -83,4 +79,10 @@ class JYJTripsTableViewController: JYJAbstractPageContentViewController {
         return cell;
     }
 
+    func reloadCoreData() {
+        var managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
+        var fetchRequest = NSFetchRequest(entityName: "Trip");
+        myTrips = managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as Trip[];
+        self.tableView.reloadData();
+    }
 }

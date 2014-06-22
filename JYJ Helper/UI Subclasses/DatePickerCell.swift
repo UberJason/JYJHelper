@@ -11,6 +11,7 @@ import UIKit
 class DatePickerCell: UITableViewCell {
 
     @IBOutlet var datePicker : UIDatePicker
+    
     init(style: UITableViewCellStyle, reuseIdentifier: String) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // Initialization code
