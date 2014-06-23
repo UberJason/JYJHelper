@@ -33,6 +33,7 @@
 		963CFBB81947E28400AB871B /* airplane-horizontal-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */; };
 		963EF08A194A812B0069D5EA /* JYJTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EF088194A812B0069D5EA /* JYJTripTableViewCell.swift */; };
 		963EF08B194A812B0069D5EA /* JYJTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963EF089194A812B0069D5EA /* JYJTripTableViewCell.xib */; };
+		96541EEE19576DC9006B8578 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 96541EED19576DC9006B8578 /* UIActionSheet+Blocks.m */; };
 		966892561947EFD6006A9029 /* Trip+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966892551947EFD6006A9029 /* Trip+Helpers.m */; };
 		966C6959194D1E35000365F5 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C6958194D1E35000365F5 /* Flight.m */; };
 		966C695C194D21CF000365F5 /* Flight+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C695B194D21CF000365F5 /* Flight+Helpers.m */; };
@@ -106,6 +107,8 @@
 		963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane-horizontal-48@2x.png"; sourceTree = "<group>"; };
 		963EF088194A812B0069D5EA /* JYJTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJTripTableViewCell.swift; path = Views/JYJTripTableViewCell.swift; sourceTree = "<group>"; };
 		963EF089194A812B0069D5EA /* JYJTripTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JYJTripTableViewCell.xib; path = Views/JYJTripTableViewCell.xib; sourceTree = "<group>"; };
+		96541EEC19576DC9006B8578 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIActionSheet+Blocks.h"; path = "Supporting Files/UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
+		96541EED19576DC9006B8578 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIActionSheet+Blocks.m"; path = "Supporting Files/UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
 		966892541947EFD6006A9029 /* Trip+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Trip+Helpers.h"; path = "Core Data/Trip+Helpers.h"; sourceTree = "<group>"; };
 		966892551947EFD6006A9029 /* Trip+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Trip+Helpers.m"; path = "Core Data/Trip+Helpers.m"; sourceTree = "<group>"; };
 		966C6957194D1E35000365F5 /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flight.h; path = "Core Data/Flight.h"; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				961521181947CF810046A550 /* JYJ Helper-Bridging-Header.h */,
+				96541EEC19576DC9006B8578 /* UIActionSheet+Blocks.h */,
+				96541EED19576DC9006B8578 /* UIActionSheet+Blocks.m */,
 				96E95164195765AC00E6CFFB /* UIAlertView+Blocks.h */,
 				96E95165195765AC00E6CFFB /* UIAlertView+Blocks.m */,
 				96248D53181B720100101651 /* JYJAppDelegate.h */,
@@ -492,6 +497,7 @@
 				969A73BD19494B34001C6F70 /* JYJTripsTableViewController.swift in Sources */,
 				96B29ED9194E5C93005D5967 /* TwoLabelTableViewCell.swift in Sources */,
 				96720B7D19495C5900B8D52F /* JYJAbstractPageContentViewController.swift in Sources */,
+				96541EEE19576DC9006B8578 /* UIActionSheet+Blocks.m in Sources */,
 				96D7B73C194E2E9C00DCD035 /* LabelAndTextFieldTableViewCell.swift in Sources */,
 				966C695C194D21CF000365F5 /* Flight+Helpers.m in Sources */,
 				96248D51181B720100101651 /* main.m in Sources */,

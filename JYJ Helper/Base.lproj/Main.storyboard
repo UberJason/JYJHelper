@@ -734,6 +734,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="424566328.332892">
                                                         <!--<__NSDate Class=2014-06-15 23:05:28 +0000 timeInterval=424566328.332892 ISO8601=2014-06-15T16:05:28.333-0700>-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="dateChanged:" destination="oFp-dD-GSk" eventType="valueChanged" id="XmF-hO-Sv3"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -745,28 +748,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="datePicker" destination="5sE-jC-EbU" id="OfY-1f-RXa"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="flightTypePickerCell" rowHeight="163" id="5V5-5S-mUo" customClass="PickerCell" customModule="JYJ_Helper" customModuleProvider="target">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5V5-5S-mUo" id="nCe-zH-Jve">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3g-jJ-9ZN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
-                                                </pickerView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="d3g-jJ-9ZN" secondAttribute="trailing" id="DLR-W3-wQ3"/>
-                                                <constraint firstAttribute="bottom" secondItem="d3g-jJ-9ZN" secondAttribute="bottom" id="W2K-D6-gYh"/>
-                                                <constraint firstItem="d3g-jJ-9ZN" firstAttribute="leading" secondItem="nCe-zH-Jve" secondAttribute="leading" id="Yho-JZ-tdI"/>
-                                                <constraint firstItem="d3g-jJ-9ZN" firstAttribute="top" secondItem="nCe-zH-Jve" secondAttribute="top" id="cg9-BZ-1I2"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="leftLabel" destination="nCe-zH-Jve" id="jF6-JC-j8H"/>
-                                            <outlet property="pickerView" destination="d3g-jJ-9ZN" id="zWd-G0-FrT"/>
-                                            <outlet property="rightLabel" destination="nCe-zH-Jve" id="UKk-NO-Bgs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -8,13 +8,21 @@
 
 import UIKit
 
+@objc protocol DatePickerDelegate {
+    func cellDidChangeDate(cell: DatePickerCell, datePicker: UIDatePicker);
+}
+
 class DatePickerCell: UITableViewCell {
 
     @IBOutlet var datePicker : UIDatePicker
+    weak var delegate: DatePickerDelegate?
     
     init(style: UITableViewCellStyle, reuseIdentifier: String) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // Initialization code
+        let calendar = NSCalendar.currentCalendar();
+        calendar.timeZone = NSTimeZone.systemTimeZone();
+        self.datePicker.calendar = calendar;
     }
 
     override func awakeFromNib() {
@@ -22,10 +30,7 @@ class DatePickerCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBAction func dateChanged(sender: UIDatePicker) {
+        self.delegate?.cellDidChangeDate(self, datePicker: sender);
     }
-
 }

@@ -12,6 +12,14 @@ enum FlightViewType {
     case Edit, New;
 }
 
+let DEPARTURE_TIME_CELL_TAG = 33;
+let ARRIVAL_TIME_CELL_TAG = 34;
+let DEPARTURE_DATEPICKER_TABLEVIEW_CELL_TAG = 35;
+let DEPARTURE_DATEPICKER_ROW = 3;
+let ARRIVAL_DATEPICKER_TABLEVIEW_CELL_TAG = 36;
+let ARRIVAL_DATEPICKER_ROW = 4;
+let FLIGHT_TYPE_TEXTFIELD_TAG = 4;
+
 class JYJAddNewFlightViewController: UIViewController {
     
     @IBOutlet var navigationBar : UINavigationBar
@@ -25,8 +33,7 @@ class JYJAddNewFlightViewController: UIViewController {
     var departurePickerShowing = false;
     var arrivalPickerShowing = false;
     
-    let DEPARTURE_TIME_CELL_TAG = 1;
-    let ARRIVAL_TIME_CELL_TAG = 2;
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +67,7 @@ class JYJAddNewFlightViewController: UIViewController {
     
 }
 
-extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSource, UINavigationBarDelegate, UITextFieldDelegate {
+extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSource, UINavigationBarDelegate, UITextFieldDelegate, UIActionSheetDelegate, DatePickerDelegate {
     // #pragma mark - Table view data source
     
     func tableView(tableView: UITableView?, titleForHeaderInSection section: Int) -> String {
@@ -74,7 +81,7 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
     func tableView(tableView: UITableView?, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let identifier = self.identifierForRowAtIndexPath(indexPath);
         return identifier == "datePickerCell" ? 163 : 44;
-
+        
     }
     
     func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
@@ -88,41 +95,54 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
         let identifier = self.identifierForRowAtIndexPath(indexPath!);
         println(identifier);
         switch(identifier) {
-            case "textFieldCell":
-                println(indexPath!.row);
-                var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as LabelAndTextFieldTableViewCell;
-                cell.titleLabel.text = self.leftLabelForRow(indexPath!.row);
-                cell.textField.placeholder = self.rightPlaceholderTextForRow(indexPath!.row);
-                cell.textField.textColor = UIColor.pomegranateFlatColor();
-                cell.textField.delegate = self;
-                cell.textField.tag = indexPath!.row;
-                return cell;
-            case "timeCell":
-                var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as TwoLabelTableViewCell;
-                let leftLabel = self.leftLabelForRow(indexPath!.row);
-                cell.leftLabel.text = leftLabel;
-                cell.rightLabel.text = self.rightPlaceholderTextForRow(indexPath!.row);
-                cell.rightLabel.textColor = UIColor.pomegranateFlatColor();
-                if(leftLabel == "Departs") {
-                    cell.tag = DEPARTURE_TIME_CELL_TAG;
+        case "textFieldCell":
+            println(indexPath!.row);
+            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as LabelAndTextFieldTableViewCell;
+            cell.titleLabel.text = self.leftLabelForRow(indexPath!.row);
+            cell.textField.placeholder = self.rightPlaceholderTextForRow(indexPath!.row);
+            cell.textField.textColor = UIColor.pomegranateFlatColor();
+            cell.textField.delegate = self;
+            cell.textField.tag = indexPath!.row;
+            return cell;
+        case "timeCell":
+            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as TwoLabelTableViewCell;
+            let leftLabel = self.leftLabelForRow(indexPath!.row);
+            cell.leftLabel.text = leftLabel;
+            cell.rightLabel.text = self.rightPlaceholderTextForRow(indexPath!.row);
+            cell.rightLabel.textColor = UIColor.pomegranateFlatColor();
+            if(leftLabel == "Departs") {
+                cell.tag = DEPARTURE_TIME_CELL_TAG;
+            }
+            else {
+                cell.tag = ARRIVAL_TIME_CELL_TAG;
+            }
+            return cell;
+        case "datePickerCell":
+            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as DatePickerCell;
+            cell.delegate = self;
+            if(indexPath!.row == DEPARTURE_DATEPICKER_ROW) {
+                cell.tag = DEPARTURE_DATEPICKER_TABLEVIEW_CELL_TAG;
+                if(self.flight.departureTime) {
+                    cell.datePicker.date = self.flight.departureTime;
                 }
-                else {
-                    cell.tag = ARRIVAL_TIME_CELL_TAG;
+            }
+            else {
+                cell.tag = ARRIVAL_DATEPICKER_TABLEVIEW_CELL_TAG;
+                if(self.flight.arrivalTime) {
+                    cell.datePicker.date = self.flight.arrivalTime;
                 }
-                return cell;
-            case "datePickerCell":
-                var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as DatePickerCell;
-                return cell;
-            case "flightTypePickerCell":
-                var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as PickerCell;
-                return cell;
-            default:
-                return nil;
+            }
+            return cell;
+        case "flightTypePickerCell":
+            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as PickerCell;
+            return cell;
+        default:
+            return nil;
         }
     }
     
     func identifierForRowAtIndexPath(indexPath: NSIndexPath) -> String {
-
+        
         switch(indexPath.row) {
         case 0, 1:
             return "textFieldCell";
@@ -183,7 +203,7 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
         
         let dateString: String = {
             let formatter = NSDateFormatter();
-//            formatter.dateFormat = "h:mm a";
+            //            formatter.dateFormat = "h:mm a";
             formatter.dateFormat = "M/d/y, h:mm a";
             return formatter.stringFromDate(NSDate());
             }();
@@ -230,48 +250,48 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
             return;
         }
         println("did select row \(indexPath.row)");
-
+        
         let cell = tableView!.cellForRowAtIndexPath(indexPath);
         if(cell.tag == DEPARTURE_TIME_CELL_TAG) {
-
+            
             tableView!.beginUpdates();
             if(self.departurePickerShowing) {
-                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: 3, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: DEPARTURE_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
             }
             else {
-                tableView!.insertRowsAtIndexPaths([NSIndexPath(forRow: 3, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+                tableView!.insertRowsAtIndexPaths([NSIndexPath(forRow: DEPARTURE_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
             }
             if(self.arrivalPickerShowing) {
-                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: 4, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: ARRIVAL_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
             }
-
+            
             self.departurePickerShowing = !self.departurePickerShowing;
             self.arrivalPickerShowing = false;
             
             tableView!.endUpdates();
         }
         else {
-
+            
             tableView!.beginUpdates();
             if(self.arrivalPickerShowing) {
-                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: 4, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: ARRIVAL_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
             }
             else {
-                tableView!.insertRowsAtIndexPaths([NSIndexPath(forRow: 4, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+                tableView!.insertRowsAtIndexPaths([NSIndexPath(forRow: ARRIVAL_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
             }
             if(self.departurePickerShowing) {
-                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: 3, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: DEPARTURE_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
             }
             
             self.arrivalPickerShowing = !self.arrivalPickerShowing;
             self.departurePickerShowing = false;
             tableView!.endUpdates();
-
+            
         }
         
         tableView!.deselectRowAtIndexPath(tableView!.indexPathForSelectedRow(), animated: true);
     }
-
+    
     
     func positionForBar(bar: UIBarPositioning!) -> UIBarPosition {
         return UIBarPosition.TopAttached;
@@ -279,11 +299,83 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
     
     func textFieldDidEndEditing(textField: UITextField!) {
         println("textfield \(textField.tag) ended editing");
+        switch(textField.tag) {
+        case 0:
+            self.flight.airlineCode = textField.text;
+        case 1:
+            self.flight.flightNumber = (textField.text as NSString).integerValue;
+        case 5:
+            self.flight.originAirportCode = textField.text;
+        case 6:
+            self.flight.destinationAirportCode = textField.text;
+        default:
+            break;
+        }
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        if(textField.tag == FLIGHT_TYPE_TEXTFIELD_TAG) {
+            
+            let actionSheet = UIActionSheet();
+            actionSheet.title = "Flight Type";
+            actionSheet.addButtonWithTitle("Departure");
+            actionSheet.addButtonWithTitle("Leg");
+            actionSheet.addButtonWithTitle("Arrival");
+            actionSheet.addButtonWithTitle("Cancel");
+            actionSheet.cancelButtonIndex = 3;
+            
+            actionSheet.delegate = self;
+            actionSheet.showInView(self.view);
+            
+            return false;
+        }
+        else {
+            return true;
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder();
         return true;
+    }
+    
+    func actionSheet(actionSheet: UIActionSheet!, clickedButtonAtIndex buttonIndex: Int) {
+        println(buttonIndex);
+        if(buttonIndex == actionSheet.cancelButtonIndex) {
+            return;
+        }
+        let textField = self.view.viewWithTag(FLIGHT_TYPE_TEXTFIELD_TAG) as UITextField;
+        println(textField.description);
+        textField.text = actionSheet.buttonTitleAtIndex(buttonIndex);
+        self.flight.flightType = NSNumber.numberWithInteger(buttonIndex);
+        
+    }
+    
+    func cellDidChangeDate(cell: DatePickerCell, datePicker: UIDatePicker) {
+        let tag = cell.tag;
+        if(tag == DEPARTURE_DATEPICKER_TABLEVIEW_CELL_TAG) {
+            println("departure time changed");
+            self.flight.departureTime = datePicker.date;
+            
+            let departureCell = self.view.viewWithTag(DEPARTURE_TIME_CELL_TAG) as TwoLabelTableViewCell;
+            departureCell.rightLabel.text = {
+                let formatter = NSDateFormatter();
+                formatter.dateFormat = "M/d/y, h:mm a";
+                return formatter.stringFromDate(self.flight.departureTime);
+                }();
+        }
+        else {
+            println("arrival time changed");
+            self.flight.arrivalTime = datePicker.date;
+            
+            let arrivalCell = self.view.viewWithTag(ARRIVAL_TIME_CELL_TAG) as TwoLabelTableViewCell;
+            arrivalCell.rightLabel.text = {
+                let formatter = NSDateFormatter();
+                formatter.dateFormat = "M/d/y, h:mm a";
+                return formatter.stringFromDate(self.flight.arrivalTime);
+                }();
+
+        }
     }
     
 }
