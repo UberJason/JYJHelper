@@ -59,21 +59,16 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
     }
     
     @IBAction func cancelPressed(sender : AnyObject) {
+        if(self.type == TripViewType.New) {
+            self.context.deleteObject(self.trip);
+            self.context.save(nil);
+        }
         self.delegate!.dismissViewControllerAnimated(true, completion: nil);
     }
     
     @IBAction func savePressed(sender : UIBarButtonItem) {
         self.view.endEditing(true);
         if(!self.trip.name || self.trip.name == "") {
-//            let alert = UIAlertController(title: "Error", message: "You must specify a name for this trip.", preferredStyle: UIAlertControllerStyle.Alert);
-//            
-//            let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
-//                handler: { [unowned self] action in
-//                    self.dismissViewControllerAnimated(true, completion: nil);
-//                });
-//
-//            alert.addAction(action);
-//            self.presentViewController(alert, animated: true, completion: nil);
             UIAlertView.showWithTitle("Error", message: "You must specify a name for this trip.", cancelButtonTitle: "OK", otherButtonTitles: nil, tapBlock: nil);
         }
         else {
@@ -93,6 +88,16 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
         case 0: return "Trip Details";
         case 1: return "Flight Information";
         default: return "";
+        }
+    }
+    
+    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let identifier = self.identifierForRowAtIndexPath(indexPath);
+        if(identifier == "flightCell") {
+            return 88;
+        }
+        else {
+            return 44;
         }
     }
     
@@ -131,20 +136,11 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             var cell: JYJFlightTableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as JYJFlightTableViewCell;
             var flight = self.trip.flights[indexPath.row] as Flight;
             cell.flightLabel.text = "\(flight.airlineCode) \(flight.flightNumber)";
-            let type = flight.flightType.integerValue;
             
             var formatter = NSDateFormatter();
             formatter.dateStyle = NSDateFormatterStyle.LongStyle;
-            
-            switch(type) {
-            case FlightType.Departing.toRaw(), FlightType.Leg.toRaw():
-                cell.dateLabel.text = formatter.stringFromDate(flight.departureTime);
-            case FlightType.Arriving.toRaw():
-                cell.dateLabel.text = formatter.stringFromDate(flight.arrivalTime);
-            default:
-                cell.dateLabel.text = formatter.stringFromDate(flight.departureTime);
-                
-            }
+            formatter.timeZone = NSTimeZone(name: flight.storedTimeZone);
+            cell.dateLabel.text = formatter.stringFromDate(flight.departureTime);
             cell.airportsLabel.text = "\(flight.originAirportCode) to \(flight.destinationAirportCode)";
             
             formatter.dateFormat = "h:mm a";
@@ -196,6 +192,7 @@ extension JYJAddEditTripTableViewController {
     }
     
     func didFinishAddingOrEditingAFlight() {
+        self.tableView.reloadData();
         self.dismissViewControllerAnimated(true, completion: nil);
     }
     

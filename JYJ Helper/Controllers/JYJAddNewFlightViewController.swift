@@ -12,13 +12,16 @@ enum FlightViewType {
     case Edit, New;
 }
 
+let NUMBER_OF_FIELDS = 6;
+
 let DEPARTURE_TIME_CELL_TAG = 33;
 let ARRIVAL_TIME_CELL_TAG = 34;
 let DEPARTURE_DATEPICKER_TABLEVIEW_CELL_TAG = 35;
-let DEPARTURE_DATEPICKER_ROW = 3;
 let ARRIVAL_DATEPICKER_TABLEVIEW_CELL_TAG = 36;
+
+let FLIGHT_NUMBER_ROW = 1;
+let DEPARTURE_DATEPICKER_ROW = 3;
 let ARRIVAL_DATEPICKER_ROW = 4;
-let FLIGHT_TYPE_TEXTFIELD_TAG = 4;
 
 class JYJAddNewFlightViewController: UIViewController {
     
@@ -61,6 +64,8 @@ class JYJAddNewFlightViewController: UIViewController {
     }
     
     @IBAction func savePressed(sender : UIBarButtonItem) {
+        self.view.endEditing(true);
+        self.flight.storedTimeZone = NSTimeZone.systemTimeZone().name;
         self.context.save(nil);
         self.delegate!.didFinishAddingOrEditingAFlight();
     }
@@ -87,7 +92,7 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
     func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return self.departurePickerShowing || self.arrivalPickerShowing ? 8 : 7;
+        return self.departurePickerShowing || self.arrivalPickerShowing ? NUMBER_OF_FIELDS+1 : NUMBER_OF_FIELDS;
     }
     
     
@@ -101,6 +106,9 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
             cell.titleLabel.text = self.leftLabelForRow(indexPath!.row);
             cell.textField.placeholder = self.rightPlaceholderTextForRow(indexPath!.row);
             cell.textField.textColor = UIColor.pomegranateFlatColor();
+            if(indexPath!.row == FLIGHT_NUMBER_ROW) {
+                cell.textField.keyboardType = UIKeyboardType.NumberPad;
+            }
             cell.textField.delegate = self;
             cell.textField.tag = indexPath!.row;
             return cell;
@@ -160,7 +168,7 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
             else {
                 return "textFieldCell";
             }
-        case 5, 6, 7:
+        case 5, 6:
             return "textFieldCell";
         default: return "";
         }
@@ -177,23 +185,16 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
                 return "Arrives";
             }
             else {
-                return "Flight Type";
-            }
-        case 5:
-            if(self.departurePickerShowing || self.arrivalPickerShowing) {
-                return "Flight Type";
-            }
-            else {
                 return "Origin Airport";
             }
-        case 6:
+        case 5:
             if(self.departurePickerShowing || self.arrivalPickerShowing) {
                 return "Origin Airport";
             }
             else {
                 return "Destination Airport";
             }
-        case 7:
+        case 6:
             return "Destination Airport";
         default: return "";
         }
@@ -222,23 +223,16 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
                 return dateString;
             }
             else {
-                return "Flight Type";
-            }
-        case 5:
-            if(self.departurePickerShowing || self.arrivalPickerShowing) {
-                return "Flight Type";
-            }
-            else {
                 return "Origin";
             }
-        case 6:
+        case 5:
             if(self.departurePickerShowing || self.arrivalPickerShowing) {
                 return "Origin";
             }
             else {
                 return "Destination";
             }
-        case 7:
+        case 6:
             return "Destination";
         default: return "";
         }
@@ -250,7 +244,7 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
             return;
         }
         println("did select row \(indexPath.row)");
-        
+        self.view.endEditing(true);
         let cell = tableView!.cellForRowAtIndexPath(indexPath);
         if(cell.tag == DEPARTURE_TIME_CELL_TAG) {
             
@@ -304,51 +298,18 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
             self.flight.airlineCode = textField.text;
         case 1:
             self.flight.flightNumber = (textField.text as NSString).integerValue;
-        case 5:
+        case 4:
             self.flight.originAirportCode = textField.text;
-        case 6:
+        case 5:
             self.flight.destinationAirportCode = textField.text;
         default:
             break;
         }
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        if(textField.tag == FLIGHT_TYPE_TEXTFIELD_TAG) {
-            
-            let actionSheet = UIActionSheet();
-            actionSheet.title = "Flight Type";
-            actionSheet.addButtonWithTitle("Departure");
-            actionSheet.addButtonWithTitle("Leg");
-            actionSheet.addButtonWithTitle("Arrival");
-            actionSheet.addButtonWithTitle("Cancel");
-            actionSheet.cancelButtonIndex = 3;
-            
-            actionSheet.delegate = self;
-            actionSheet.showInView(self.view);
-            
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder();
         return true;
-    }
-    
-    func actionSheet(actionSheet: UIActionSheet!, clickedButtonAtIndex buttonIndex: Int) {
-        println(buttonIndex);
-        if(buttonIndex == actionSheet.cancelButtonIndex) {
-            return;
-        }
-        let textField = self.view.viewWithTag(FLIGHT_TYPE_TEXTFIELD_TAG) as UITextField;
-        println(textField.description);
-        textField.text = actionSheet.buttonTitleAtIndex(buttonIndex);
-        self.flight.flightType = NSNumber.numberWithInteger(buttonIndex);
-        
     }
     
     func cellDidChangeDate(cell: DatePickerCell, datePicker: UIDatePicker) {

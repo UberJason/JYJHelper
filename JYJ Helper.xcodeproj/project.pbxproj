@@ -35,7 +35,6 @@
 		963EF08B194A812B0069D5EA /* JYJTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963EF089194A812B0069D5EA /* JYJTripTableViewCell.xib */; };
 		96541EEE19576DC9006B8578 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 96541EED19576DC9006B8578 /* UIActionSheet+Blocks.m */; };
 		966892561947EFD6006A9029 /* Trip+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966892551947EFD6006A9029 /* Trip+Helpers.m */; };
-		966C6959194D1E35000365F5 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C6958194D1E35000365F5 /* Flight.m */; };
 		966C695C194D21CF000365F5 /* Flight+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C695B194D21CF000365F5 /* Flight+Helpers.m */; };
 		966C695E194D2941000365F5 /* JYJAddEditTripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C695D194D2941000365F5 /* JYJAddEditTripTableViewController.swift */; };
 		966C6961194D298A000365F5 /* JYJAddNewFlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C6960194D298A000365F5 /* JYJAddNewFlightViewController.swift */; };
@@ -60,6 +59,7 @@
 		96E0422E1947C64B000902CF /* jyj@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422C1947C64B000902CF /* jyj@2x.png */; };
 		96E042301947CB85000902CF /* airplane-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422F1947CB85000902CF /* airplane-48@2x.png */; };
 		96E95166195765AC00E6CFFB /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E95165195765AC00E6CFFB /* UIAlertView+Blocks.m */; };
+		96FF7DA1195BB691005F234D /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FF7DA0195BB691005F234D /* Flight.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,8 +111,6 @@
 		96541EED19576DC9006B8578 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIActionSheet+Blocks.m"; path = "Supporting Files/UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
 		966892541947EFD6006A9029 /* Trip+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Trip+Helpers.h"; path = "Core Data/Trip+Helpers.h"; sourceTree = "<group>"; };
 		966892551947EFD6006A9029 /* Trip+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Trip+Helpers.m"; path = "Core Data/Trip+Helpers.m"; sourceTree = "<group>"; };
-		966C6957194D1E35000365F5 /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flight.h; path = "Core Data/Flight.h"; sourceTree = "<group>"; };
-		966C6958194D1E35000365F5 /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Flight.m; path = "Core Data/Flight.m"; sourceTree = "<group>"; };
 		966C695A194D21CF000365F5 /* Flight+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Flight+Helpers.h"; path = "Core Data/Flight+Helpers.h"; sourceTree = "<group>"; };
 		966C695B194D21CF000365F5 /* Flight+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Flight+Helpers.m"; path = "Core Data/Flight+Helpers.m"; sourceTree = "<group>"; };
 		966C695D194D2941000365F5 /* JYJAddEditTripTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJAddEditTripTableViewController.swift; path = Controllers/JYJAddEditTripTableViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +142,8 @@
 		96E0422F1947CB85000902CF /* airplane-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane-48@2x.png"; sourceTree = "<group>"; };
 		96E95164195765AC00E6CFFB /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Blocks.h"; path = "Supporting Files/UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		96E95165195765AC00E6CFFB /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Blocks.m"; path = "Supporting Files/UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		96FF7D9F195BB691005F234D /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flight.h; path = "Core Data/Flight.h"; sourceTree = "<group>"; };
+		96FF7DA0195BB691005F234D /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Flight.m; path = "Core Data/Flight.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,8 +317,8 @@
 		96E9ABA21947EC3F005BE367 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				966C6957194D1E35000365F5 /* Flight.h */,
-				966C6958194D1E35000365F5 /* Flight.m */,
+				96FF7D9F195BB691005F234D /* Flight.h */,
+				96FF7DA0195BB691005F234D /* Flight.m */,
 				96B710271947EEAB008D08B9 /* Trip.h */,
 				96B710281947EEAB008D08B9 /* Trip.m */,
 			);
@@ -502,12 +502,12 @@
 				966C695C194D21CF000365F5 /* Flight+Helpers.m in Sources */,
 				96248D51181B720100101651 /* main.m in Sources */,
 				96316BD51955F97F00A968DE /* PickerCell.swift in Sources */,
-				966C6959194D1E35000365F5 /* Flight.m in Sources */,
 				969A73BB19494B2B001C6F70 /* JYJFlightsTableViewController.swift in Sources */,
 				966C695E194D2941000365F5 /* JYJAddEditTripTableViewController.swift in Sources */,
 				96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */,
 				9615211A1947CF820046A550 /* JYJFlightsBaseViewController.swift in Sources */,
 				96248D7B181B769000101651 /* JYJNextBusViewController.m in Sources */,
+				96FF7DA1195BB691005F234D /* Flight.m in Sources */,
 				96248D5B181B720100101651 /* JYJMainBusViewController.m in Sources */,
 				96A0EA77186F5DE6005711E5 /* JYJAddCell.m in Sources */,
 			);

@@ -78,7 +78,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="I0X-RX-L4z" customClass="LabelAndSwitchCellTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="I0X-RX-L4z" customClass="LabelAndSwitchCellTableViewCell">
                                         <rect key="frame" x="0.0" y="55" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I0X-RX-L4z" id="3Yj-cW-FGC">
@@ -561,7 +561,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" id="dwx-QA-sRB" customClass="LabelAndTextFieldTableViewCell" customModule="JYJ_Helper" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="titleCell" id="dwx-QA-sRB" customClass="LabelAndTextFieldTableViewCell" customModule="JYJ_Helper" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dwx-QA-sRB" id="MKG-ge-pKw">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -732,7 +732,7 @@
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5sE-jC-EbU">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="424566328.332892">
-                                                        <!--<__NSDate Class=2014-06-15 23:05:28 +0000 timeInterval=424566328.332892 ISO8601=2014-06-15T16:05:28.333-0700>-->
+                                                        <!--<__NSDate Class=2014-06-15 23:05:28 +0000 timeInterval=424566328.332892 ISO8601=2014-06-15T19:05:28.333-0400>-->
                                                     </date>
                                                     <connections>
                                                         <action selector="dateChanged:" destination="oFp-dD-GSk" eventType="valueChanged" id="XmF-hO-Sv3"/>

@@ -2,7 +2,7 @@
 //  Flight.h
 //  JYJ Helper
 //
-//  Created by Jason Ji on 6/14/14.
+//  Created by Jason Ji on 6/25/14.
 //  Copyright (c) 2014 Jason Ji. All rights reserved.
 //
 
@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSString * destinationAirportCode;
 @property (nonatomic, retain) NSNumber * flightNumber;
 @property (nonatomic, retain) NSString * originAirportCode;
-@property (nonatomic, retain) NSNumber * flightType;
+@property (nonatomic, retain) NSString * storedTimeZone;
 @property (nonatomic, retain) Trip *trip;
 
 @end

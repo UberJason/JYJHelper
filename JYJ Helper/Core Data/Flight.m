@@ -2,7 +2,7 @@
 //  Flight.m
 //  JYJ Helper
 //
-//  Created by Jason Ji on 6/14/14.
+//  Created by Jason Ji on 6/25/14.
 //  Copyright (c) 2014 Jason Ji. All rights reserved.
 //
 
@@ -18,7 +18,7 @@
 @dynamic destinationAirportCode;
 @dynamic flightNumber;
 @dynamic originAirportCode;
-@dynamic flightType;
+@dynamic storedTimeZone;
 @dynamic trip;
 
 @end

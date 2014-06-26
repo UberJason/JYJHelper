@@ -8,10 +8,6 @@
 
 import UIKit
 
-enum FlightType: Int {
-    case Departing = 0, Leg, Arriving;
-}
-
 class JYJFlightsTableViewController: JYJAbstractPageContentViewController {
     
     @lazy var trips: Trip[] = {
@@ -81,20 +77,10 @@ class JYJFlightsTableViewController: JYJAbstractPageContentViewController {
         
         var formatter = NSDateFormatter();
         formatter.dateStyle = NSDateFormatterStyle.LongStyle;
+        formatter.timeZone = NSTimeZone(name: flight.storedTimeZone);
         
         cell.flightLabel.text = "\(flight.airlineCode) \(flight.flightNumber)";
-        let type = flight.flightType.integerValue;
-        
-        switch(type) {
-        case FlightType.Departing.toRaw(), FlightType.Leg.toRaw():
-            cell.dateLabel.text = formatter.stringFromDate(flight.departureTime);
-        case FlightType.Arriving.toRaw():
-            cell.dateLabel.text = formatter.stringFromDate(flight.arrivalTime);
-        default:
-            cell.dateLabel.text = formatter.stringFromDate(flight.departureTime);
-            
-        }
-        //        cell.dateLabel.text = formatter.stringFromDate(flight.flightType as FlightType == Departing ? flight.departureTime );
+        cell.dateLabel.text = formatter.stringFromDate(flight.departureTime);
         cell.airportsLabel.text = "\(flight.originAirportCode) to \(flight.destinationAirportCode)";
         
         formatter.dateFormat = "h:mm a";

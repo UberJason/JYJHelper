@@ -10,16 +10,16 @@
 
 @implementation Flight (Helpers)
 
-+(Flight *)flightWithAirline:(NSString *)airlineCode flightNumber:(NSNumber *)flightNumber flightType:(NSNumber *)flightType originAirportCode:(NSString *)originAirportCode destinationAirportCode:(NSString *)destinationAirportCode departureTime:(NSDate *)departureTime arrivalTime:(NSDate *)arrivalTime inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
++(Flight *)flightWithAirline:(NSString *)airlineCode flightNumber:(NSNumber *)flightNumber originAirportCode:(NSString *)originAirportCode destinationAirportCode:(NSString *)destinationAirportCode departureTime:(NSDate *)departureTime arrivalTime:(NSDate *)arrivalTime storedTimeZone:(NSString *)storedTimeZone inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
     Flight *flight = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(Flight.class) inManagedObjectContext:managedObjectContext];
     
     flight.airlineCode = airlineCode;
     flight.flightNumber = flightNumber;
-    flight.flightType = flightType;
     flight.originAirportCode = originAirportCode;
     flight.destinationAirportCode = destinationAirportCode;
     flight.departureTime = departureTime;
     flight.arrivalTime = arrivalTime;
+    flight.storedTimeZone = storedTimeZone;
     
     return flight;
 }
