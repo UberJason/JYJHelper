@@ -2,7 +2,7 @@
 //  Trip.h
 //  JYJ Helper
 //
-//  Created by Jason Ji on 6/10/14.
+//  Created by Jason Ji on 6/25/14.
 //  Copyright (c) 2014 Jason Ji. All rights reserved.
 //
 
@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSDate * endDate;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSDate * startDate;
+@property (nonatomic, retain) NSString * storedTimeZone;
 @property (nonatomic, retain) NSOrderedSet *flights;
 @end
 

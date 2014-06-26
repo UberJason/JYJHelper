@@ -575,13 +575,72 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Trip Name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QXj-cd-hRb">
                                                     <rect key="frame" x="143" y="8" width="157" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="textField" destination="QXj-cd-hRb" id="wDS-L6-mrV"/>
                                             <outlet property="titleLabel" destination="uoN-Ks-ACA" id="W5A-92-j5O"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="timeCell" id="4Q5-4g-vTa" customClass="TwoLabelTableViewCell" customModule="JYJ_Helper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="262" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Q5-4g-vTa" id="etb-g9-mEJ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcQ-63-Tk5">
+                                                    <rect key="frame" x="20" y="11" width="119" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:55AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdG-B0-TrJ">
+                                                    <rect key="frame" x="240" y="11" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MdG-B0-TrJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fcQ-63-Tk5" secondAttribute="trailing" priority="750" constant="8" id="Nnb-Rf-MeN"/>
+                                                <constraint firstAttribute="centerY" secondItem="MdG-B0-TrJ" secondAttribute="centerY" id="c4Z-SK-ODu"/>
+                                                <constraint firstAttribute="centerY" secondItem="fcQ-63-Tk5" secondAttribute="centerY" id="wBy-xe-7kf"/>
+                                                <constraint firstItem="fcQ-63-Tk5" firstAttribute="leading" secondItem="etb-g9-mEJ" secondAttribute="leading" constant="20" symbolic="YES" id="wIp-Av-t0v"/>
+                                                <constraint firstAttribute="trailing" secondItem="MdG-B0-TrJ" secondAttribute="trailing" constant="20" symbolic="YES" id="xSj-u9-lkk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="leftLabel" destination="fcQ-63-Tk5" id="aQW-3J-5wv"/>
+                                            <outlet property="rightLabel" destination="MdG-B0-TrJ" id="S56-Nf-Sj4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="datePickerCell" rowHeight="163" id="39K-fk-G4Y" customClass="DatePickerCell" customModule="JYJ_Helper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="203" width="320" height="163"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="39K-fk-G4Y" id="ecg-hl-sAG">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="CLA-iy-Ve3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="424566328.332892">
+                                                        <!--<__NSDate Class=2014-06-15 23:05:28 +0000 timeInterval=424566328.332892 ISO8601=2014-06-15T19:05:28.333-0400>-->
+                                                    </date>
+                                                    <connections>
+                                                        <action selector="dateChanged:" destination="39K-fk-G4Y" eventType="valueChanged" id="x3h-QF-9fb"/>
+                                                    </connections>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="CLA-iy-Ve3" secondAttribute="trailing" id="UFn-B1-EkV"/>
+                                                <constraint firstItem="CLA-iy-Ve3" firstAttribute="leading" secondItem="ecg-hl-sAG" secondAttribute="leading" id="Vzl-iq-uki"/>
+                                                <constraint firstItem="CLA-iy-Ve3" firstAttribute="top" secondItem="ecg-hl-sAG" secondAttribute="top" id="pzD-Ec-OHh"/>
+                                                <constraint firstAttribute="bottom" secondItem="CLA-iy-Ve3" secondAttribute="bottom" id="v5U-XO-9dy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="datePicker" destination="CLA-iy-Ve3" id="pI2-uA-zeg"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addFlightCell" textLabel="sRt-hu-wUv" style="IBUITableViewCellStyleDefault" id="bU3-6n-Okj">

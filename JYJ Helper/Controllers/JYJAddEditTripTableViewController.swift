@@ -12,7 +12,19 @@ enum TripViewType {
     case Edit, New;
 }
 
+
+
 class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelegate {
+
+    let NUMBER_OF_DETAIL_FIELDS = 3;
+    
+    let DEPARTING_TIME_CELL_TAG = 33;
+    let RETURNING_TIME_CELL_TAG = 34;
+    let DEPARTING_DATEPICKER_CELL_TAG = 35;
+    let RETURNING_DATEPICKER_CELL_TAG = 36;
+    
+    let DEPARTING_DATEPICKER_ROW = 2;
+    let RETURNING_DATEPICKER_ROW = 3;
     
     weak var delegate: JYJFlightsBaseViewController?
     let context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
@@ -21,6 +33,9 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
     @IBOutlet var tableView : UITableView
     @IBOutlet var navigationBar : UINavigationBar
     
+    var departingPickerShowing = false;
+    var returningPickerShowing = false;
+    
     init(coder aDecoder: NSCoder!)  {
         super.init(coder: aDecoder);
     }
@@ -28,7 +43,7 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationBar.barTintColor = UIColor.pomegranateFlatColor();
+        self.navigationBar.barTintColor = UIColor.alizarinFlatColor();
         self.navigationBar.translucent = false;
         self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()];
         self.navigationBar.delegate = self;
@@ -81,7 +96,7 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
 
 // UITableView, UITextField delegate/data source
 
-extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, DatePickerDelegate {
     
     func tableView(tableView: UITableView?, titleForHeaderInSection section: Int) -> String! {
         switch(section) {
@@ -95,6 +110,9 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
         let identifier = self.identifierForRowAtIndexPath(indexPath);
         if(identifier == "flightCell") {
             return 88;
+        }
+        else if(identifier == "datePickerCell") {
+            return 163;
         }
         else {
             return 44;
@@ -110,11 +128,9 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
         // Return the number of rows in the section.
         println("numberOfRowsInSection \(section)");
         if(section == 0) {
-            println("1 row");
-            return 1;
+            return self.departingPickerShowing || self.returningPickerShowing ? NUMBER_OF_DETAIL_FIELDS+1 : NUMBER_OF_DETAIL_FIELDS;
         }
         else {
-            println("number of rows = trip.flights.count = \(trip.flights.count)");
             return trip.flights.count+1;
         }
     }
@@ -131,7 +147,35 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             cell.textField.delegate = self;
             println(cell.textField.delegate.description);
             return cell;
-            
+        case "timeCell":
+            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as TwoLabelTableViewCell;
+            let leftLabel = self.leftLabelForRow(indexPath!.row);
+            cell.leftLabel.text = leftLabel;
+            cell.rightLabel.text = self.rightPlaceholderTextForRow(indexPath!.row);
+            cell.rightLabel.textColor = UIColor.alizarinFlatColor();
+            if(leftLabel == "Start Date") {
+                cell.tag = DEPARTING_TIME_CELL_TAG;
+            }
+            else {
+                cell.tag = RETURNING_TIME_CELL_TAG;
+            }
+            return cell;
+        case "datePickerCell":
+            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as DatePickerCell;
+            cell.delegate = self;
+            if(indexPath.row == DEPARTING_DATEPICKER_ROW) {
+                cell.tag = DEPARTING_DATEPICKER_CELL_TAG;
+                if(self.trip.endDate) {
+                    cell.datePicker.date = self.trip.endDate;
+                }
+            }
+            else {
+                cell.tag = RETURNING_DATEPICKER_CELL_TAG;
+                if(self.trip.startDate) {
+                    cell.datePicker.date = self.trip.startDate;
+                }
+            }
+            return cell;
         case "flightCell":
             var cell: JYJFlightTableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as JYJFlightTableViewCell;
             var flight = self.trip.flights[indexPath.row] as Flight;
@@ -161,12 +205,89 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
         println("identifierForRowAtIndexPath: \(indexPath.section)");
         switch(indexPath.section) {
         case 0:
-            return "titleCell";
+            switch(indexPath.row) {
+            case 0: return "titleCell";
+            case 1: return "timeCell";
+            case 2: return self.departingPickerShowing ? "datePickerCell" : "timeCell";
+            case 3: return self.returningPickerShowing ? "datePickerCell" : "timeCell";
+            default: return "";
+            }
         case 1:
             return indexPath.row == self.trip.flights.count ? "addFlightCell" : "flightCell";
         default:
             return "";
         }
+    }
+    
+    func leftLabelForRow(row: Int) -> String {
+        switch(row) {
+        case 0: return "Trip Name";
+        case 1: return "Start Date";
+        case 2: return "End Date";
+        case 3: return "End Date";
+        default: return "ERROR";
+        }
+    }
+    
+    func rightPlaceholderTextForRow(row: Int) -> String {
+        let dateString: String = {
+            let formatter = NSDateFormatter();
+            formatter.dateStyle = NSDateFormatterStyle.LongStyle;
+            return formatter.stringFromDate(NSDate());
+            }();
+        switch(row) {
+        case 0: return "Trip Name";
+        case 1,2,3: return dateString;
+        default: return "ERROR";
+        }
+    }
+    
+    func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let identifier = self.identifierForRowAtIndexPath(indexPath);
+        if(identifier != "timeCell") {
+            return;
+        }
+        println("did select row \(indexPath.row)");
+        self.view.endEditing(true);
+        let cell = tableView!.cellForRowAtIndexPath(indexPath);
+        if(cell.tag == DEPARTING_TIME_CELL_TAG) {
+            
+            tableView!.beginUpdates();
+            if(self.departingPickerShowing) {
+                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: DEPARTING_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+            }
+            else {
+                tableView!.insertRowsAtIndexPaths([NSIndexPath(forRow: DEPARTING_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+            }
+            if(self.returningPickerShowing) {
+                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: RETURNING_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+            }
+            
+            self.departingPickerShowing = !self.departingPickerShowing;
+            self.returningPickerShowing = false;
+            
+            tableView!.endUpdates();
+        }
+        else {
+            
+            tableView!.beginUpdates();
+            if(self.returningPickerShowing) {
+                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: RETURNING_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+            }
+            else {
+                tableView!.insertRowsAtIndexPaths([NSIndexPath(forRow: RETURNING_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+            }
+            if(self.departingPickerShowing) {
+                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: DEPARTING_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+            }
+            
+            self.returningPickerShowing = !self.returningPickerShowing;
+            self.departingPickerShowing = false;
+            tableView!.endUpdates();
+            
+        }
+        
+        tableView!.deselectRowAtIndexPath(tableView!.indexPathForSelectedRow(), animated: true);
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
@@ -179,6 +300,32 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
         self.trip.name = textField.text;
     }
     
+    func cellDidChangeDate(cell: DatePickerCell, datePicker: UIDatePicker) {
+        let tag = cell.tag;
+        if(tag == DEPARTING_DATEPICKER_CELL_TAG) {
+            println("departure time changed");
+            self.trip.startDate = datePicker.date;
+            
+            let departureCell = self.view.viewWithTag(DEPARTING_TIME_CELL_TAG) as TwoLabelTableViewCell;
+            departureCell.rightLabel.text = {
+                let formatter = NSDateFormatter();
+                formatter.dateStyle = NSDateFormatterStyle.LongStyle;
+                return formatter.stringFromDate(self.trip.startDate);
+                }();
+        }
+        else {
+            println("arrival time changed");
+            self.trip.endDate = datePicker.date;
+            
+            let arrivalCell = self.view.viewWithTag(RETURNING_TIME_CELL_TAG) as TwoLabelTableViewCell;
+            arrivalCell.rightLabel.text = {
+                let formatter = NSDateFormatter();
+                formatter.dateStyle = NSDateFormatterStyle.LongStyle;
+                return formatter.stringFromDate(self.trip.endDate);
+                }();
+            
+        }
+    }
 }
 
 // segues

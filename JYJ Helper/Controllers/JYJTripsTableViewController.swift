@@ -51,13 +51,11 @@ class JYJTripsTableViewController: JYJAbstractPageContentViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
-        // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1;
     }
 
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return self.myTrips.count;
     }
@@ -67,14 +65,15 @@ class JYJTripsTableViewController: JYJAbstractPageContentViewController {
         
         var cell: JYJTripTableViewCell = tableView!.dequeueReusableCellWithIdentifier("tripCell", forIndexPath: indexPath) as JYJTripTableViewCell;
 
+        let trip = self.myTrips[indexPath.row];
+        
         let formatter = NSDateFormatter();
         formatter.dateFormat = "MMMM d";
-        let trip = self.myTrips[indexPath.row];
+        formatter.timeZone = NSTimeZone(name: trip.storedTimeZone);
         
         cell.nameLabel.text = trip.name;
         cell.startDateLabel.text = formatter.stringFromDate(trip.startDate);
         cell.endDateLabel.text = formatter.stringFromDate(trip.endDate);
-        // Configure the cell...
 
         return cell;
     }

@@ -14,10 +14,11 @@
         <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="storedTimeZone" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="flights" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Flight" inverseName="trip" inverseEntity="Flight" syncable="YES"/>
     </entity>
     <elements>
         <element name="Flight" positionX="196" positionY="-18" width="128" height="165"/>
-        <element name="Trip" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Trip" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

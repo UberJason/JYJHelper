@@ -12,18 +12,18 @@ enum FlightViewType {
     case Edit, New;
 }
 
-let NUMBER_OF_FIELDS = 6;
-
-let DEPARTURE_TIME_CELL_TAG = 33;
-let ARRIVAL_TIME_CELL_TAG = 34;
-let DEPARTURE_DATEPICKER_TABLEVIEW_CELL_TAG = 35;
-let ARRIVAL_DATEPICKER_TABLEVIEW_CELL_TAG = 36;
-
-let FLIGHT_NUMBER_ROW = 1;
-let DEPARTURE_DATEPICKER_ROW = 3;
-let ARRIVAL_DATEPICKER_ROW = 4;
-
 class JYJAddNewFlightViewController: UIViewController {
+
+    let NUMBER_OF_FIELDS = 6;
+    
+    let DEPARTURE_TIME_CELL_TAG = 33;
+    let ARRIVAL_TIME_CELL_TAG = 34;
+    let DEPARTURE_DATEPICKER_TABLEVIEW_CELL_TAG = 35;
+    let ARRIVAL_DATEPICKER_TABLEVIEW_CELL_TAG = 36;
+    
+    let FLIGHT_NUMBER_ROW = 1;
+    let DEPARTURE_DATEPICKER_ROW = 3;
+    let ARRIVAL_DATEPICKER_ROW = 4;
     
     @IBOutlet var navigationBar : UINavigationBar
     @IBOutlet var tableView : UITableView
@@ -36,15 +36,13 @@ class JYJAddNewFlightViewController: UIViewController {
     var departurePickerShowing = false;
     var arrivalPickerShowing = false;
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         
-        self.navigationBar.barTintColor = UIColor.pomegranateFlatColor();
+        self.navigationBar.barTintColor = UIColor.alizarinFlatColor();
         self.navigationBar.translucent = false;
         self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()];
         self.navigationBar.delegate = self;
@@ -90,7 +88,6 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return self.departurePickerShowing || self.arrivalPickerShowing ? NUMBER_OF_FIELDS+1 : NUMBER_OF_FIELDS;
     }
@@ -105,7 +102,8 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
             var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as LabelAndTextFieldTableViewCell;
             cell.titleLabel.text = self.leftLabelForRow(indexPath!.row);
             cell.textField.placeholder = self.rightPlaceholderTextForRow(indexPath!.row);
-            cell.textField.textColor = UIColor.pomegranateFlatColor();
+            cell.textField.textColor = UIColor.alizarinFlatColor();
+            cell.textField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters;
             if(indexPath!.row == FLIGHT_NUMBER_ROW) {
                 cell.textField.keyboardType = UIKeyboardType.NumberPad;
             }
@@ -117,7 +115,7 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
             let leftLabel = self.leftLabelForRow(indexPath!.row);
             cell.leftLabel.text = leftLabel;
             cell.rightLabel.text = self.rightPlaceholderTextForRow(indexPath!.row);
-            cell.rightLabel.textColor = UIColor.pomegranateFlatColor();
+            cell.rightLabel.textColor = UIColor.alizarinFlatColor();
             if(leftLabel == "Departs") {
                 cell.tag = DEPARTURE_TIME_CELL_TAG;
             }
@@ -204,7 +202,6 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
         
         let dateString: String = {
             let formatter = NSDateFormatter();
-            //            formatter.dateFormat = "h:mm a";
             formatter.dateFormat = "M/d/y, h:mm a";
             return formatter.stringFromDate(NSDate());
             }();

@@ -10,6 +10,6 @@
 
 @interface Trip (Helpers)
 
-+(Trip *)tripWithName:(NSString *)name startDate:(NSDate *)startDate endDate:(NSDate *)endDate inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
++(Trip *)tripWithName:(NSString *)name startDate:(NSDate *)startDate endDate:(NSDate *)endDate storedTimeZone:(NSString *)storedTimeZone inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 @end

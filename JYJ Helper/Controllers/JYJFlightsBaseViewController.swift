@@ -37,10 +37,10 @@ class JYJFlightsBaseViewController: UIViewController, UIToolbarDelegate, UINavig
         
         navigationBar.delegate = self;
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()];
-        navigationBar.barTintColor = UIColor.pomegranateFlatColor();
+        navigationBar.barTintColor = UIColor.alizarinFlatColor();
         navigationBar.translucent = false;
         
-        barView.backgroundColor = UIColor.pomegranateFlatColor();
+        barView.backgroundColor = UIColor.alizarinFlatColor();
         
         pageController.delegate = self;
         pageController.dataSource = self;

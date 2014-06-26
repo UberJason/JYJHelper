@@ -10,12 +10,13 @@
 
 @implementation Trip (Helpers)
 
-+(instancetype)tripWithName:(NSString *)name startDate:(NSDate *)startDate endDate:(NSDate *)endDate inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
++(instancetype)tripWithName:(NSString *)name startDate:(NSDate *)startDate endDate:(NSDate *)endDate storedTimeZone:(NSString *)storedTimeZone inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
     Trip *trip = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(self.class) inManagedObjectContext:managedObjectContext];
     
     trip.name = name;
     trip.startDate = startDate;
     trip.endDate = endDate;
+    trip.storedTimeZone = storedTimeZone;
     
     return trip;
 }
