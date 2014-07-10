@@ -8,72 +8,68 @@
 
 import UIKit
 
-class JYJFlightsTableViewController: JYJAbstractPageContentViewController {
+class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @lazy var trips: Trip[] = {
-        var managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
-        var request = NSFetchRequest(entityName: "Trip");
-        return managedObjectContext.executeFetchRequest(request, error: nil) as Trip[];
-        }();
-    
-    init(style: UITableViewStyle) {
-        super.init(style: style)
-        // Custom initialization
-    }
+    @IBOutlet var navigationBar: UINavigationBar
+    @IBOutlet var tableView: UITableView
+    var trip: Trip!;
     
     init(coder aDecoder: NSCoder!)
     {
         super.init(coder: aDecoder)
-        self.pageIndex = 1;
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("viewDidLoad");
+    
+        self.tableView.registerNib(UINib(nibName:"JYJFlightTableViewCell", bundle: nil), forCellReuseIdentifier: "flightCell");
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
         
-        tableView.registerNib(UINib(nibName:"JYJFlightTableViewCell", bundle: nil), forCellReuseIdentifier: "flightCell");
+//        self.title = self.trip.name;
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewWillAppear(animated);
+//    override func viewDidAppear(animated: Bool) {
+//        super.viewDidAppear(animated);
+//        println("viewDidAppear");
 //        var flight: Flight = self.trips[0].flights[0] as Flight;
 //        
 //        var formatter = NSDateFormatter();
 //        
 //        formatter.dateFormat = "h:mm a";
 //        println(flight.departureTime.description);
-    }
+//    }
     
     // #pragma mark - Table view data source
     
-    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String {
-        return (self.trips[section] as Trip).name;
+    func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String {
+        return "Flights";
     }
     
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 88;
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return self.trips.count;
+        return 1;
     }
     
-    override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        var trip = self.trips[section];
-        return trip.flights.count;
+        return self.trip.flights.count;
     }
     
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cellIdentifier = "flightCell";
         
         var cell: JYJFlightTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as JYJFlightTableViewCell;
         
-        var trip = self.trips[indexPath.section];
-        var flight: Flight = trip.flights[indexPath.row] as Flight;
+        var flight: Flight = self.trip.flights[indexPath.row] as Flight;
         
         var formatter = NSDateFormatter();
         formatter.dateStyle = NSDateFormatterStyle.LongStyle;

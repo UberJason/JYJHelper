@@ -27,7 +27,7 @@
 
 -(NSURL *)bus23AWork {
     if(!_bus23AWork) {
-        _bus23AWork = [NSURL URLWithString: @"http://www.nextbus.com/wireless/miniPrediction.shtml?a=wmata&r=23A&d=23A_23A_1&s=14172"];
+        _bus23AWork = [NSURL URLWithString: @"http://www.nextbus.com/wireless/miniPrediction.shtml?a=wmata&r=23A&d=23A_23A_1&s=18686"];
     }
     return _bus23AWork;
 }

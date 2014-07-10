@@ -12,6 +12,8 @@ enum FlightViewType {
     case Edit, New;
 }
 
+let iPHONE_PORTRAIT_KEYBOARD_HEIGHT = 216;
+
 class JYJAddNewFlightViewController: UIViewController {
 
     let NUMBER_OF_FIELDS = 6;
@@ -58,6 +60,9 @@ class JYJAddNewFlightViewController: UIViewController {
     }
     
     @IBAction func cancelPressed(sender : AnyObject) {
+        if(self.type == FlightViewType.New) {
+            self.context.deleteObject(self.flight);
+        }
         self.delegate!.didCancelAddingOrEditingAFlight();
     }
     
@@ -286,6 +291,28 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
     
     func positionForBar(bar: UIBarPositioning!) -> UIBarPosition {
         return UIBarPosition.TopAttached;
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField!) -> Bool {
+        
+        
+        // TODO: This doesn't work, possibly because of the position of self.view is not the top of the screen??
+        // Instead, listen for keyboard will appear notification and scroll if necessary?
+        
+        let yPosition = self.view.superview.convertPoint(textField.frame.origin, fromView: textField).y;
+        let thirdOfScreen = self.view.frame.size.height / 3.0;
+        
+        println("yPosition: \(yPosition)");
+        println("2/3 of screen: \(thirdOfScreen*2)");
+        
+        if(yPosition >= thirdOfScreen*2) {  // if y-pos is in bottom 1/3 of screen
+            self.tableView.setContentOffset(CGPoint(x: 0, y: self.tableView.contentOffset.y+CGFloat(iPHONE_PORTRAIT_KEYBOARD_HEIGHT)), animated: true);
+        }
+        
+        println("view height: \(self.view.frame.size.height)");
+
+        
+        return true;
     }
     
     func textFieldDidEndEditing(textField: UITextField!) {

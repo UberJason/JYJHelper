@@ -8,59 +8,60 @@
 
 import UIKit
 
-class JYJTripsTableViewController: JYJAbstractPageContentViewController {
+class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var myTrips: Trip[] = {
+    @IBOutlet var tableView: UITableView
+    var myTrips: [Trip] = {
         var managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
         var fetchRequest = NSFetchRequest(entityName: "Trip");
-        return managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as Trip[];
+        return managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as [Trip];
     }();
-    
-    init(style: UITableViewStyle) {
-        super.init(style: style)
-        // Custom initialization
-    }
 
     init(coder aDecoder: NSCoder!)
     {
         super.init(coder: aDecoder)
-        self.pageIndex = 0;
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         
         self.tableView.registerNib(UINib(nibName: "JYJTripTableViewCell", bundle: nil), forCellReuseIdentifier: "tripCell");
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
+        
+        self.navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()];
+        self.navigationController.navigationBar.barTintColor = UIColor.alizarinFlatColor();
+        self.navigationController.navigationBar.tintColor = UIColor.whiteColor();
+        self.navigationController.navigationBar.translucent = false;
+        self.title = "Travel";
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // #pragma mark - Table view data source
 
-    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+    func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
         return "My Trips";
     }
     
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
         return 88;
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
         // Return the number of sections.
         return 1;
     }
 
-    override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return self.myTrips.count;
     }
 
-    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
+    func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
         var cellIdentifier = "tripCell";
         
         var cell: JYJTripTableViewCell = tableView!.dequeueReusableCellWithIdentifier("tripCell", forIndexPath: indexPath) as JYJTripTableViewCell;
@@ -78,10 +79,40 @@ class JYJTripsTableViewController: JYJAbstractPageContentViewController {
         return cell;
     }
 
+    func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+
+//        let flightsVC: JYJFlightsTableViewController = self.storyboard.instantiateViewControllerWithIdentifier("flightsVC") as JYJFlightsTableViewController;
+//        flightsVC.trip = self.myTrips[indexPath.row];
+//        self.navigationController .pushViewController(flightsVC, animated: true);
+
+        self.performSegueWithIdentifier("pushFlightsVC", sender: self.tableView.cellForRowAtIndexPath(indexPath));
+        
+        self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow(), animated: true);
+    }
+    
     func reloadCoreData() {
         var managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
         var fetchRequest = NSFetchRequest(entityName: "Trip");
-        myTrips = managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as Trip[];
+        myTrips = managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as [Trip];
         self.tableView.reloadData();
+    }
+}
+
+// segues
+extension JYJTripsTableViewController {
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!)  {
+        if(segue.identifier == "addNewTripSegue") {
+            let destinationVC: JYJAddEditTripTableViewController = segue.destinationViewController as JYJAddEditTripTableViewController;
+            destinationVC.delegate = self;
+        }
+        else if(segue.identifier == "pushFlightsVC") {
+            let flightsVC: JYJFlightsTableViewController = segue.destinationViewController as JYJFlightsTableViewController;
+            flightsVC.trip = self.myTrips[self.tableView.indexPathForCell(sender as UITableViewCell).row];
+            println("Trip: \(flightsVC.trip.description)");
+        }
+        
+    }
+    func didFinishCreatingOrEditingATrip() {
+        self.reloadCoreData();
     }
 }

@@ -11,23 +11,20 @@ import UIKit
 class JYJFlightsBaseViewController: UIViewController, UIToolbarDelegate, UINavigationBarDelegate {
     
     @IBOutlet var navigationBar : UINavigationBar
-    @IBOutlet var barView : UIView
-    @IBOutlet var segmentedControl : UISegmentedControl
-    @IBOutlet var containerView : UIView
     
-    var pageController: UIPageViewController
-    var myViewControllers: UIViewController[] = [];
-    
-    @lazy var tripsVC: JYJTripsTableViewController = {
-        return self.storyboard.instantiateViewControllerWithIdentifier("tripsVC") as JYJTripsTableViewController;
-        }();
-    @lazy var flightsVC: JYJFlightsTableViewController = {
-        return self.storyboard.instantiateViewControllerWithIdentifier("flightsVC") as JYJFlightsTableViewController;
-        }();
+//    var pageController: UIPageViewController
+//    var myViewControllers: [UIViewController] = [];
+//    
+//    @lazy var tripsVC: JYJTripsTableViewController = {
+//        return self.storyboard.instantiateViewControllerWithIdentifier("tripsVC") as JYJTripsTableViewController;
+//        }();
+//    @lazy var flightsVC: JYJFlightsTableViewController = {
+//        return self.storyboard.instantiateViewControllerWithIdentifier("flightsVC") as JYJFlightsTableViewController;
+//        }();
     
     
     init(coder aDecoder: NSCoder!) {
-        pageController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil);
+//        pageController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil);
         super.init(coder: aDecoder);
         
     }
@@ -40,13 +37,11 @@ class JYJFlightsBaseViewController: UIViewController, UIToolbarDelegate, UINavig
         navigationBar.barTintColor = UIColor.alizarinFlatColor();
         navigationBar.translucent = false;
         
-        barView.backgroundColor = UIColor.alizarinFlatColor();
+//        pageController.delegate = self;
+//        pageController.dataSource = self;
         
-        pageController.delegate = self;
-        pageController.dataSource = self;
-        
-        myViewControllers.append(self.tripsVC);
-        myViewControllers.append(self.flightsVC);
+//        myViewControllers.append(self.tripsVC);
+//        myViewControllers.append(self.flightsVC);
 
         /*
         var calendar = NSCalendar.currentCalendar();
@@ -117,12 +112,12 @@ class JYJFlightsBaseViewController: UIViewController, UIToolbarDelegate, UINavig
     
     override func viewWillAppear(animated: Bool)  {
         super.viewWillAppear(animated);
-        pageController.view.frame = CGRectMake(0, 0, self.containerView.frame.width, self.containerView.frame.height);
-        pageController.setViewControllers([self.tripsVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil);
-        
-        self.addChildViewController(pageController);
-        self.containerView.addSubview(pageController.view);
-        pageController.didMoveToParentViewController(self);
+//        pageController.view.frame = CGRectMake(0, 0, self.containerView.frame.width, self.containerView.frame.height);
+//        pageController.setViewControllers([self.tripsVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil);
+//        
+//        self.addChildViewController(pageController);
+//        self.containerView.addSubview(pageController.view);
+//        pageController.didMoveToParentViewController(self);
     }
     
     func positionForBar(bar: UIBarPositioning!) -> UIBarPosition {
@@ -137,61 +132,61 @@ class JYJFlightsBaseViewController: UIViewController, UIToolbarDelegate, UINavig
 }
 
 // UIPageViewController delegate and data source
-extension JYJFlightsBaseViewController : UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-    
-    func pageViewController(pageViewController: UIPageViewController!, viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController? {
-        let vc = viewController as JYJAbstractPageContentViewController;
-        if(vc.pageIndex == 0) {
-            return nil;
-        }
-        else {
-            return self.myViewControllers[vc.pageIndex-1];
-        }
-        
-    }
-    func pageViewController(pageViewController: UIPageViewController!, viewControllerAfterViewController viewController: UIViewController!) -> UIViewController? {
-        let vc = viewController as JYJAbstractPageContentViewController;
-        if(vc.pageIndex == self.myViewControllers.count-1) {
-            return nil;
-        }
-        else {
-            return self.myViewControllers[vc.pageIndex+1];
-        }
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController!, didFinishAnimating finished: Bool, previousViewControllers: AnyObject![], transitionCompleted completed: Bool) {
-        if(previousViewControllers[0] === self.tripsVC) {
-            self.segmentedControl.selectedSegmentIndex = 1;
-        }
-        else {
-            self.segmentedControl.selectedSegmentIndex = 0;
-        }
-    }
-}
-
-// target-action methods
-extension JYJFlightsBaseViewController {
-    @IBAction func controlPressed(sender : UISegmentedControl) {
-        if(sender.selectedSegmentIndex == 0) {
-            self.pageController.setViewControllers([self.tripsVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil);
-        }
-        else {
-            self.pageController.setViewControllers([self.flightsVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil);
-        }
-    }
-}
-
+//extension JYJFlightsBaseViewController : UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+//    
+//    func pageViewController(pageViewController: UIPageViewController!, viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController? {
+//        let vc = viewController as JYJAbstractPageContentViewController;
+//        if(vc.pageIndex == 0) {
+//            return nil;
+//        }
+//        else {
+//            return self.myViewControllers[vc.pageIndex-1];
+//        }
+//        
+//    }
+//    func pageViewController(pageViewController: UIPageViewController!, viewControllerAfterViewController viewController: UIViewController!) -> UIViewController? {
+//        let vc = viewController as JYJAbstractPageContentViewController;
+//        if(vc.pageIndex == self.myViewControllers.count-1) {
+//            return nil;
+//        }
+//        else {
+//            return self.myViewControllers[vc.pageIndex+1];
+//        }
+//    }
+//    
+//    func pageViewController(pageViewController: UIPageViewController!, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject!], transitionCompleted completed: Bool) {
+//        if(previousViewControllers[0] === self.tripsVC) {
+//            self.segmentedControl.selectedSegmentIndex = 1;
+//        }
+//        else {
+//            self.segmentedControl.selectedSegmentIndex = 0;
+//        }
+//    }
+//}
+//
+//// target-action methods
+//extension JYJFlightsBaseViewController {
+//    @IBAction func controlPressed(sender : UISegmentedControl) {
+//        if(sender.selectedSegmentIndex == 0) {
+//            self.pageController.setViewControllers([self.tripsVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil);
+//        }
+//        else {
+//            self.pageController.setViewControllers([self.flightsVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil);
+//        }
+//    }
+//}
+//
 // segues
-extension JYJFlightsBaseViewController {
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!)  {
-        if(segue.identifier == "addNewTripSegue") {
-            var destinationVC: JYJAddEditTripTableViewController = segue.destinationViewController as JYJAddEditTripTableViewController;
-            destinationVC.delegate = self;
-        }
-        
-    }
-    func didFinishCreatingOrEditingATrip() {
-        self.tripsVC.reloadCoreData();
-        self.flightsVC.tableView.reloadData();
-    }
-}
+//extension JYJFlightsBaseViewController {
+//    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!)  {
+//        if(segue.identifier == "addNewTripSegue") {
+//            var destinationVC: JYJAddEditTripTableViewController = segue.destinationViewController as JYJAddEditTripTableViewController;
+//            destinationVC.delegate = self;
+//        }
+//        
+//    }
+//    func didFinishCreatingOrEditingATrip() {
+////        self.tripsVC.reloadCoreData();
+////        self.flightsVC.tableView.reloadData();
+//    }
+//}

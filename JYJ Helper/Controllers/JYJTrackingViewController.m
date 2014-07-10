@@ -61,6 +61,10 @@ typedef enum {
     return self.trackedObjectsList.count;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44.0;
+}
+
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(section == self.trackedObjectsList.count)
         return @"";

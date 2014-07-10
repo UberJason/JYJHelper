@@ -26,7 +26,7 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
     let DEPARTING_DATEPICKER_ROW = 2;
     let RETURNING_DATEPICKER_ROW = 3;
     
-    weak var delegate: JYJFlightsBaseViewController?
+    weak var delegate: JYJTripsTableViewController?
     let context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
     var trip: Trip!
     var type: TripViewType = .New;
