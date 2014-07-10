@@ -339,8 +339,8 @@ extension JYJAddEditTripTableViewController {
     }
     
     func didFinishAddingOrEditingAFlight() {
-        self.tableView.reloadData();
-        self.dismissViewControllerAnimated(true, completion: nil);
+        self.dismissViewControllerAnimated(true, completion: { self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Fade); });
+
     }
     
     func didCancelAddingOrEditingAFlight() {
