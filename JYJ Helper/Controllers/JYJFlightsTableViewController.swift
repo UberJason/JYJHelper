@@ -27,7 +27,7 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         
-//        self.title = self.trip.name;
+        self.title = self.trip.name;
     }
     
 //    override func viewDidAppear(animated: Bool) {

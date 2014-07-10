@@ -108,7 +108,6 @@ extension JYJTripsTableViewController {
         else if(segue.identifier == "pushFlightsVC") {
             let flightsVC: JYJFlightsTableViewController = segue.destinationViewController as JYJFlightsTableViewController;
             flightsVC.trip = self.myTrips[self.tableView.indexPathForCell(sender as UITableViewCell).row];
-            println("Trip: \(flightsVC.trip.description)");
         }
         
     }
