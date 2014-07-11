@@ -246,14 +246,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="unX-0c-Ldb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ah4-IA-nys">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ah4-IA-nys" id="UT2-k7-mvg">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -280,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ii-8N-WEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="1148"/>
+            <point key="canvasLocation" x="1204" y="1500"/>
         </scene>
         <!--Flights Table View Controller-->
         <scene sceneID="FNx-ej-1TM">
@@ -295,19 +287,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="8KI-dj-ZsW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8KI-dj-ZsW" firstAttribute="top" secondItem="bW4-6I-h9q" secondAttribute="top" id="X6p-SZ-YK6"/>
+                            <constraint firstItem="8KI-dj-ZsW" firstAttribute="top" secondItem="oz1-GN-wZW" secondAttribute="bottom" id="4up-ng-vg5"/>
+                            <constraint firstItem="FUF-wp-4tq" firstAttribute="top" secondItem="8KI-dj-ZsW" secondAttribute="bottom" id="Tjh-og-wst"/>
                             <constraint firstItem="8KI-dj-ZsW" firstAttribute="leading" secondItem="bW4-6I-h9q" secondAttribute="leading" id="ePJ-Ee-Caa"/>
                             <constraint firstAttribute="trailing" secondItem="8KI-dj-ZsW" secondAttribute="trailing" id="kvZ-Y6-aIa"/>
-                            <constraint firstItem="FUF-wp-4tq" firstAttribute="top" secondItem="8KI-dj-ZsW" secondAttribute="bottom" id="rtX-5g-YRZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oSM-it-quw"/>
+                    <navigationItem key="navigationItem" id="oSM-it-quw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Niv-qV-ucb"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="tableView" destination="8KI-dj-ZsW" id="nJu-rU-eZl"/>
@@ -315,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAt-NR-WTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="1981"/>
+            <point key="canvasLocation" x="1644" y="1909"/>
         </scene>
         <!--Tracking-->
         <scene sceneID="QaT-rr-D4z">
@@ -633,7 +627,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYj-Jc-Ct7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648" y="1148"/>
+            <point key="canvasLocation" x="1644" y="1220"/>
         </scene>
         <!--Add New Flight View Controller-->
         <scene sceneID="Gvh-TE-RRK">
@@ -782,7 +776,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uT-gC-bmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2102" y="1148"/>
+            <point key="canvasLocation" x="2098" y="1220"/>
         </scene>
         <!--Flights-->
         <scene sceneID="eDB-Pi-QMg">
@@ -804,7 +798,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGk-gX-Bfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="672" y="1148"/>
+            <point key="canvasLocation" x="672" y="1500"/>
         </scene>
     </scenes>
     <resources>
