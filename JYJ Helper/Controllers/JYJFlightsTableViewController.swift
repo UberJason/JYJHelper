@@ -11,8 +11,8 @@ import QuartzCore
 
 class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //    @IBOutlet var tripHeaderView: UIView
-    @IBOutlet var tableView: UITableView
+    //    @IBOutlet weak var tripHeaderView: UIView
+    @IBOutlet weak var tableView: UITableView!
     var trip: Trip!;
     
     init(coder aDecoder: NSCoder!)
@@ -43,6 +43,10 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated);
+        println("viewDidAppear");
+    }
     
     // #pragma mark - Table view data source
     

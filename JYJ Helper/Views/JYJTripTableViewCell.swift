@@ -10,9 +10,9 @@ import UIKit
 
 class JYJTripTableViewCell: UITableViewCell {
 
-    @IBOutlet var nameLabel : UILabel
-    @IBOutlet var startDateLabel : UILabel
-    @IBOutlet var endDateLabel : UILabel
+    @IBOutlet weak var nameLabel : UILabel!
+    @IBOutlet weak var startDateLabel : UILabel!
+    @IBOutlet weak var endDateLabel : UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

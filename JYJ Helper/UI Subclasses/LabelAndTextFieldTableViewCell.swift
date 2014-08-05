@@ -10,8 +10,8 @@ import UIKit
 
 class LabelAndTextFieldTableViewCell: UITableViewCell {
 
-    @IBOutlet var titleLabel : UILabel
-    @IBOutlet var textField : UITextField
+    @IBOutlet weak var titleLabel : UILabel!
+    @IBOutlet weak var textField : UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()

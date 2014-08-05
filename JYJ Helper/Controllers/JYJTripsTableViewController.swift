@@ -10,7 +10,7 @@ import UIKit
 
 class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet var tableView: UITableView
+    @IBOutlet weak var tableView: UITableView!
     var myTrips: [Trip] = {
         var managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
         var fetchRequest = NSFetchRequest(entityName: "Trip");

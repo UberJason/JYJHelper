@@ -10,7 +10,7 @@ import UIKit
 
 class JYJFlightsBaseViewController: UIViewController, UIToolbarDelegate, UINavigationBarDelegate {
     
-    @IBOutlet var navigationBar : UINavigationBar
+    @IBOutlet weak var navigationBar : UINavigationBar!
     
 //    var pageController: UIPageViewController
 //    var myViewControllers: [UIViewController] = [];

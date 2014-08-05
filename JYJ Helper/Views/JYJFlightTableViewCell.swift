@@ -10,11 +10,11 @@ import UIKit
 
 class JYJFlightTableViewCell: UITableViewCell {
 
-    @IBOutlet var flightLabel : UILabel
-    @IBOutlet var dateLabel : UILabel
-    @IBOutlet var airportsLabel : UILabel
-    @IBOutlet var departureTimeLabel : UILabel
-    @IBOutlet var arrivalTimeLabel : UILabel
+    @IBOutlet weak var flightLabel : UILabel!
+    @IBOutlet weak var dateLabel : UILabel!
+    @IBOutlet weak var airportsLabel : UILabel!
+    @IBOutlet weak var departureTimeLabel : UILabel!
+    @IBOutlet weak var arrivalTimeLabel : UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

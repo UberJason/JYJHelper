@@ -10,8 +10,8 @@ import UIKit
 
 class TwoLabelTableViewCell: UITableViewCell {
 
-    @IBOutlet var leftLabel: UILabel
-    @IBOutlet var rightLabel : UILabel
+    @IBOutlet weak var leftLabel: UILabel!
+    @IBOutlet weak var rightLabel : UILabel!
     
     init(style: UITableViewCellStyle, reuseIdentifier: String) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

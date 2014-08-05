@@ -27,8 +27,8 @@ class JYJAddNewFlightViewController: UIViewController {
     let DEPARTURE_DATEPICKER_ROW = 3;
     let ARRIVAL_DATEPICKER_ROW = 4;
     
-    @IBOutlet var navigationBar : UINavigationBar
-    @IBOutlet var tableView : UITableView
+    @IBOutlet weak var navigationBar : UINavigationBar!
+    @IBOutlet weak var tableView : UITableView!
     
     weak var delegate: JYJAddEditTripTableViewController?;
     let context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;

@@ -30,8 +30,8 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
     let context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
     var trip: Trip!
     var type: TripViewType = .New;
-    @IBOutlet var tableView : UITableView
-    @IBOutlet var navigationBar : UINavigationBar
+    @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var navigationBar : UINavigationBar!
     
     var departingPickerShowing = false;
     var returningPickerShowing = false;

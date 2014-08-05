@@ -16,7 +16,7 @@
 
 
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -28,6 +28,11 @@
     self.navigationBar.delegate = self;
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"viewDidAppear");
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
