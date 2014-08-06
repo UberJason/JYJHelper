@@ -12,9 +12,13 @@ class PickerCell: UITableViewCell {
 
     @IBOutlet weak var pickerView: UIPickerView!
     
-    init(style: UITableViewCellStyle, reuseIdentifier: String) {
+    required override init(style: UITableViewCellStyle, reuseIdentifier: String) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // Initialization code
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("NSCoding not supported");
     }
 
     override func awakeFromNib() {

@@ -15,7 +15,7 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var tableView: UITableView!
     var trip: Trip!;
     
-    init(coder aDecoder: NSCoder!)
+    required init(coder aDecoder: NSCoder!)
     {
         super.init(coder: aDecoder)
     }

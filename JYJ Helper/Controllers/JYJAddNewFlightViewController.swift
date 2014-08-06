@@ -12,7 +12,7 @@ enum FlightViewType {
     case Edit, New;
 }
 
-let iPHONE_PORTRAIT_KEYBOARD_HEIGHT = 216;
+//let iPHONE_PORTRAIT_KEYBOARD_HEIGHT = 216;
 
 class JYJAddNewFlightViewController: UIViewController {
 
@@ -29,6 +29,8 @@ class JYJAddNewFlightViewController: UIViewController {
     
     @IBOutlet weak var navigationBar : UINavigationBar!
     @IBOutlet weak var tableView : UITableView!
+    
+    var activeTextField : UITextField?
     
     weak var delegate: JYJAddEditTripTableViewController?;
     let context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
@@ -57,6 +59,20 @@ class JYJAddNewFlightViewController: UIViewController {
         else {
             self.title = "Edit Flight";
         }
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated);
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self);
     }
     
     @IBAction func cancelPressed(sender : AnyObject) {
@@ -293,29 +309,34 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
         return UIBarPosition.TopAttached;
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField!) -> Bool {
-        
-        
-        // TODO: This doesn't work, possibly because of the position of self.view is not the top of the screen??
-        // Instead, listen for keyboard will appear notification and scroll if necessary?
-        
-        let yPosition = self.view.superview.convertPoint(textField.frame.origin, fromView: textField).y;
-        let thirdOfScreen = self.view.frame.size.height / 3.0;
-        
-        println("yPosition: \(yPosition)");
-        println("2/3 of screen: \(thirdOfScreen*2)");
-        
-        if(yPosition >= thirdOfScreen*2) {  // if y-pos is in bottom 1/3 of screen
-            self.tableView.setContentOffset(CGPoint(x: 0, y: self.tableView.contentOffset.y+CGFloat(iPHONE_PORTRAIT_KEYBOARD_HEIGHT)), animated: true);
-        }
-        
-        println("view height: \(self.view.frame.size.height)");
-
-        
-        return true;
+//    func textFieldShouldBeginEditing(textField: UITextField!) -> Bool {
+//        
+//        
+//        // TODO: This doesn't work, possibly because of the position of self.view is not the top of the screen??
+//        // Instead, listen for keyboard will appear notification and scroll if necessary?
+//        
+//        let yPosition = self.view.superview!.convertPoint(textField.frame.origin, fromView: textField).y;
+//        let thirdOfScreen = self.view.frame.size.height / 3.0;
+//        
+//        println("yPosition: \(yPosition)");
+//        println("2/3 of screen: \(thirdOfScreen*2)");
+//        
+//        if(yPosition >= thirdOfScreen*2) {  // if y-pos is in bottom 1/3 of screen
+//            self.tableView.setContentOffset(CGPoint(x: 0, y: self.tableView.contentOffset.y+CGFloat(iPHONE_PORTRAIT_KEYBOARD_HEIGHT)), animated: true);
+//        }
+//        
+//        println("view height: \(self.view.frame.size.height)");
+//
+//        
+//        return true;
+//    }
+    
+    func textFieldDidBeginEditing(textField:UITextField!) {
+        self.activeTextField = textField;
     }
     
     func textFieldDidEndEditing(textField: UITextField!) {
+        self.activeTextField = nil;
         println("textfield \(textField.tag) ended editing");
         switch(textField.tag) {
         case 0:
@@ -334,6 +355,29 @@ extension JYJAddNewFlightViewController : UITableViewDelegate, UITableViewDataSo
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder();
         return true;
+    }
+    
+    func keyboardWasShown(notification: NSNotification) {
+        let info = notification.userInfo;
+        let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size;
+        
+        self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0);
+        self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+        
+        var aRect : CGRect = self.view.frame;
+        aRect.size.height = aRect.size.height - keyboardSize!.height;
+        
+        if let currentField = self.activeTextField {
+            let origin = self.view.convertPoint(currentField.frame.origin, fromView: currentField.superview);
+            if(!CGRectContainsPoint(aRect, CGPoint(x: origin.x, y: origin.y+currentField.frame.size.height))) {
+                self.tableView.scrollRectToVisible(currentField.frame, animated: true);
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        self.tableView.contentInset = UIEdgeInsetsZero;
+        self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     }
     
     func cellDidChangeDate(cell: DatePickerCell, datePicker: UIDatePicker) {

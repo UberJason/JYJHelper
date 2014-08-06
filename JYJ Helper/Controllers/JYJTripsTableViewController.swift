@@ -17,7 +17,7 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
         return managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as [Trip];
     }();
 
-    init(coder aDecoder: NSCoder!)
+    required init(coder aDecoder: NSCoder!)
     {
         super.init(coder: aDecoder)
     }

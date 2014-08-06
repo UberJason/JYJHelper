@@ -17,7 +17,7 @@ class DatePickerCell: UITableViewCell {
     @IBOutlet weak var datePicker : UIDatePicker!
     weak var delegate: DatePickerDelegate?
     
-    init(style: UITableViewCellStyle, reuseIdentifier: String) {
+    required override init(style: UITableViewCellStyle, reuseIdentifier: String) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // Initialization code
         let calendar = NSCalendar.currentCalendar();
@@ -25,6 +25,10 @@ class DatePickerCell: UITableViewCell {
         self.datePicker.calendar = calendar;
     }
 
+    required init(coder:NSCoder) {
+        super.init(coder:coder);
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

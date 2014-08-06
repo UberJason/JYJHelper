@@ -33,10 +33,12 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var navigationBar : UINavigationBar!
     
+    var activeTextField : UITextField?
+    
     var departingPickerShowing = false;
     var returningPickerShowing = false;
     
-    init(coder aDecoder: NSCoder!)  {
+    required init(coder aDecoder: NSCoder!)  {
         super.init(coder: aDecoder);
     }
     
@@ -61,12 +63,21 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
         else {
             self.title = "Edit Trip";
         }
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
+        
         self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow(), animated: false);
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated);
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self);
     }
     
     func positionForBar(bar: UIBarPositioning!) -> UIBarPosition {
@@ -296,8 +307,36 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
         return true;
     }
     
+    func textFieldDidBeginEditing(textField: UITextField!) {
+        self.activeTextField = textField;
+    }
+    
     func textFieldDidEndEditing(textField: UITextField!) {
+        self.activeTextField = nil;
         self.trip.name = textField.text;
+    }
+    
+    func keyboardWasShown(notification: NSNotification) {
+        let info = notification.userInfo;
+        let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size;
+        
+        self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0);
+        self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+        
+        var aRect : CGRect = self.view.frame;
+        aRect.size.height = aRect.size.height - keyboardSize!.height;
+        
+        if let currentField = self.activeTextField {
+            let origin = self.view.convertPoint(currentField.frame.origin, fromView: currentField.superview);
+            if(!CGRectContainsPoint(aRect, CGPoint(x: origin.x, y: origin.y+currentField.frame.size.height))) {
+                self.tableView.scrollRectToVisible(currentField.frame, animated: true);
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        self.tableView.contentInset = UIEdgeInsetsZero;
+        self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     }
     
     func cellDidChangeDate(cell: DatePickerCell, datePicker: UIDatePicker) {
