@@ -76,7 +76,6 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
         
         self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow(), animated: false);
-        println(self.navigationBar.topItem);
     
     }
     
@@ -414,7 +413,7 @@ extension JYJAddEditTripTableViewController {
             self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Fade);
         });
         if(self.type == TripViewType.Edit) {
-            println(self.navigationBar.backItem);
+            self.navigationBar.topItem.setLeftBarButtonItem(nil, animated: false);
         }
         
     }
