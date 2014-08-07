@@ -9,9 +9,8 @@
 import UIKit
 import QuartzCore
 
-class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddEditTripDelegate {
     
-    //    @IBOutlet weak var tripHeaderView: UIView
     @IBOutlet weak var tableView: UITableView!
     var trip: Trip!;
     
@@ -30,16 +29,6 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
         self.tableView.dataSource = self;
         
         self.title = self.trip.name;
-        //
-        //        let topLayer = CALayer();
-        //        topLayer.frame = CGRect(x: 0, y: 0, width: self.tripHeaderView.frame.size.width, height: 2);
-        //        topLayer.backgroundColor = UIColor.alizarinFlatColor().CGColor;
-        //        self.tripHeaderView.layer.addSublayer(topLayer);
-        //
-        //        let bottomLayer = CALayer();
-        //        bottomLayer.frame = CGRect(x: 0, y: self.tripHeaderView.frame.size.height, width: self.tripHeaderView.frame.size.width, height: 2);
-        //        bottomLayer.backgroundColor = UIColor.alizarinFlatColor().CGColor;
-        //        self.tripHeaderView.layer.addSublayer(bottomLayer);
         
     }
     
@@ -59,13 +48,11 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
-        // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 2;
     }
     
     func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return section == 0 ? 1 : self.trip.flights.count;
     }
@@ -117,6 +104,20 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
         }
         else {
             return "flightCell";
+        }
+    }
+    
+    func didFinishCreatingOrEditingATrip() {
+        self.dismissViewControllerAnimated(true, completion: nil);
+        self.tableView.reloadData();
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if(segue.identifier == "editTripSegue") {
+            let destinationVC = segue.destinationViewController as JYJAddEditTripTableViewController;
+            destinationVC.trip = self.trip;
+            destinationVC.type = TripViewType.Edit;
+            destinationVC.delegate = self;
         }
     }
 }

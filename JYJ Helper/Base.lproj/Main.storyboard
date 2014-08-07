@@ -300,7 +300,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oSM-it-quw">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Niv-qV-ucb"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Niv-qV-ucb">
+                            <connections>
+                                <segue destination="F0H-ow-aou" kind="modal" identifier="editTripSegue" id="c0K-et-Orq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
@@ -621,18 +625,20 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="lQ4-ix-YAr" id="fab-dP-bq4"/>
                         <outlet property="navigationBar" destination="2MA-ZV-F8z" id="LTJ-nZ-wsd"/>
                         <outlet property="tableView" destination="3Ig-dr-aN2" id="KHg-Kh-Xln"/>
+                        <segue destination="Zcx-Kx-YYt" kind="modal" identifier="editFlightSegue" id="Kca-nu-ghj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYj-Jc-Ct7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1644" y="1220"/>
+            <point key="canvasLocation" x="2188" y="1500"/>
         </scene>
-        <!--Add New Flight View Controller-->
+        <!--Add Edit Flight Controller-->
         <scene sceneID="Gvh-TE-RRK">
             <objects>
-                <viewController id="Zcx-Kx-YYt" customClass="JYJAddNewFlightViewController" customModule="JYJ_Helper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zcx-Kx-YYt" customClass="JYJAddEditFlightController" customModule="JYJ_Helper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DNE-2H-erY"/>
                         <viewControllerLayoutGuide type="bottom" id="Fv1-TN-ZDp"/>
@@ -776,7 +782,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uT-gC-bmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2098" y="1220"/>
+            <point key="canvasLocation" x="2642" y="1500"/>
         </scene>
         <!--Flights-->
         <scene sceneID="eDB-Pi-QMg">
@@ -815,4 +821,8 @@
             <size key="landscapeSize" width="568" height="320"/>
         </simulatedScreenMetrics>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="c0K-et-Orq"/>
+        <segue reference="Kca-nu-ghj"/>
+    </inferredMetricsTieBreakers>
 </document>

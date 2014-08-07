@@ -36,6 +36,10 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
         self.title = "Travel";
     }
 
+    override func viewWillAppear(animated: Bool) {
+        self.reloadCoreData();
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -99,7 +103,7 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
 }
 
 // segues
-extension JYJTripsTableViewController {
+extension JYJTripsTableViewController: AddEditTripDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!)  {
         if(segue.identifier == "addNewTripSegue") {
             let destinationVC: JYJAddEditTripTableViewController = segue.destinationViewController as JYJAddEditTripTableViewController;
@@ -112,6 +116,7 @@ extension JYJTripsTableViewController {
         
     }
     func didFinishCreatingOrEditingATrip() {
+        self.dismissViewControllerAnimated(true, completion: nil);
         self.reloadCoreData();
     }
 }

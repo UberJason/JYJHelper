@@ -34,10 +34,11 @@
 		963EF08A194A812B0069D5EA /* JYJTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EF088194A812B0069D5EA /* JYJTripTableViewCell.swift */; };
 		963EF08B194A812B0069D5EA /* JYJTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963EF089194A812B0069D5EA /* JYJTripTableViewCell.xib */; };
 		96541EEE19576DC9006B8578 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 96541EED19576DC9006B8578 /* UIActionSheet+Blocks.m */; };
+		965762801992EC6F00E297D4 /* AddEditTripDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657627F1992EC6F00E297D4 /* AddEditTripDelegate.swift */; };
 		966892561947EFD6006A9029 /* Trip+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966892551947EFD6006A9029 /* Trip+Helpers.m */; };
 		966C695C194D21CF000365F5 /* Flight+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C695B194D21CF000365F5 /* Flight+Helpers.m */; };
 		966C695E194D2941000365F5 /* JYJAddEditTripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C695D194D2941000365F5 /* JYJAddEditTripTableViewController.swift */; };
-		966C6961194D298A000365F5 /* JYJAddNewFlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C6960194D298A000365F5 /* JYJAddNewFlightViewController.swift */; };
+		966C6961194D298A000365F5 /* JYJAddEditFlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C6960194D298A000365F5 /* JYJAddEditFlightViewController.swift */; };
 		96720B7D19495C5900B8D52F /* JYJAbstractPageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96720B7C19495C5900B8D52F /* JYJAbstractPageContentViewController.swift */; };
 		969A73AB19493975001C6F70 /* j2_flat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A73AA19493975001C6F70 /* j2_flat@2x.png */; };
 		969A73B419493C20001C6F70 /* JYJFlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A73B219493C20001C6F70 /* JYJFlightTableViewCell.swift */; };
@@ -109,12 +110,13 @@
 		963EF089194A812B0069D5EA /* JYJTripTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JYJTripTableViewCell.xib; path = Views/JYJTripTableViewCell.xib; sourceTree = "<group>"; };
 		96541EEC19576DC9006B8578 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIActionSheet+Blocks.h"; path = "Supporting Files/UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
 		96541EED19576DC9006B8578 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIActionSheet+Blocks.m"; path = "Supporting Files/UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
+		9657627F1992EC6F00E297D4 /* AddEditTripDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditTripDelegate.swift; sourceTree = "<group>"; };
 		966892541947EFD6006A9029 /* Trip+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Trip+Helpers.h"; path = "Core Data/Trip+Helpers.h"; sourceTree = "<group>"; };
 		966892551947EFD6006A9029 /* Trip+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Trip+Helpers.m"; path = "Core Data/Trip+Helpers.m"; sourceTree = "<group>"; };
 		966C695A194D21CF000365F5 /* Flight+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Flight+Helpers.h"; path = "Core Data/Flight+Helpers.h"; sourceTree = "<group>"; };
 		966C695B194D21CF000365F5 /* Flight+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Flight+Helpers.m"; path = "Core Data/Flight+Helpers.m"; sourceTree = "<group>"; };
 		966C695D194D2941000365F5 /* JYJAddEditTripTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJAddEditTripTableViewController.swift; path = Controllers/JYJAddEditTripTableViewController.swift; sourceTree = "<group>"; };
-		966C6960194D298A000365F5 /* JYJAddNewFlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJAddNewFlightViewController.swift; path = Controllers/JYJAddNewFlightViewController.swift; sourceTree = "<group>"; };
+		966C6960194D298A000365F5 /* JYJAddEditFlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJAddEditFlightViewController.swift; path = Controllers/JYJAddEditFlightViewController.swift; sourceTree = "<group>"; };
 		96720B7C19495C5900B8D52F /* JYJAbstractPageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJAbstractPageContentViewController.swift; path = Controllers/JYJAbstractPageContentViewController.swift; sourceTree = "<group>"; };
 		969A73AA19493975001C6F70 /* j2_flat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "j2_flat@2x.png"; sourceTree = "<group>"; };
 		969A73B219493C20001C6F70 /* JYJFlightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJFlightTableViewCell.swift; path = Views/JYJFlightTableViewCell.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				969F66081947F9F300F9A48F /* Views */,
 				96E9ABA41947ECC1005BE367 /* Controllers */,
 				96E9ABA71947ECF5005BE367 /* UI Subclasses */,
+				965762811992ECC800E297D4 /* Protocols */,
 				96248D88181B8ABB00101651 /* images */,
 				96E9AB9B1947EA23005BE367 /* Core Data */,
 				96248D4B181B720100101651 /* Supporting Files */,
@@ -280,6 +283,14 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		965762811992ECC800E297D4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9657627F1992EC6F00E297D4 /* AddEditTripDelegate.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		966C695F194D294B000365F5 /* Flights Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,7 +299,7 @@
 				969A73BC19494B34001C6F70 /* JYJTripsTableViewController.swift */,
 				969A73BA19494B2B001C6F70 /* JYJFlightsTableViewController.swift */,
 				966C695D194D2941000365F5 /* JYJAddEditTripTableViewController.swift */,
-				966C6960194D298A000365F5 /* JYJAddNewFlightViewController.swift */,
+				966C6960194D298A000365F5 /* JYJAddEditFlightViewController.swift */,
 			);
 			name = "Flights Tab";
 			sourceTree = "<group>";
@@ -487,9 +498,10 @@
 				96E95166195765AC00E6CFFB /* UIAlertView+Blocks.m in Sources */,
 				96248D87181B8A1E00101651 /* UIColor+FlatUI.m in Sources */,
 				96B29EDB194E5E76005D5967 /* DatePickerCell.swift in Sources */,
+				965762801992EC6F00E297D4 /* AddEditTripDelegate.swift in Sources */,
 				96C631711946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m in Sources */,
 				969A73B419493C20001C6F70 /* JYJFlightTableViewCell.swift in Sources */,
-				966C6961194D298A000365F5 /* JYJAddNewFlightViewController.swift in Sources */,
+				966C6961194D298A000365F5 /* JYJAddEditFlightViewController.swift in Sources */,
 				96248D55181B720100101651 /* JYJAppDelegate.m in Sources */,
 				966892561947EFD6006A9029 /* Trip+Helpers.m in Sources */,
 				963EF08A194A812B0069D5EA /* JYJTripTableViewCell.swift in Sources */,
