@@ -231,49 +231,6 @@
             </objects>
             <point key="canvasLocation" x="672" y="166"/>
         </scene>
-        <!--Trips Table View Controller-->
-        <scene sceneID="d8o-Wm-Ghp">
-            <objects>
-                <viewController id="ubV-RU-GpS" customClass="JYJTripsTableViewController" customModule="JYJ_Helper" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qKf-pO-w4S"/>
-                        <viewControllerLayoutGuide type="bottom" id="iRx-4l-T6n"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wuO-2b-72S">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="unX-0c-Ldb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="unX-0c-Ldb" secondAttribute="trailing" id="6IC-xF-1ag"/>
-                            <constraint firstItem="unX-0c-Ldb" firstAttribute="top" secondItem="wuO-2b-72S" secondAttribute="top" id="haq-1y-DhH"/>
-                            <constraint firstItem="unX-0c-Ldb" firstAttribute="leading" secondItem="wuO-2b-72S" secondAttribute="leading" id="hv4-uo-hb1"/>
-                            <constraint firstItem="iRx-4l-T6n" firstAttribute="top" secondItem="unX-0c-Ldb" secondAttribute="bottom" id="zoN-2s-pmd"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="i1L-b6-Pfy">
-                        <barButtonItem key="backBarButtonItem" title=" " id="nvu-GK-wuq"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eHQ-TS-ZEf">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="F0H-ow-aou" kind="modal" identifier="addNewTripSegue" id="RXV-DK-8dz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="unX-0c-Ldb" id="bm7-Fb-7gH"/>
-                        <segue destination="N6G-jq-mRW" kind="push" identifier="pushFlightsVC" id="Mqt-88-0FT"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ii-8N-WEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1204" y="1500"/>
-        </scene>
         <!--Flights Table View Controller-->
         <scene sceneID="FNx-ej-1TM">
             <objects>
@@ -799,12 +756,82 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ubV-RU-GpS" kind="relationship" relationship="rootViewController" id="RDb-Rr-GXT"/>
+                        <segue destination="PLZ-13-1Iq" kind="relationship" relationship="rootViewController" id="pba-hv-Oeu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGk-gX-Bfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="672" y="1500"/>
+        </scene>
+        <!--Trips Table View Controller-->
+        <scene sceneID="fp9-53-pHZ">
+            <objects>
+                <viewController id="PLZ-13-1Iq" customClass="JYJTripsTableViewController" customModule="JYJ_Helper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kb7-ho-xIn"/>
+                        <viewControllerLayoutGuide type="bottom" id="RN5-JL-Hub"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JNI-9Q-pGx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="V05-pp-Lud">
+                                <rect key="frame" x="0.0" y="108" width="320" height="411"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="PLZ-13-1Iq" id="muJ-pN-vnh"/>
+                                    <outlet property="delegate" destination="PLZ-13-1Iq" id="3lz-3Q-KWK"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffE-Ne-vhu">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qhe-Jy-5fK"/>
+                                    <barButtonItem style="plain" id="COj-Uq-vWj">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="gNV-ga-uk8">
+                                            <rect key="frame" x="98" y="7" width="150" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Upcoming"/>
+                                                <segment title="Previous"/>
+                                            </segments>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1t8-iX-ZUk"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="PLZ-13-1Iq" id="yO3-Fd-xSZ"/>
+                                </connections>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ffE-Ne-vhu" firstAttribute="top" secondItem="Kb7-ho-xIn" secondAttribute="bottom" id="7af-Bk-cw4"/>
+                            <constraint firstAttribute="trailing" secondItem="V05-pp-Lud" secondAttribute="trailing" id="DSc-Mw-UDL"/>
+                            <constraint firstItem="V05-pp-Lud" firstAttribute="top" secondItem="ffE-Ne-vhu" secondAttribute="bottom" id="Q8U-Qa-fbO"/>
+                            <constraint firstItem="RN5-JL-Hub" firstAttribute="top" secondItem="V05-pp-Lud" secondAttribute="bottom" id="mTk-iU-3TO"/>
+                            <constraint firstAttribute="trailing" secondItem="ffE-Ne-vhu" secondAttribute="trailing" id="p5D-DV-Bgu"/>
+                            <constraint firstItem="V05-pp-Lud" firstAttribute="leading" secondItem="JNI-9Q-pGx" secondAttribute="leading" id="sTh-nB-Rdd"/>
+                            <constraint firstItem="ffE-Ne-vhu" firstAttribute="leading" secondItem="JNI-9Q-pGx" secondAttribute="leading" id="z3B-5X-YHZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vhf-92-Ou8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="u3n-sC-b0g">
+                            <connections>
+                                <segue destination="F0H-ow-aou" kind="modal" identifier="addNewTripSegue" id="18A-xD-XyR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segToolbar" destination="ffE-Ne-vhu" id="UrS-Zp-uH2"/>
+                        <outlet property="tableView" destination="V05-pp-Lud" id="ZkK-2v-KnZ"/>
+                        <segue destination="N6G-jq-mRW" kind="push" identifier="pushFlightsVC" id="3Oy-7o-mcL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rPg-kn-a2Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1163" y="1494"/>
         </scene>
     </scenes>
     <resources>
@@ -822,7 +849,7 @@
         </simulatedScreenMetrics>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="c0K-et-Orq"/>
+        <segue reference="18A-xD-XyR"/>
         <segue reference="Kca-nu-ghj"/>
     </inferredMetricsTieBreakers>
 </document>

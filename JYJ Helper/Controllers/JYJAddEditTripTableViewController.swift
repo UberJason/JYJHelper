@@ -110,7 +110,9 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
             UIAlertView.showWithTitle("Error", message: "You must specify a name for this trip.", cancelButtonTitle: "OK", otherButtonTitles: nil, tapBlock: nil);
         }
         else {
-            self.context.deleteObject(self.cachedTrip);
+            if(self.cachedTrip != nil) {
+                self.context.deleteObject(self.cachedTrip);
+            }
             self.context.save(nil);
             self.delegate!.didFinishCreatingOrEditingATrip();
         }
@@ -376,6 +378,17 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
                 formatter.dateStyle = NSDateFormatterStyle.LongStyle;
                 return formatter.stringFromDate(self.trip.startDate);
                 }();
+            
+            if(self.trip.startDate.compare(self.trip.endDate) == NSComparisonResult.OrderedDescending) {
+                self.trip.endDate = self.trip.startDate;
+                
+                let arrivalCell = self.view.viewWithTag(RETURNING_TIME_CELL_TAG) as TwoLabelTableViewCell;
+                arrivalCell.rightLabel.text = {
+                    let formatter = NSDateFormatter();
+                    formatter.dateStyle = NSDateFormatterStyle.LongStyle;
+                    return formatter.stringFromDate(self.trip.endDate);
+                    }();
+            }
         }
         else {
             //            println("arrival time changed");
@@ -387,6 +400,17 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
                 formatter.dateStyle = NSDateFormatterStyle.LongStyle;
                 return formatter.stringFromDate(self.trip.endDate);
                 }();
+            
+            if(self.trip.endDate.compare(self.trip.startDate) == NSComparisonResult.OrderedAscending) {
+                self.trip.startDate = self.trip.endDate;
+                
+                let departureCell = self.view.viewWithTag(DEPARTING_TIME_CELL_TAG) as TwoLabelTableViewCell;
+                departureCell.rightLabel.text = {
+                    let formatter = NSDateFormatter();
+                    formatter.dateStyle = NSDateFormatterStyle.LongStyle;
+                    return formatter.stringFromDate(self.trip.startDate);
+                    }();
+            }
             
         }
     }

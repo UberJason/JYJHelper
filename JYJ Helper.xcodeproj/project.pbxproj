@@ -48,6 +48,7 @@
 		96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */; };
 		96A0EA77186F5DE6005711E5 /* JYJAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0EA76186F5DE6005711E5 /* JYJAddCell.m */; };
 		96A0EA7B186F7E1A005711E5 /* list-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A0EA7A186F7E1A005711E5 /* list-48@2x.png */; };
+		96A673E019947204007B022D /* UINavigationBar+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A673DF19947204007B022D /* UINavigationBar+Addition.m */; };
 		96B29ED9194E5C93005D5967 /* TwoLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B29ED8194E5C93005D5967 /* TwoLabelTableViewCell.swift */; };
 		96B29EDB194E5E76005D5967 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B29EDA194E5E76005D5967 /* DatePickerCell.swift */; };
 		96B710231947EE61008D08B9 /* JYJ_Helper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96B710211947EE61008D08B9 /* JYJ_Helper.xcdatamodeld */; };
@@ -128,6 +129,8 @@
 		96A0EA75186F5DE6005711E5 /* JYJAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJAddCell.h; path = "UI Subclasses/JYJAddCell.h"; sourceTree = "<group>"; };
 		96A0EA76186F5DE6005711E5 /* JYJAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJAddCell.m; path = "UI Subclasses/JYJAddCell.m"; sourceTree = "<group>"; };
 		96A0EA7A186F7E1A005711E5 /* list-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-48@2x.png"; sourceTree = "<group>"; };
+		96A673DE19947204007B022D /* UINavigationBar+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+Addition.h"; path = "Supporting Files/UINavigationBar+Addition.h"; sourceTree = "<group>"; };
+		96A673DF19947204007B022D /* UINavigationBar+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+Addition.m"; path = "Supporting Files/UINavigationBar+Addition.m"; sourceTree = "<group>"; };
 		96B29ED8194E5C93005D5967 /* TwoLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwoLabelTableViewCell.swift; path = "UI Subclasses/TwoLabelTableViewCell.swift"; sourceTree = "<group>"; };
 		96B29EDA194E5E76005D5967 /* DatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerCell.swift; path = "UI Subclasses/DatePickerCell.swift"; sourceTree = "<group>"; };
 		96B710221947EE61008D08B9 /* JYJ_Helper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JYJ_Helper.xcdatamodel; sourceTree = "<group>"; };
@@ -224,6 +227,8 @@
 				961521181947CF810046A550 /* JYJ Helper-Bridging-Header.h */,
 				96541EEC19576DC9006B8578 /* UIActionSheet+Blocks.h */,
 				96541EED19576DC9006B8578 /* UIActionSheet+Blocks.m */,
+				96A673DE19947204007B022D /* UINavigationBar+Addition.h */,
+				96A673DF19947204007B022D /* UINavigationBar+Addition.m */,
 				96E95164195765AC00E6CFFB /* UIAlertView+Blocks.h */,
 				96E95165195765AC00E6CFFB /* UIAlertView+Blocks.m */,
 				96248D53181B720100101651 /* JYJAppDelegate.h */,
@@ -516,6 +521,7 @@
 				96316BD51955F97F00A968DE /* PickerCell.swift in Sources */,
 				969A73BB19494B2B001C6F70 /* JYJFlightsTableViewController.swift in Sources */,
 				966C695E194D2941000365F5 /* JYJAddEditTripTableViewController.swift in Sources */,
+				96A673E019947204007B022D /* UINavigationBar+Addition.m in Sources */,
 				96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */,
 				9615211A1947CF820046A550 /* JYJFlightsBaseViewController.swift in Sources */,
 				96248D7B181B769000101651 /* JYJNextBusViewController.m in Sources */,

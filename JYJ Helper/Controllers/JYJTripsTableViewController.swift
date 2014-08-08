@@ -8,9 +8,11 @@
 
 import UIKit
 
-class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIBarPositioningDelegate {
+
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segToolbar: UIToolbar!
     var myTrips: [Trip] = {
         var managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
         var fetchRequest = NSFetchRequest(entityName: "Trip");
@@ -26,18 +28,20 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         
         self.tableView.registerNib(UINib(nibName: "JYJTripTableViewCell", bundle: nil), forCellReuseIdentifier: "tripCell");
-        self.tableView.delegate = self;
-        self.tableView.dataSource = self;
         
         self.navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()];
         self.navigationController.navigationBar.barTintColor = UIColor.alizarinFlatColor();
         self.navigationController.navigationBar.tintColor = UIColor.whiteColor();
         self.navigationController.navigationBar.translucent = false;
         self.title = "Travel";
+        
+        self.segToolbar.barTintColor = UIColor.alizarinFlatColor();
     }
 
     override func viewWillAppear(animated: Bool) {
         self.reloadCoreData();
+        
+        self.navigationController.navigationBar.hideBottomHairline();
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,6 +96,10 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
         self.performSegueWithIdentifier("pushFlightsVC", sender: self.tableView.cellForRowAtIndexPath(indexPath));
         
         self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow(), animated: true);
+    }
+    
+    func positionForBar(bar: UIBarPositioning!) -> UIBarPosition {
+        return UIBarPosition.TopAttached;
     }
     
     func reloadCoreData() {

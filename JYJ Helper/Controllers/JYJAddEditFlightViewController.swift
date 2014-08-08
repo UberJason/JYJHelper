@@ -105,7 +105,10 @@ class JYJAddEditFlightController: UIViewController {
         }
         else {
             self.flight.storedTimeZone = NSTimeZone.systemTimeZone().name;
-            self.context.deleteObject(self.cachedFlight);
+
+            if(self.cachedFlight != nil) {
+                self.context.deleteObject(self.cachedFlight);
+            }
             self.context.save(nil);
             self.delegate!.didFinishAddingOrEditingAFlight();
         }
@@ -256,9 +259,9 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
         
         switch(row) {
         case 0:
-            return self.flight.airlineCode ?? "Airline Code";
+            return self.flight.airlineCode ?? "";
         case 1:
-            return self.flight.flightNumber ? "\(self.flight.flightNumber)" : "Flight Number";
+            return self.flight.flightNumber != 0 ? "\(self.flight.flightNumber)" : "";
         case 2:
             return dateString;
         case 3:
@@ -268,17 +271,17 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
                 return dateString;
             }
             else {
-                return self.flight.originAirportCode ?? "Origin";
+                return self.flight.originAirportCode ?? "";
             }
         case 5:
             if(self.departurePickerShowing || self.arrivalPickerShowing) {
-                return self.flight.originAirportCode ?? "Origin";
+                return self.flight.originAirportCode ?? "";
             }
             else {
-                return self.flight.destinationAirportCode ?? "Destination";
+                return self.flight.destinationAirportCode ?? "";
             }
         case 6:
-            return self.flight.destinationAirportCode ?? "Destination";
+            return self.flight.destinationAirportCode ?? "";
         default: return "";
         }
     }
@@ -434,6 +437,18 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
                 formatter.dateFormat = "M/d/y, h:mm a";
                 return formatter.stringFromDate(self.flight.departureTime);
                 }();
+
+            if(self.flight.departureTime.compare(self.flight.arrivalTime) == NSComparisonResult.OrderedDescending) {
+                self.flight.arrivalTime = self.flight.departureTime;
+                
+                let arrivalCell = self.view.viewWithTag(ARRIVAL_TIME_CELL_TAG) as TwoLabelTableViewCell;
+                arrivalCell.rightLabel.text = {
+                    let formatter = NSDateFormatter();
+                    formatter.dateFormat = "M/d/y, h:mm a";
+                    return formatter.stringFromDate(self.flight.arrivalTime);
+                    }();
+            }
+            
         }
         else {
 //            println("arrival time changed");
@@ -445,6 +460,17 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
                 formatter.dateFormat = "M/d/y, h:mm a";
                 return formatter.stringFromDate(self.flight.arrivalTime);
                 }();
+            
+            if(self.flight.arrivalTime.compare(self.flight.departureTime) == NSComparisonResult.OrderedAscending) {
+                self.flight.departureTime = self.flight.arrivalTime;
+                
+                let departureCell = self.view.viewWithTag(DEPARTURE_TIME_CELL_TAG) as TwoLabelTableViewCell;
+                departureCell.rightLabel.text = {
+                    let formatter = NSDateFormatter();
+                    formatter.dateFormat = "M/d/y, h:mm a";
+                    return formatter.stringFromDate(self.flight.departureTime);
+                }();
+            }
 
         }
     }
