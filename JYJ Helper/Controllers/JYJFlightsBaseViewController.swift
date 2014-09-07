@@ -23,7 +23,7 @@ class JYJFlightsBaseViewController: UIViewController, UIToolbarDelegate, UINavig
 //        }();
     
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
 //        pageController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil);
         super.init(coder: aDecoder);
         

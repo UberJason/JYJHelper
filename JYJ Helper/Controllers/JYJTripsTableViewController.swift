@@ -19,7 +19,7 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
         return managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as [Trip];
     }();
 
-    required init(coder aDecoder: NSCoder!)
+    required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
@@ -29,10 +29,10 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         self.tableView.registerNib(UINib(nibName: "JYJTripTableViewCell", bundle: nil), forCellReuseIdentifier: "tripCell");
         
-        self.navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()];
-        self.navigationController.navigationBar.barTintColor = UIColor.alizarinFlatColor();
-        self.navigationController.navigationBar.tintColor = UIColor.whiteColor();
-        self.navigationController.navigationBar.translucent = false;
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()];
+        self.navigationController!.navigationBar.barTintColor = UIColor.alizarinFlatColor();
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor();
+        self.navigationController!.navigationBar.translucent = false;
         self.title = "Travel";
         
         self.segToolbar.barTintColor = UIColor.alizarinFlatColor();
@@ -41,7 +41,7 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewWillAppear(animated: Bool) {
         self.reloadCoreData();
         
-        self.navigationController.navigationBar.hideBottomHairline();
+        self.navigationController!.navigationBar.hideBottomHairline();
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,11 +51,11 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     // #pragma mark - Table view data source
 
-    func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String! {
         return "My Trips";
     }
     
-    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
         return 88;
     }
     
@@ -64,15 +64,15 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
         return 1;
     }
 
-    func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return self.myTrips.count;
     }
 
-    func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cellIdentifier = "tripCell";
         
-        var cell: JYJTripTableViewCell = tableView!.dequeueReusableCellWithIdentifier("tripCell", forIndexPath: indexPath) as JYJTripTableViewCell;
+        var cell: JYJTripTableViewCell = tableView.dequeueReusableCellWithIdentifier("tripCell", forIndexPath: indexPath) as JYJTripTableViewCell;
 
         let trip = self.myTrips[indexPath.row];
         
@@ -87,7 +87,7 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
         return cell;
     }
 
-    func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
 //        let flightsVC: JYJFlightsTableViewController = self.storyboard.instantiateViewControllerWithIdentifier("flightsVC") as JYJFlightsTableViewController;
 //        flightsVC.trip = self.myTrips[indexPath.row];
@@ -95,7 +95,7 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
 
         self.performSegueWithIdentifier("pushFlightsVC", sender: self.tableView.cellForRowAtIndexPath(indexPath));
         
-        self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow(), animated: true);
+        self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow()!, animated: true);
     }
     
     func positionForBar(bar: UIBarPositioning!) -> UIBarPosition {
@@ -112,14 +112,14 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
 
 // segues
 extension JYJTripsTableViewController: AddEditTripDelegate {
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!)  {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)  {
         if(segue.identifier == "addNewTripSegue") {
             let destinationVC: JYJAddEditTripTableViewController = segue.destinationViewController as JYJAddEditTripTableViewController;
             destinationVC.delegate = self;
         }
         else if(segue.identifier == "pushFlightsVC") {
             let flightsVC: JYJFlightsTableViewController = segue.destinationViewController as JYJFlightsTableViewController;
-            flightsVC.trip = self.myTrips[self.tableView.indexPathForCell(sender as UITableViewCell).row];
+            flightsVC.trip = self.myTrips[self.tableView.indexPathForCell(sender as UITableViewCell)!.row];
         }
         
     }

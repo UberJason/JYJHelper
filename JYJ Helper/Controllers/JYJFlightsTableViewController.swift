@@ -14,7 +14,7 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var tableView: UITableView!
     var trip: Trip!;
     
-    required init(coder aDecoder: NSCoder!)
+    required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
@@ -39,11 +39,11 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
     
     // #pragma mark - Table view data source
     
-    func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String {
         return section == 0 ? "Trip Details" : "Flights";
     }
     
-    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 88;
     }
     
@@ -52,13 +52,13 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
         return 2;
     }
     
-    func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return section == 0 ? 1 : self.trip.flights.count;
     }
     
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cellIdentifier = self.identifierForRowAtIndexPath(indexPath);
         
         if(cellIdentifier == "tripCell") {
@@ -112,7 +112,7 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
         self.tableView.reloadData();
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "editTripSegue") {
             let destinationVC = segue.destinationViewController as JYJAddEditTripTableViewController;
             destinationVC.trip = self.trip;

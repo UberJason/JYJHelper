@@ -56,12 +56,12 @@ class JYJAddEditFlightController: UIViewController {
             self.flight.trip = self.delegate!.trip;
             self.flight.arrivalTime = NSDate.date();
             self.flight.departureTime = NSDate.date();
-            self.navigationBar.topItem.title = "Add New Flight";
+            self.navigationBar.topItem!.title = "Add New Flight";
         }
         else {
             
             self.cachedFlight = Flight(airline: self.flight.airlineCode, flightNumber: self.flight.flightNumber, originAirportCode: self.flight.originAirportCode, destinationAirportCode: self.flight.destinationAirportCode, departureTime: self.flight.departureTime, arrivalTime: self.flight.arrivalTime, storedTimeZone: self.flight.storedTimeZone, inManagedObjectContext: self.context);
-            self.navigationBar.topItem.title = "Edit Flight";
+            self.navigationBar.topItem!.title = "Edit Flight";
         }
         
     }
@@ -91,7 +91,7 @@ class JYJAddEditFlightController: UIViewController {
             self.flight.departureTime = self.cachedFlight!.departureTime;
             self.flight.arrivalTime = self.cachedFlight!.arrivalTime;
             self.flight.storedTimeZone = self.cachedFlight!.storedTimeZone;
-            self.context.deleteObject(self.cachedFlight);
+            self.context.deleteObject(self.cachedFlight!);
         }
         
         self.delegate!.didCancelAddingOrEditingAFlight();
@@ -107,7 +107,7 @@ class JYJAddEditFlightController: UIViewController {
             self.flight.storedTimeZone = NSTimeZone.systemTimeZone().name;
 
             if(self.cachedFlight != nil) {
-                self.context.deleteObject(self.cachedFlight);
+                self.context.deleteObject(self.cachedFlight!);
             }
             self.context.save(nil);
             self.delegate!.didFinishAddingOrEditingAFlight();
@@ -119,45 +119,45 @@ class JYJAddEditFlightController: UIViewController {
 extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSource, UINavigationBarDelegate, UITextFieldDelegate, UIActionSheetDelegate, DatePickerDelegate {
     // #pragma mark - Table view data source
     
-    func tableView(tableView: UITableView?, titleForHeaderInSection section: Int) -> String {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String {
         return "Flight Details";
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1;
     }
     
-    func tableView(tableView: UITableView?, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let identifier = self.identifierForRowAtIndexPath(indexPath);
         return identifier == "datePickerCell" ? 163 : 44;
         
     }
     
-    func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return self.departurePickerShowing || self.arrivalPickerShowing ? NUMBER_OF_FIELDS+1 : NUMBER_OF_FIELDS;
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
-        let identifier = self.identifierForRowAtIndexPath(indexPath!);
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let identifier = self.identifierForRowAtIndexPath(indexPath);
         switch(identifier) {
         case "textFieldCell":
             var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as LabelAndTextFieldTableViewCell;
-            cell.titleLabel.text = self.leftLabelForRow(indexPath!.row);
-            cell.textField.placeholder = self.rightPlaceholderTextForRow(indexPath!.row);
-            cell.textField.text = self.rightTextForRow(indexPath!.row);
+            cell.titleLabel.text = self.leftLabelForRow(indexPath.row);
+            cell.textField.placeholder = self.rightPlaceholderTextForRow(indexPath.row);
+            cell.textField.text = self.rightTextForRow(indexPath.row);
             cell.textField.textColor = UIColor.alizarinFlatColor();
             cell.textField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters;
-            if(indexPath!.row == FLIGHT_NUMBER_ROW) {
+            if(indexPath.row == FLIGHT_NUMBER_ROW) {
                 cell.textField.keyboardType = UIKeyboardType.NumberPad;
             }
             cell.textField.delegate = self;
-            cell.textField.tag = indexPath!.row;
+            cell.textField.tag = indexPath.row;
             return cell;
         case "timeCell":
             var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as TwoLabelTableViewCell;
-            let leftLabel = self.leftLabelForRow(indexPath!.row);
+            let leftLabel = self.leftLabelForRow(indexPath.row);
             cell.leftLabel.text = leftLabel;
 //            cell.rightLabel.text = self.rightPlaceholderTextForRow(indexPath!.row);
             
@@ -181,21 +181,21 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
         case "datePickerCell":
             var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as DatePickerCell;
             cell.delegate = self;
-            if(indexPath!.row == DEPARTURE_DATEPICKER_ROW) {
+            if(indexPath.row == DEPARTURE_DATEPICKER_ROW) {
                 cell.tag = DEPARTURE_DATEPICKER_TABLEVIEW_CELL_TAG;
-                if(self.flight.departureTime) {
+                if(self.flight.departureTime != nil) {
                     cell.datePicker.date = self.flight.departureTime;
                 }
             }
             else {
                 cell.tag = ARRIVAL_DATEPICKER_TABLEVIEW_CELL_TAG;
-                if(self.flight.arrivalTime) {
+                if(self.flight.arrivalTime != nil) {
                     cell.datePicker.date = self.flight.arrivalTime;
                 }
             }
             return cell;
         default:
-            return nil;
+            return UITableViewCell();
         }
     }
     
@@ -330,7 +330,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
         }
 //        println("did select row \(indexPath.row)");
         self.view.endEditing(true);
-        let cell = tableView!.cellForRowAtIndexPath(indexPath);
+        let cell = tableView!.cellForRowAtIndexPath(indexPath)!;
         if(cell.tag == DEPARTURE_TIME_CELL_TAG) {
             
             tableView!.beginUpdates();
@@ -368,7 +368,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
             
         }
         
-        tableView!.deselectRowAtIndexPath(tableView!.indexPathForSelectedRow(), animated: true);
+        tableView!.deselectRowAtIndexPath(tableView!.indexPathForSelectedRow()!, animated: true);
     }
     
     
@@ -403,7 +403,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
     }
     
     func keyboardWasShown(notification: NSNotification) {
-        let info = notification.userInfo;
+        let info = notification.userInfo as Dictionary!;
         let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size;
         
         self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0);

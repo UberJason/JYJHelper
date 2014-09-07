@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DE443E41-6B28-4981-B5B3-07EDE4AC6210</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JYJ Helper</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1A289B8EA71F63785AAA3BB900C738C796A3F15D</key>
+		<string>https://github.com/UberJason/JYJHelper.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JYJ Helper.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1A289B8EA71F63785AAA3BB900C738C796A3F15D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/UberJason/JYJHelper.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1A289B8EA71F63785AAA3BB900C738C796A3F15D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1A289B8EA71F63785AAA3BB900C738C796A3F15D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JYJHelper</string>
+		</dict>
+	</array>
+</dict>
+</plist>
