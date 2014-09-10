@@ -15,4 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSInteger currentSectionAboutToBeDeleted;
 
+-(void)addJason:(JYJAddCell *)sender;
+-(void)addKevin:(JYJAddCell *)sender;
+-(void)deleteSection:(JYJAddCell *)sender;
+
 @end

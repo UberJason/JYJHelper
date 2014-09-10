@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class JYJTrackingViewController;
 
 @interface JYJAddCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIButton *addJasonButton;
 @property (weak, nonatomic) IBOutlet UIButton *addKevinButton;
 @property (weak, nonatomic) IBOutlet UIButton *deleteSectionButton;
+@property (weak, nonatomic) JYJTrackingViewController *delegate;
 
 @end

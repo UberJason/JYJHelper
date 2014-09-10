@@ -46,6 +46,12 @@ typedef enum {
        [[NSUserDefaults standardUserDefaults] setObject:self.trackedObjectsList forKey:@"trackedObjectList"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+    else {
+        for(NSInteger i = 0; i < self.trackedObjectsList.count; i++) {
+            self.trackedObjectsList[i] = [self.trackedObjectsList[i] mutableCopy];
+            self.trackedObjectsList[i][@"queue"] = [self.trackedObjectsList[i][@"queue"] mutableCopy];
+        }
+    }
     
 }
 
@@ -102,7 +108,7 @@ typedef enum {
         [addCell.addJasonButton setTitleColor:[UIColor peterRiverFlatColor] forState:UIControlStateNormal];
         [addCell.addKevinButton setTitleColor:[UIColor greenSeaFlatColor] forState:UIControlStateNormal];
         [addCell.deleteSectionButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        
+        addCell.delegate = self;
     }
 
     return cell;
@@ -184,10 +190,12 @@ typedef enum {
 
 #pragma mark - target action methods
 
-- (IBAction)addJason:(UIButton *)sender {
+- (void)addJason:(JYJAddCell *)sender {
 //    NSLog(@"add Jason");
-    UITableViewCell *cell = (UITableViewCell *)sender.superview.superview.superview;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+//    UITableViewCell *cell = (UITableViewCell *)sender.superview.superview.superview;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+//    if(!indexPath)
+//        indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 //    NSLog(@"indexPath = (section,row) = (%ld, %ld)", (long)indexPath.section, (long)indexPath.row);
     
     [self.trackedObjectsList[indexPath.section][@"queue"] addObject:@"Jason"];
@@ -199,10 +207,12 @@ typedef enum {
     [self.tableView endUpdates];
 //    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.trackedObjectsList[indexPath.section][@"queue"] count] inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationFade];
 }
-- (IBAction)addKevin:(UIButton *)sender {
+- (void)addKevin:(JYJAddCell *)sender {
 //    NSLog(@"add Kevin");
-    UITableViewCell *cell = (UITableViewCell *)sender.superview.superview.superview;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+//    UITableViewCell *cell = (UITableViewCell *)sender.superview.superview.superview;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+//    if(!indexPath)
+//        indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 //    NSLog(@"indexPath = (section,row) = (%ld, %ld)", indexPath.section, (long)indexPath.row);
     [self.trackedObjectsList[indexPath.section][@"queue"] addObject:@"Kevin"];
     [[NSUserDefaults standardUserDefaults] setObject:self.trackedObjectsList forKey:@"trackedObjectList"];
@@ -213,10 +223,9 @@ typedef enum {
     [self.tableView endUpdates];
 //    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.trackedObjectsList[indexPath.section][@"queue"] count] inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationFade];
 }
-- (IBAction)deleteSection:(UIButton *)sender {
+- (void)deleteSection:(JYJAddCell *)sender {
 
-    UITableViewCell *cell = (UITableViewCell *)sender.superview.superview.superview;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     
     self.currentSectionAboutToBeDeleted = indexPath.section;
     

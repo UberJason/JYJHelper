@@ -313,31 +313,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nn-r8-bwR">
-                                                    <rect key="frame" x="20" y="7" width="63" height="30"/>
+                                                    <rect key="frame" x="20" y="5" width="71" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="(+) Jason">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="addJason:" destination="3aH-Bc-Jlp" eventType="touchUpInside" id="ws2-9x-IHe"/>
+                                                        <action selector="addJasonPressed:" destination="52L-N8-lyt" eventType="touchUpInside" id="cfn-2s-ysR"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWD-sE-7gH">
-                                                    <rect key="frame" x="130" y="7" width="60" height="30"/>
+                                                    <rect key="frame" x="127" y="5" width="67" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="(+) Kevin">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="addKevin:" destination="3aH-Bc-Jlp" eventType="touchUpInside" id="zQw-bl-4ea"/>
+                                                        <action selector="addKevinPressed:" destination="52L-N8-lyt" eventType="touchUpInside" id="5dd-Hq-Ee6"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wqv-eB-wSv">
-                                                    <rect key="frame" x="237" y="7" width="63" height="30"/>
+                                                    <rect key="frame" x="230" y="5" width="70" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="(-) Delete">
                                                         <color key="titleColor" red="1" green="0.023988376491241081" blue="0.059364635391518927" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="deleteSection:" destination="3aH-Bc-Jlp" eventType="touchUpInside" id="odF-Yq-ztL"/>
+                                                        <action selector="deleteSectionPressed:" destination="52L-N8-lyt" eventType="touchUpInside" id="vlj-xB-HXX"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

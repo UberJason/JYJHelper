@@ -7,6 +7,7 @@
 //
 
 #import "JYJAddCell.h"
+#import "JYJTrackingViewController.h"
 
 @implementation JYJAddCell
 
@@ -25,4 +26,17 @@
 
     // Configure the view for the selected state
 }
+
+- (IBAction)addJasonPressed:(id)sender {
+    [self.delegate addJason:self];
+}
+
+- (IBAction)addKevinPressed:(id)sender {
+    [self.delegate addKevin:self];
+}
+
+- (IBAction)deleteSectionPressed:(id)sender {
+    [self.delegate deleteSection:self];
+}
+
 @end
