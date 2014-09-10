@@ -323,52 +323,53 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
         }
     }
     
-    func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let identifier = self.identifierForRowAtIndexPath(indexPath);
         if(identifier != "timeCell") {
             return;
         }
 //        println("did select row \(indexPath.row)");
         self.view.endEditing(true);
-        let cell = tableView!.cellForRowAtIndexPath(indexPath)!;
+        let cell = tableView.cellForRowAtIndexPath(indexPath)!;
         if(cell.tag == DEPARTURE_TIME_CELL_TAG) {
             
-            tableView!.beginUpdates();
+            tableView.beginUpdates();
             if(self.departurePickerShowing) {
-                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: DEPARTURE_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+                tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: DEPARTURE_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
             }
             else {
-                tableView!.insertRowsAtIndexPaths([NSIndexPath(forRow: DEPARTURE_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: DEPARTURE_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
             }
             if(self.arrivalPickerShowing) {
-                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: ARRIVAL_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+                tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: ARRIVAL_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
             }
             
             self.departurePickerShowing = !self.departurePickerShowing;
             self.arrivalPickerShowing = false;
             
-            tableView!.endUpdates();
+            tableView.endUpdates();
         }
         else {
             
-            tableView!.beginUpdates();
+            tableView.beginUpdates();
             if(self.arrivalPickerShowing) {
-                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: ARRIVAL_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+                tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: ARRIVAL_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
             }
             else {
-                tableView!.insertRowsAtIndexPaths([NSIndexPath(forRow: ARRIVAL_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: ARRIVAL_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
             }
             if(self.departurePickerShowing) {
-                tableView!.deleteRowsAtIndexPaths([NSIndexPath(forRow: DEPARTURE_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
+                tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: DEPARTURE_DATEPICKER_ROW, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade);
             }
             
             self.arrivalPickerShowing = !self.arrivalPickerShowing;
             self.departurePickerShowing = false;
-            tableView!.endUpdates();
+            tableView.endUpdates();
             
         }
-        
-        tableView!.deselectRowAtIndexPath(tableView!.indexPathForSelectedRow()!, animated: true);
+        if(self.tableView.indexPathForSelectedRow() != nil) {
+            tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow()!, animated: true);
+        }
     }
     
     

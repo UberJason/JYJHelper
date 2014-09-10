@@ -77,8 +77,9 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
         
-        self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow()!, animated: false);
-    
+        if(self.tableView.indexPathForSelectedRow() != nil) {
+            self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow()!, animated: false);
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -108,7 +109,8 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
     
     @IBAction func savePressed(sender : UIBarButtonItem) {
         self.view.endEditing(true);
-        if(self.trip.name != nil || self.trip.name == "") {
+        println("trip name: \(self.trip.name)");
+        if(self.trip.name == nil || self.trip.name == "") {
             UIAlertView.showWithTitle("Error", message: "You must specify a name for this trip.", cancelButtonTitle: "OK", otherButtonTitles: nil, tapBlock: nil);
         }
         else {
@@ -221,7 +223,9 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             
             var formatter = NSDateFormatter();
             formatter.dateStyle = NSDateFormatterStyle.LongStyle;
-            formatter.timeZone = NSTimeZone(name: flight.storedTimeZone);
+            if(flight.storedTimeZone != nil) {
+                formatter.timeZone = NSTimeZone(name: flight.storedTimeZone);
+            }
             cell.dateLabel.text = formatter.stringFromDate(flight.departureTime);
             cell.airportsLabel.text = "\(flight.originAirportCode) to \(flight.destinationAirportCode)";
             
@@ -326,8 +330,9 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
                 
             }
         }
-        
-        tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow()!, animated: true);
+        if(tableView.indexPathForSelectedRow() != nil) {
+            tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow()!, animated: true);
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {

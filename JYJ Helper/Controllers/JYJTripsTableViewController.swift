@@ -13,6 +13,7 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segToolbar: UIToolbar!
+    @IBOutlet weak var segControl: UISegmentedControl!
     var myTrips: [Trip] = {
         var managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
         var fetchRequest = NSFetchRequest(entityName: "Trip");
@@ -78,8 +79,12 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         let formatter = NSDateFormatter();
         formatter.dateFormat = "MMMM d";
-        formatter.timeZone = NSTimeZone(name: trip.storedTimeZone);
-        
+        if(trip.storedTimeZone != nil) {
+            formatter.timeZone = NSTimeZone(name: trip.storedTimeZone);
+        }
+        else {
+            println(trip.name);
+        }
         cell.nameLabel.text = trip.name;
         cell.startDateLabel.text = formatter.stringFromDate(trip.startDate);
         cell.endDateLabel.text = formatter.stringFromDate(trip.endDate);
@@ -95,7 +100,26 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
 
         self.performSegueWithIdentifier("pushFlightsVC", sender: self.tableView.cellForRowAtIndexPath(indexPath));
         
-        self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow()!, animated: true);
+        if(self.tableView.indexPathForSelectedRow() != nil) {
+            self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow()!, animated: true);
+        }
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true;
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if(editingStyle == UITableViewCellEditingStyle.Delete) {
+            self.tableView.beginUpdates();
+            let trip = self.myTrips[indexPath.row];
+            let managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
+            managedObjectContext.deleteObject(trip);
+            managedObjectContext.save(nil);
+            self.myTrips.removeAtIndex(indexPath.row);
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic);
+            self.tableView.endUpdates();
+        }
     }
     
     func positionForBar(bar: UIBarPositioning!) -> UIBarPosition {
@@ -105,8 +129,16 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
     func reloadCoreData() {
         var managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
         var fetchRequest = NSFetchRequest(entityName: "Trip");
+        var sortDescriptor = NSSortDescriptor(key: "startDate", ascending: true);
+        fetchRequest.sortDescriptors = [sortDescriptor];
+        let predicate = (self.segControl.selectedSegmentIndex == 0) ? NSPredicate(format: "SELF.endDate >= %@", NSDate.date()) : NSPredicate(format: "SELF.endDate <= %@", NSDate.date());
+        fetchRequest.predicate = predicate;
+        
         myTrips = managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as [Trip];
         self.tableView.reloadData();
+    }
+    @IBAction func segControlPressed(sender: AnyObject) {
+        self.reloadCoreData();
     }
 }
 

@@ -65,7 +65,9 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
             let cell: JYJTripTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as JYJTripTableViewCell;
             let formatter = NSDateFormatter();
             formatter.dateFormat = "MMMM d";
-            formatter.timeZone = NSTimeZone(name: trip.storedTimeZone);
+            if(trip.storedTimeZone != nil) {
+                formatter.timeZone = NSTimeZone(name: trip.storedTimeZone);
+            }
             
             cell.nameLabel.text = trip.name;
             cell.startDateLabel.text = formatter.stringFromDate(trip.startDate);
@@ -82,7 +84,9 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
             
             var formatter = NSDateFormatter();
             formatter.dateStyle = NSDateFormatterStyle.LongStyle;
-            formatter.timeZone = NSTimeZone(name: flight.storedTimeZone);
+            if(flight.storedTimeZone != nil) {
+                formatter.timeZone = NSTimeZone(name: flight.storedTimeZone);
+            }
             
             cell.flightLabel.text = "\(flight.airlineCode) \(flight.flightNumber)";
             cell.dateLabel.text = formatter.stringFromDate(flight.departureTime);
