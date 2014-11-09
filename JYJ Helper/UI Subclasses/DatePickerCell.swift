@@ -15,6 +15,7 @@ import UIKit
 class DatePickerCell: UITableViewCell {
 
     @IBOutlet weak var datePicker : UIDatePicker!
+
     weak var delegate: DatePickerDelegate?
     
     required override init(style: UITableViewCellStyle, reuseIdentifier: String!) {

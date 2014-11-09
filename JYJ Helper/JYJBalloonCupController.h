@@ -18,4 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *viewGameHistoryButton;
 @property (weak, nonatomic) IBOutlet UIView *overallPanel;
 
+@property (weak, nonatomic) IBOutlet UILabel *lastGameResultLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lastGameDateLabel;
+
 @end

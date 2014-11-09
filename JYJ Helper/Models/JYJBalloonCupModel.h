@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "GameRecord+Helpers.h"
 @interface JYJBalloonCupModel : NSObject
 
 @property (strong, nonatomic) NSArray *gameRecords;
 
 -(void)refreshCoreData;
 -(NSInteger)numberOfWinsForPlayer:(NSString *)player;
+-(GameRecord *)mostRecentGameRecord;
 
 @end

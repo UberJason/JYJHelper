@@ -31,7 +31,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.navigationController.navigationBar.barTintColor = [UIColor emeraldFlatColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor sunFlowerFlatColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
 }

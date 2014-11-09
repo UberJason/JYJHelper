@@ -726,12 +726,176 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JYJ Helper/JYJBalloonCupController.m"
-            timestampString = "437203020.337863"
+            timestampString = "437211575.985017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JYJ Helper/UI Subclasses/DatePickerCell.swift"
+            timestampString = "437204671.71802"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "DatePickerCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JYJ_Helper.DatePickerCell.datePicker.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIDatePicker&gt;"
+                  moduleName = "JYJ Helper"
+                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/UI%20Subclasses/DatePickerCell.swift"
+                  timestampString = "437204671.725801"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JYJ_Helper.DatePickerCell.datePicker.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIDatePicker&gt;"
+                  moduleName = "JYJ Helper"
+                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/UI%20Subclasses/DatePickerCell.swift"
+                  timestampString = "437204671.725977"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JYJ_Helper.DatePickerCell.init (JYJ_Helper.DatePickerCell.Type)(style : C.UITableViewCellStyle, reuseIdentifier : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;) -&gt; JYJ_Helper.DatePickerCell"
+                  moduleName = "JYJ Helper"
+                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/UI%20Subclasses/DatePickerCell.swift"
+                  timestampString = "437204671.726128"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "74">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JYJ_Helper.DatePickerCell.init (JYJ_Helper.DatePickerCell.Type)(coder : ObjectiveC.NSCoder) -&gt; JYJ_Helper.DatePickerCell"
+                  moduleName = "JYJ Helper"
+                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/UI%20Subclasses/DatePickerCell.swift"
+                  timestampString = "437204671.726236"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JYJ_Helper.DatePickerCell.datePicker.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIDatePicker&gt;"
+                  moduleName = "JYJ Helper"
+                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/UI%20Subclasses/DatePickerCell.swift"
+                  timestampString = "437204671.726351"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JYJ Helper/Controllers/JYJAddGameResultController.h"
+            timestampString = "437205364.621092"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[JYJAddGameResultController navigationBar]"
+                  moduleName = "JYJ Helper"
+                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddGameResultController.h"
+                  timestampString = "437204952.82821"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[JYJAddGameResultController setNavigationBar:]"
+                  moduleName = "JYJ Helper"
+                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddGameResultController.h"
+                  timestampString = "437204952.828427"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JYJ Helper/JYJBalloonCupController.m"
+            timestampString = "437211575.985017"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-prepareForSegue:sender:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JYJ Helper/Controllers/JYJAddGameResultController.m"
+            timestampString = "437206872.72002"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "-cellDidChangeDate:datePicker:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -61,7 +61,7 @@
     }
     
     self.navBar.delegate = self;
-    self.navBar.barTintColor = [UIColor emeraldFlatColor];
+    self.navBar.barTintColor = [UIColor sunFlowerFlatColor];
     [self.navBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
 }

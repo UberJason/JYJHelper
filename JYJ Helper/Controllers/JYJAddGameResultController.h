@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JYJ_Helper-Swift.h"
+#import "GameRecord+Helpers.h"
 
-@interface JYJAddGameResultController : UIViewController
+@interface JYJAddGameResultController : UIViewController<UIBarPositioningDelegate, UITableViewDataSource, UITableViewDelegate, DatePickerDelegate>
+
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) GameRecord *record;
 
 @end

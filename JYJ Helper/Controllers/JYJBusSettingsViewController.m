@@ -24,7 +24,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 
-    self.navigationBar.barTintColor = [UIColor emeraldFlatColor];
+    self.navigationBar.barTintColor = [UIColor sunFlowerFlatColor];
     self.navigationBar.delegate = self;
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
@@ -32,7 +32,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    NSLog(@"viewDidAppear");
+
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

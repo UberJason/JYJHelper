@@ -28,4 +28,8 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"GameRecord"];
     self.gameRecords = [context executeFetchRequest:request error:nil];
 }
+
+-(GameRecord *)mostRecentGameRecord {
+    return [[self.gameRecords sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"gameTime" ascending:YES]]] lastObject];
+}
 @end
