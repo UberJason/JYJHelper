@@ -138,6 +138,7 @@
 		966C695D194D2941000365F5 /* JYJAddEditTripTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJAddEditTripTableViewController.swift; path = Controllers/JYJAddEditTripTableViewController.swift; sourceTree = "<group>"; };
 		966C6960194D298A000365F5 /* JYJAddEditFlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJAddEditFlightViewController.swift; path = Controllers/JYJAddEditFlightViewController.swift; sourceTree = "<group>"; };
 		96720B7C19495C5900B8D52F /* JYJAbstractPageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJAbstractPageContentViewController.swift; path = Controllers/JYJAbstractPageContentViewController.swift; sourceTree = "<group>"; };
+		968AD4541A1012A5003D18F6 /* JYJ_Helper 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "JYJ_Helper 2.xcdatamodel"; sourceTree = "<group>"; };
 		969A73AA19493975001C6F70 /* j2_flat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "j2_flat@2x.png"; sourceTree = "<group>"; };
 		969A73B219493C20001C6F70 /* JYJFlightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJFlightTableViewCell.swift; path = Views/JYJFlightTableViewCell.swift; sourceTree = "<group>"; };
 		969A73B319493C20001C6F70 /* JYJFlightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JYJFlightTableViewCell.xib; path = Views/JYJFlightTableViewCell.xib; sourceTree = "<group>"; };
@@ -838,9 +839,10 @@
 		96B710211947EE61008D08B9 /* JYJ_Helper.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				968AD4541A1012A5003D18F6 /* JYJ_Helper 2.xcdatamodel */,
 				96B710221947EE61008D08B9 /* JYJ_Helper.xcdatamodel */,
 			);
-			currentVersion = 96B710221947EE61008D08B9 /* JYJ_Helper.xcdatamodel */;
+			currentVersion = 968AD4541A1012A5003D18F6 /* JYJ_Helper 2.xcdatamodel */;
 			name = JYJ_Helper.xcdatamodeld;
 			path = "Core Data/JYJ_Helper.xcdatamodeld";
 			sourceTree = "<group>";

@@ -82,9 +82,7 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
         if(trip.storedTimeZone != nil) {
             formatter.timeZone = NSTimeZone(name: trip.storedTimeZone);
         }
-        else {
-            println(trip.name);
-        }
+
         cell.nameLabel.text = trip.name;
         cell.startDateLabel.text = formatter.stringFromDate(trip.startDate);
         cell.endDateLabel.text = formatter.stringFromDate(trip.endDate);

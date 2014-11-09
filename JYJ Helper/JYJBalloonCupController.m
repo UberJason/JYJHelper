@@ -35,8 +35,9 @@
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
     
     self.viewGameHistoryButton.layer.cornerRadius = 4.0f;
-    self.viewGameHistoryButton.layer.borderColor = [UIColor grayColor].CGColor;
+    self.viewGameHistoryButton.layer.borderColor = [UIColor emeraldFlatColor].CGColor;
     self.viewGameHistoryButton.layer.borderWidth = 1.0f;
+    [self.viewGameHistoryButton setTitleColor:[UIColor emeraldFlatColor] forState:UIControlStateNormal];
     
 }
 
@@ -71,20 +72,26 @@
     self.overallPanel.clipsToBounds = YES;
     
     GameRecord *lastRecord = [self.model mostRecentGameRecord];
-    
-    if([lastRecord.winner isEqualToString:@"Jason"]) {
-        self.lastGameResultLabel.text = @"Winner: Jason";
-        self.lastGameResultLabel.textColor = [UIColor emeraldFlatColor];
-    }
-    else if([lastRecord.winner isEqualToString:@"Mary Anne"]) {
-        self.lastGameResultLabel.text = @"Winner: Mary Anne";
-        self.lastGameResultLabel.textColor = [UIColor redColor];
+    if(!lastRecord) {
+        self.lastGameResultLabel.text = @"No games played.";
+        self.lastGameDateLabel.hidden = YES;
     }
     else {
-        self.lastGameResultLabel.text = @"Deadlock";
-        self.lastGameResultLabel.textColor = [UIColor sunFlowerFlatColor];
+        if([lastRecord.winner isEqualToString:@"Jason"]) {
+            self.lastGameResultLabel.text = @"Winner: Jason";
+            self.lastGameResultLabel.textColor = [UIColor emeraldFlatColor];
+        }
+        else if([lastRecord.winner isEqualToString:@"Mary Anne"]) {
+            self.lastGameResultLabel.text = @"Winner: Mary Anne";
+            self.lastGameResultLabel.textColor = [UIColor redColor];
+        }
+        else {
+            self.lastGameResultLabel.text = @"Deadlock";
+            self.lastGameResultLabel.textColor = [UIColor sunFlowerFlatColor];
+        }
+        self.lastGameDateLabel.hidden = NO;
+        self.lastGameDateLabel.text = [NSString stringWithFormat:@"Date: %@", [self.dateFormatter stringFromDate:lastRecord.gameTime]];
     }
-    self.lastGameDateLabel.text = [NSString stringWithFormat:@"Date: %@", [self.dateFormatter stringFromDate:lastRecord.gameTime]];
 }
 
 #pragma mark - Navigation

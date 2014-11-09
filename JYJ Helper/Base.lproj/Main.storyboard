@@ -244,8 +244,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hho-0N-iOP">
-                                <rect key="frame" x="85" y="451" width="150" height="38"/>
+                                <rect key="frame" x="80" y="449" width="160" height="41"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="10" maxX="5" maxY="10"/>
                                 <state key="normal" title="View Game History">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -364,16 +365,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Td-6Z-HkP">
-                                <rect key="frame" x="85" y="306" width="150" height="113"/>
+                                <rect key="frame" x="80" y="306" width="160" height="113"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overall" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkh-7C-Vgf">
-                                        <rect key="frame" x="40" y="20" width="71" height="27"/>
+                                        <rect key="frame" x="45" y="20" width="71" height="27"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jason +2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Weg-QQ-b8D">
-                                        <rect key="frame" x="34" y="67" width="82" height="24"/>
+                                        <rect key="frame" x="39" y="67" width="82" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -382,7 +383,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="113" id="6XB-fL-Ohd"/>
-                                    <constraint firstAttribute="width" constant="150" id="KTl-7C-E7x"/>
+                                    <constraint firstAttribute="width" constant="160" id="KTl-7C-E7x"/>
                                     <constraint firstItem="Tkh-7C-Vgf" firstAttribute="top" secondItem="4Td-6Z-HkP" secondAttribute="top" constant="20" id="T4m-Vz-h6S"/>
                                     <constraint firstAttribute="centerX" secondItem="Weg-QQ-b8D" secondAttribute="centerX" id="VkE-qU-ajC"/>
                                     <constraint firstItem="Tkh-7C-Vgf" firstAttribute="centerX" secondItem="4Td-6Z-HkP" secondAttribute="centerX" id="vgI-9Z-06G"/>
@@ -392,9 +393,9 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="hho-0N-iOP" secondAttribute="bottom" constant="30" id="0kj-dA-Yl2"/>
                             <constraint firstItem="4Td-6Z-HkP" firstAttribute="top" secondItem="AXP-NM-Rw8" secondAttribute="bottom" constant="30" id="7qg-qr-viF"/>
                             <constraint firstAttribute="centerX" secondItem="hho-0N-iOP" secondAttribute="centerX" id="9zM-rj-Qp7"/>
+                            <constraint firstItem="hho-0N-iOP" firstAttribute="top" secondItem="4Td-6Z-HkP" secondAttribute="bottom" constant="30" id="MXn-Vg-GyN"/>
                             <constraint firstAttribute="centerX" secondItem="4Td-6Z-HkP" secondAttribute="centerX" id="U55-xk-7c6"/>
                             <constraint firstAttribute="trailing" secondItem="AXP-NM-Rw8" secondAttribute="trailing" id="bKt-p8-b5v"/>
                             <constraint firstItem="AXP-NM-Rw8" firstAttribute="leading" secondItem="WNq-Kw-Wom" secondAttribute="leading" id="ccJ-jc-Ri7"/>
@@ -429,7 +430,6 @@
         <!--Add Game Result Controller-->
         <scene sceneID="ekf-FM-GOU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gts-mT-zPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="iL4-Sj-uxO" customClass="JYJAddGameResultController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jAH-2F-jYM"/>
@@ -568,6 +568,7 @@
                         <outlet property="tableView" destination="PNf-6T-5Dt" id="bj0-JJ-clN"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gts-mT-zPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2231" y="2158"/>
         </scene>

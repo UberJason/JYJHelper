@@ -10,6 +10,12 @@
         <attribute name="storedTimeZone" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="flights" inverseEntity="Trip" syncable="YES"/>
     </entity>
+    <entity name="GameRecord" representedClassName="GameRecord" syncable="YES">
+        <attribute name="gameTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="numLoserCups" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="numWinnerCups" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="winner" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Trip" representedClassName="Trip" syncable="YES">
         <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,5 +26,6 @@
     <elements>
         <element name="Flight" positionX="196" positionY="-18" width="128" height="165"/>
         <element name="Trip" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="GameRecord" positionX="63" positionY="54" width="128" height="105"/>
     </elements>
 </model>
