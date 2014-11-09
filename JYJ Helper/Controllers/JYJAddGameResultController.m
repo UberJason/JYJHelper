@@ -34,11 +34,19 @@
  
     if(!self.record)
         self.record = [GameRecord gameRecordWithWinner:@"Jason" numWinnerCups:3 numLoserCups:0 gameTime:[NSDate date] inManagedObjectContext:((JYJAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext];
+    
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)savePressed:(id)sender {
+    [((JYJAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext save:nil];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)cancelPressed:(id)sender {
+    
+    [((JYJAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext rollback];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UIBarPositioningDelegate
@@ -61,19 +69,19 @@
     if(section == 0)
         return @"Winner";
     else if(section == 1)
+        return @"Winner Cups";
+    else if(section == 2)
         return @"Loser Cups";
     else
         return @"Game Time";
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if(section == 0)
-        return 3;
-    else if(section == 1)
+    if(section == 0 || section == 1 || section == 2)
         return 3;
     else
         return self.showingDatePicker ? 2 : 1;
@@ -97,7 +105,17 @@
         
         return cell;
     }
-    else if([identifier isEqualToString:@"cupsCell"]) {
+    else if([identifier isEqualToString:@"winnerCupsCell"]) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        cell.textLabel.text = [NSString stringWithFormat:@"%ld Cups", indexPath.row+3];
+        if(self.record.numWinnerCups.integerValue == indexPath.row+3)
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        else
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        
+        return cell;
+    }
+    else if([identifier isEqualToString:@"loserCupsCell"]) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         cell.textLabel.text = [NSString stringWithFormat:@"%ld Cups", indexPath.row];
         if(self.record.numLoserCups.integerValue == indexPath.row)
@@ -127,10 +145,12 @@
     if(indexPath.section == 0)
         return @"playerCell";
     else if(indexPath.section == 1)
-        return @"cupsCell";
-    else if(indexPath.section == 2 && indexPath.row == 0)
+        return @"winnerCupsCell";
+    else if(indexPath.section == 2)
+        return @"loserCupsCell";
+    else if(indexPath.section == 3 && indexPath.row == 0)
         return @"dateCell";
-    else if(indexPath.section == 2 && indexPath.row == 1)
+    else if(indexPath.section == 3 && indexPath.row == 1)
         return @"datePickerCell";
     else return nil;
 }
@@ -147,31 +167,25 @@
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     else if(indexPath.section == 1) {
-        self.record.numLoserCups = @(indexPath.row);
+        self.record.numWinnerCups = @(indexPath.row);
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     else if(indexPath.section == 2) {
-        self.showingDatePicker = ! self.showingDatePicker;
+        self.record.numLoserCups = @(indexPath.row);
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    else if(indexPath.section == 3) {
+        self.showingDatePicker = ! self.showingDatePicker;
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     
 }
+
 #pragma mark - DatePickerDelegate
 
 -(void)cellDidChangeDate:(DatePickerCell *)cell datePicker:(UIDatePicker *)datePicker {
     self.record.gameTime = datePicker.date;
-    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:2]] withRowAnimation:UITableViewRowAnimationNone];
-}
-
-- (IBAction)savePressed:(id)sender {
-    [((JYJAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext save:nil];
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)cancelPressed:(id)sender {
-    
-    [((JYJAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext rollback];
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:3]] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 @end

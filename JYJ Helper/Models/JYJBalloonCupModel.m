@@ -27,9 +27,10 @@
     NSManagedObjectContext *context = ((JYJAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"GameRecord"];
     self.gameRecords = [context executeFetchRequest:request error:nil];
+    self.gameRecords = [self.gameRecords sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"gameTime" ascending:YES]]];
 }
 
 -(GameRecord *)mostRecentGameRecord {
-    return [[self.gameRecords sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"gameTime" ascending:YES]]] lastObject];
+    return self.gameRecords.lastObject;
 }
 @end

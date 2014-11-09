@@ -31,7 +31,13 @@
     
     self.model = [[JYJBalloonCupModel alloc] init];
     self.navigationController.navigationBar.barTintColor = [UIColor emeraldFlatColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
+    self.viewGameHistoryButton.layer.cornerRadius = 4.0f;
+    self.viewGameHistoryButton.layer.borderColor = [UIColor grayColor].CGColor;
+    self.viewGameHistoryButton.layer.borderWidth = 1.0f;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -88,7 +94,8 @@
         
     }
     else if([segue.identifier isEqualToString:@"viewGameHistorySegue"]) {
-        
+        JYJBalloonCupHistoryController *controller = (JYJBalloonCupHistoryController *)segue.destinationViewController;
+        controller.model = self.model;
     }
 }
 

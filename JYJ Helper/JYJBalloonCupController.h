@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "JYJBalloonCupModel.h"
+#import "JYJBalloonCupHistoryController.h"
 
 @interface JYJBalloonCupController : UIViewController
 

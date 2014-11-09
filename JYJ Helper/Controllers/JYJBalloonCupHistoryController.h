@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JYJBalloonCupModel.h"
+#import "JYJ_Helper-Swift.h"
+#import "JYJAddGameResultController.h"
 
-@interface JYJBalloonCupHistoryController : UIViewController
+@interface JYJBalloonCupHistoryController : UITableViewController
+
+@property (strong, nonatomic) JYJBalloonCupModel *model;
 
 @end
