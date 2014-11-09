@@ -1242,7 +1242,7 @@
         <scene sceneID="zZi-hF-Vpb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xBk-SQ-JUU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Balloon Cup" id="vAF-tG-oVb"/>
+                    <tabBarItem key="tabBarItem" title="Balloon Cup" image="cube-50.png" id="vAF-tG-oVb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rRu-4z-Mgt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1265,6 +1265,7 @@
     <resources>
         <image name="airplane-48.png" width="24" height="24"/>
         <image name="bus-48.png" width="24" height="24"/>
+        <image name="cube-50.png" width="25" height="25"/>
         <image name="gear-50.png" width="25" height="25"/>
         <image name="list-48.png" width="24" height="24"/>
     </resources>

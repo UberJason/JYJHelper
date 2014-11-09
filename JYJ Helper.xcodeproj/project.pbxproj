@@ -59,6 +59,7 @@
 		96B29EDB194E5E76005D5967 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B29EDA194E5E76005D5967 /* DatePickerCell.swift */; };
 		96B710231947EE61008D08B9 /* JYJ_Helper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96B710211947EE61008D08B9 /* JYJ_Helper.xcdatamodeld */; };
 		96C19B531A0F535B004FAF0C /* JYJBalloonCupHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C19B521A0F535B004FAF0C /* JYJBalloonCupHistoryController.m */; };
+		96C19B591A0F6F8F004FAF0C /* cube-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C19B581A0F6F8F004FAF0C /* cube-50@2x.png */; };
 		96C6316B1946A7F400CDAF6F /* gear-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C6316A1946A7F400CDAF6F /* gear-50@2x.png */; };
 		96C6316E1946A84E00CDAF6F /* JYJBusSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C6316D1946A84E00CDAF6F /* JYJBusSettingsViewController.m */; };
 		96C631711946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C631701946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m */; };
@@ -154,6 +155,7 @@
 		96B710221947EE61008D08B9 /* JYJ_Helper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JYJ_Helper.xcdatamodel; sourceTree = "<group>"; };
 		96C19B511A0F535B004FAF0C /* JYJBalloonCupHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJBalloonCupHistoryController.h; path = Controllers/JYJBalloonCupHistoryController.h; sourceTree = "<group>"; };
 		96C19B521A0F535B004FAF0C /* JYJBalloonCupHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJBalloonCupHistoryController.m; path = Controllers/JYJBalloonCupHistoryController.m; sourceTree = "<group>"; };
+		96C19B581A0F6F8F004FAF0C /* cube-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cube-50@2x.png"; sourceTree = "<group>"; };
 		96C6316A1946A7F400CDAF6F /* gear-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear-50@2x.png"; sourceTree = "<group>"; };
 		96C6316C1946A84E00CDAF6F /* JYJBusSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJBusSettingsViewController.h; path = Controllers/JYJBusSettingsViewController.h; sourceTree = "<group>"; };
 		96C6316D1946A84E00CDAF6F /* JYJBusSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJBusSettingsViewController.m; path = Controllers/JYJBusSettingsViewController.m; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 		96248D88181B8ABB00101651 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				96C19B581A0F6F8F004FAF0C /* cube-50@2x.png */,
 				969A73AA19493975001C6F70 /* j2_flat@2x.png */,
 				963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */,
 				96E0422F1947CB85000902CF /* airplane-48@2x.png */,
@@ -542,6 +545,7 @@
 				963EF08B194A812B0069D5EA /* JYJTripTableViewCell.xib in Resources */,
 				96248D4F181B720100101651 /* InfoPlist.strings in Resources */,
 				96248D90181B8BCF00101651 /* bus-48@2x.png in Resources */,
+				96C19B591A0F6F8F004FAF0C /* cube-50@2x.png in Resources */,
 				969A73AB19493975001C6F70 /* j2_flat@2x.png in Resources */,
 				963CFBB81947E28400AB871B /* airplane-horizontal-48@2x.png in Resources */,
 				965653F019D76C990094963B /* LaunchScreen.xib in Resources */,
