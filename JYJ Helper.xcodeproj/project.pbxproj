@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		9615211A1947CF820046A550 /* JYJFlightsBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961521191947CF820046A550 /* JYJFlightsBaseViewController.swift */; };
+		962218F01A0F262E00D18C6C /* JYJBalloonCupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962218EF1A0F262E00D18C6C /* JYJBalloonCupController.m */; };
+		962218F61A0F290700D18C6C /* JYJBalloonCupHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962218F51A0F290700D18C6C /* JYJBalloonCupHistoryController.m */; };
+		962218F91A0F292500D18C6C /* JYJAddGameResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962218F81A0F292500D18C6C /* JYJAddGameResultController.m */; };
+		962218FC1A0F298700D18C6C /* GameRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 962218FB1A0F298700D18C6C /* GameRecord.m */; };
+		962218FF1A0F29A100D18C6C /* GameRecord+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 962218FE1A0F29A100D18C6C /* GameRecord+Helpers.m */; };
+		962219021A0F2A8B00D18C6C /* JYJBalloonCupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 962219011A0F2A8B00D18C6C /* JYJBalloonCupModel.m */; };
 		96248D45181B720100101651 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D44181B720100101651 /* Foundation.framework */; };
 		96248D47181B720100101651 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D46181B720100101651 /* CoreGraphics.framework */; };
 		96248D49181B720100101651 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D48181B720100101651 /* UIKit.framework */; };
@@ -34,6 +40,7 @@
 		963EF08A194A812B0069D5EA /* JYJTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EF088194A812B0069D5EA /* JYJTripTableViewCell.swift */; };
 		963EF08B194A812B0069D5EA /* JYJTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963EF089194A812B0069D5EA /* JYJTripTableViewCell.xib */; };
 		96541EEE19576DC9006B8578 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 96541EED19576DC9006B8578 /* UIActionSheet+Blocks.m */; };
+		965653F019D76C990094963B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965653EF19D76C990094963B /* LaunchScreen.xib */; };
 		965762801992EC6F00E297D4 /* AddEditTripDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657627F1992EC6F00E297D4 /* AddEditTripDelegate.swift */; };
 		966892561947EFD6006A9029 /* Trip+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966892551947EFD6006A9029 /* Trip+Helpers.m */; };
 		966C695C194D21CF000365F5 /* Flight+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C695B194D21CF000365F5 /* Flight+Helpers.m */; };
@@ -77,6 +84,18 @@
 /* Begin PBXFileReference section */
 		961521181947CF810046A550 /* JYJ Helper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "JYJ Helper-Bridging-Header.h"; path = "Supporting Files/JYJ Helper-Bridging-Header.h"; sourceTree = "<group>"; };
 		961521191947CF820046A550 /* JYJFlightsBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJFlightsBaseViewController.swift; path = Controllers/JYJFlightsBaseViewController.swift; sourceTree = "<group>"; };
+		962218EE1A0F262E00D18C6C /* JYJBalloonCupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJBalloonCupController.h; sourceTree = "<group>"; };
+		962218EF1A0F262E00D18C6C /* JYJBalloonCupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJBalloonCupController.m; sourceTree = "<group>"; };
+		962218F41A0F290700D18C6C /* JYJBalloonCupHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJBalloonCupHistoryController.h; path = Controllers/JYJBalloonCupHistoryController.h; sourceTree = "<group>"; };
+		962218F51A0F290700D18C6C /* JYJBalloonCupHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJBalloonCupHistoryController.m; path = Controllers/JYJBalloonCupHistoryController.m; sourceTree = "<group>"; };
+		962218F71A0F292500D18C6C /* JYJAddGameResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJAddGameResultController.h; path = Controllers/JYJAddGameResultController.h; sourceTree = "<group>"; };
+		962218F81A0F292500D18C6C /* JYJAddGameResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJAddGameResultController.m; path = Controllers/JYJAddGameResultController.m; sourceTree = "<group>"; };
+		962218FA1A0F298700D18C6C /* GameRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameRecord.h; path = "Core Data/GameRecord.h"; sourceTree = "<group>"; };
+		962218FB1A0F298700D18C6C /* GameRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameRecord.m; path = "Core Data/GameRecord.m"; sourceTree = "<group>"; };
+		962218FD1A0F29A100D18C6C /* GameRecord+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GameRecord+Helpers.h"; path = "Core Data/GameRecord+Helpers.h"; sourceTree = "<group>"; };
+		962218FE1A0F29A100D18C6C /* GameRecord+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GameRecord+Helpers.m"; path = "Core Data/GameRecord+Helpers.m"; sourceTree = "<group>"; };
+		962219001A0F2A8B00D18C6C /* JYJBalloonCupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJBalloonCupModel.h; path = Models/JYJBalloonCupModel.h; sourceTree = "<group>"; };
+		962219011A0F2A8B00D18C6C /* JYJBalloonCupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJBalloonCupModel.m; path = Models/JYJBalloonCupModel.m; sourceTree = "<group>"; };
 		96248D41181B720100101651 /* JYJ Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JYJ Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96248D44181B720100101651 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96248D46181B720100101651 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -111,6 +130,7 @@
 		963EF089194A812B0069D5EA /* JYJTripTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JYJTripTableViewCell.xib; path = Views/JYJTripTableViewCell.xib; sourceTree = "<group>"; };
 		96541EEC19576DC9006B8578 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIActionSheet+Blocks.h"; path = "Supporting Files/UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
 		96541EED19576DC9006B8578 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIActionSheet+Blocks.m"; path = "Supporting Files/UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
+		965653EF19D76C990094963B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		9657627F1992EC6F00E297D4 /* AddEditTripDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditTripDelegate.swift; sourceTree = "<group>"; };
 		966892541947EFD6006A9029 /* Trip+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Trip+Helpers.h"; path = "Core Data/Trip+Helpers.h"; sourceTree = "<group>"; };
 		966892551947EFD6006A9029 /* Trip+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Trip+Helpers.m"; path = "Core Data/Trip+Helpers.m"; sourceTree = "<group>"; };
@@ -175,6 +195,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		962218F11A0F263300D18C6C /* Bus Tab */ = {
+			isa = PBXGroup;
+			children = (
+				96248D79181B769000101651 /* JYJNextBusViewController.h */,
+				96248D7A181B769000101651 /* JYJNextBusViewController.m */,
+				96248D59181B720100101651 /* JYJMainBusViewController.h */,
+				96248D5A181B720100101651 /* JYJMainBusViewController.m */,
+				96C6316C1946A84E00CDAF6F /* JYJBusSettingsViewController.h */,
+				96C6316D1946A84E00CDAF6F /* JYJBusSettingsViewController.m */,
+			);
+			name = "Bus Tab";
+			sourceTree = "<group>";
+		};
+		962218F21A0F264500D18C6C /* Tracking Tab */ = {
+			isa = PBXGroup;
+			children = (
+				96A0EA72186F2D2C005711E5 /* JYJTrackingViewController.h */,
+				96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */,
+			);
+			name = "Tracking Tab";
+			sourceTree = "<group>";
+		};
+		962218F31A0F265300D18C6C /* Balloon Cup Tab */ = {
+			isa = PBXGroup;
+			children = (
+				962218EE1A0F262E00D18C6C /* JYJBalloonCupController.h */,
+				962218EF1A0F262E00D18C6C /* JYJBalloonCupController.m */,
+				962218F41A0F290700D18C6C /* JYJBalloonCupHistoryController.h */,
+				962218F51A0F290700D18C6C /* JYJBalloonCupHistoryController.m */,
+				962218F71A0F292500D18C6C /* JYJAddGameResultController.h */,
+				962218F81A0F292500D18C6C /* JYJAddGameResultController.m */,
+			);
+			name = "Balloon Cup Tab";
+			sourceTree = "<group>";
+		};
 		96248D38181B720100101651 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				96248D56181B720100101651 /* Main.storyboard */,
+				965653EF19D76C990094963B /* LaunchScreen.xib */,
+				96C19B501A0F2C87004FAF0C /* Models */,
 				969F66081947F9F300F9A48F /* Views */,
 				96E9ABA41947ECC1005BE367 /* Controllers */,
 				96E9ABA71947ECF5005BE367 /* UI Subclasses */,
@@ -320,6 +377,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		96C19B501A0F2C87004FAF0C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				962219001A0F2A8B00D18C6C /* JYJBalloonCupModel.h */,
+				962219011A0F2A8B00D18C6C /* JYJBalloonCupModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		96E9AB9B1947EA23005BE367 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +399,8 @@
 		96E9ABA21947EC3F005BE367 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				962218FA1A0F298700D18C6C /* GameRecord.h */,
+				962218FB1A0F298700D18C6C /* GameRecord.m */,
 				96FF7DA2195BBBD5005F234D /* Trip.h */,
 				96FF7DA3195BBBD5005F234D /* Trip.m */,
 				96FF7D9F195BB691005F234D /* Flight.h */,
@@ -344,6 +412,8 @@
 		96E9ABA31947EC49005BE367 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				962218FD1A0F29A100D18C6C /* GameRecord+Helpers.h */,
+				962218FE1A0F29A100D18C6C /* GameRecord+Helpers.m */,
 				966C695A194D21CF000365F5 /* Flight+Helpers.h */,
 				966C695B194D21CF000365F5 /* Flight+Helpers.m */,
 				966892541947EFD6006A9029 /* Trip+Helpers.h */,
@@ -355,15 +425,10 @@
 		96E9ABA41947ECC1005BE367 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				96C6316C1946A84E00CDAF6F /* JYJBusSettingsViewController.h */,
-				96C6316D1946A84E00CDAF6F /* JYJBusSettingsViewController.m */,
-				96A0EA72186F2D2C005711E5 /* JYJTrackingViewController.h */,
-				96A0EA73186F2D2C005711E5 /* JYJTrackingViewController.m */,
-				96248D79181B769000101651 /* JYJNextBusViewController.h */,
-				96248D7A181B769000101651 /* JYJNextBusViewController.m */,
-				96248D59181B720100101651 /* JYJMainBusViewController.h */,
-				96248D5A181B720100101651 /* JYJMainBusViewController.m */,
 				966C695F194D294B000365F5 /* Flights Tab */,
+				962218F21A0F264500D18C6C /* Tracking Tab */,
+				962218F31A0F265300D18C6C /* Balloon Cup Tab */,
+				962218F11A0F263300D18C6C /* Bus Tab */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -479,6 +544,7 @@
 				96248D90181B8BCF00101651 /* bus-48@2x.png in Resources */,
 				969A73AB19493975001C6F70 /* j2_flat@2x.png in Resources */,
 				963CFBB81947E28400AB871B /* airplane-horizontal-48@2x.png in Resources */,
+				965653F019D76C990094963B /* LaunchScreen.xib in Resources */,
 				96248D58181B720100101651 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +570,8 @@
 				96248D87181B8A1E00101651 /* UIColor+FlatUI.m in Sources */,
 				96B29EDB194E5E76005D5967 /* DatePickerCell.swift in Sources */,
 				965762801992EC6F00E297D4 /* AddEditTripDelegate.swift in Sources */,
+				962218FC1A0F298700D18C6C /* GameRecord.m in Sources */,
+				962218FF1A0F29A100D18C6C /* GameRecord+Helpers.m in Sources */,
 				96C631711946A9D200CDAF6F /* LabelAndSwitchCellTableViewCell.m in Sources */,
 				969A73B419493C20001C6F70 /* JYJFlightTableViewCell.swift in Sources */,
 				966C6961194D298A000365F5 /* JYJAddEditFlightViewController.swift in Sources */,
@@ -512,8 +580,11 @@
 				963EF08A194A812B0069D5EA /* JYJTripTableViewCell.swift in Sources */,
 				969A73BD19494B34001C6F70 /* JYJTripsTableViewController.swift in Sources */,
 				96B29ED9194E5C93005D5967 /* TwoLabelTableViewCell.swift in Sources */,
+				962219021A0F2A8B00D18C6C /* JYJBalloonCupModel.m in Sources */,
+				962218F91A0F292500D18C6C /* JYJAddGameResultController.m in Sources */,
 				96720B7D19495C5900B8D52F /* JYJAbstractPageContentViewController.swift in Sources */,
 				96541EEE19576DC9006B8578 /* UIActionSheet+Blocks.m in Sources */,
+				962218F01A0F262E00D18C6C /* JYJBalloonCupController.m in Sources */,
 				96D7B73C194E2E9C00DCD035 /* LabelAndTextFieldTableViewCell.swift in Sources */,
 				96FF7DA4195BBBD5005F234D /* Trip.m in Sources */,
 				966C695C194D21CF000365F5 /* Flight+Helpers.m in Sources */,
@@ -523,6 +594,7 @@
 				966C695E194D2941000365F5 /* JYJAddEditTripTableViewController.swift in Sources */,
 				96A673E019947204007B022D /* UINavigationBar+Addition.m in Sources */,
 				96A0EA74186F2D2C005711E5 /* JYJTrackingViewController.m in Sources */,
+				962218F61A0F290700D18C6C /* JYJBalloonCupHistoryController.m in Sources */,
 				9615211A1947CF820046A550 /* JYJFlightsBaseViewController.swift in Sources */,
 				96248D7B181B769000101651 /* JYJNextBusViewController.m in Sources */,
 				96FF7DA1195BB691005F234D /* Flight.m in Sources */,

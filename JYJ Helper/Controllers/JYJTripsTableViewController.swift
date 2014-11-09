@@ -131,7 +131,7 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
         var fetchRequest = NSFetchRequest(entityName: "Trip");
         var sortDescriptor = NSSortDescriptor(key: "startDate", ascending: true);
         fetchRequest.sortDescriptors = [sortDescriptor];
-        let predicate = (self.segControl.selectedSegmentIndex == 0) ? NSPredicate(format: "SELF.endDate >= %@", NSDate.date()) : NSPredicate(format: "SELF.endDate <= %@", NSDate.date());
+        let predicate = (self.segControl.selectedSegmentIndex == 0) ? NSPredicate(format: "SELF.endDate >= %@", NSDate()) : NSPredicate(format: "SELF.endDate <= %@", NSDate());
         fetchRequest.predicate = predicate;
         
         myTrips = managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as [Trip];

@@ -54,8 +54,8 @@ class JYJAddEditFlightController: UIViewController {
         if(self.type == FlightViewType.New) {
             self.flight = NSEntityDescription.insertNewObjectForEntityForName("Flight", inManagedObjectContext: self.context) as Flight;
             self.flight.trip = self.delegate!.trip;
-            self.flight.arrivalTime = NSDate.date();
-            self.flight.departureTime = NSDate.date();
+            self.flight.arrivalTime = NSDate();
+            self.flight.departureTime = NSDate();
             self.navigationBar.topItem!.title = "Add New Flight";
         }
         else {

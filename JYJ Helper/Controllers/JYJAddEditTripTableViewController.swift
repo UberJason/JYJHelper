@@ -60,8 +60,8 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
         if(self.type == TripViewType.New) {
             self.trip = NSEntityDescription.insertNewObjectForEntityForName("Trip", inManagedObjectContext: self.context) as Trip;
             self.trip.flights = NSOrderedSet();
-            self.trip.startDate = NSDate.date();
-            self.trip.endDate = NSDate.date();
+            self.trip.startDate = NSDate();
+            self.trip.endDate = NSDate();
             self.navigationBar.topItem!.title = "Add New Trip";
         }
         else {

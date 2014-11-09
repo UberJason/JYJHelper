@@ -14,7 +14,7 @@
 		<string>https://github.com/UberJason/JYJHelper.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>JYJ Helper.xcodeproj/project.xcworkspace</string>
+	<string>JYJ Helper.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1A289B8EA71F63785AAA3BB900C738C796A3F15D</key>
