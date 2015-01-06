@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wX-8K-fq4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wX-8K-fq4">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Bus Stops-->
@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ths-p0-okR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="RDu-BS-qrl">
@@ -214,7 +214,7 @@
         <!--Buses-->
         <scene sceneID="HUx-i4-09x">
             <objects>
-                <navigationController title="Buses" automaticallyAdjustsScrollViewInsets="NO" id="488-og-G2b" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="bus view controller (not used)" title="Buses" automaticallyAdjustsScrollViewInsets="NO" id="488-og-G2b" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Buses" image="bus-48.png" id="ZUF-pJ-WTK"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -521,13 +521,13 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="datePickerCell" rowHeight="162" id="KNS-Wm-RBl" customClass="DatePickerCell" customModule="JYJ_Helper" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="datePickerCell" rowHeight="216" id="KNS-Wm-RBl" customClass="DatePickerCell" customModule="JYJ_Helper" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KNS-Wm-RBl" id="Qqj-Uo-XcT">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jv5-hF-lRh">
-                                                    <rect key="frame" x="0.0" y="-1" width="320" height="162"/>
+                                                    <rect key="frame" x="0.0" y="27" width="320" height="162"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="437204439.80967999">
                                                         <!--2014-11-09 05:40:39 +0000-->
                                                     </date>
@@ -828,7 +828,6 @@
                         <segue destination="PGL-bI-SPW" kind="relationship" relationship="viewControllers" id="qVl-CE-jZh"/>
                         <segue destination="3aH-Bc-Jlp" kind="relationship" relationship="viewControllers" id="kqo-Sz-iZA"/>
                         <segue destination="xBk-SQ-JUU" kind="relationship" relationship="viewControllers" id="AHB-VC-h4q"/>
-                        <segue destination="488-og-G2b" kind="relationship" relationship="viewControllers" id="TlZ-j6-39p"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drH-DY-cGP" userLabel="First Responder" sceneMemberID="firstResponder"/>

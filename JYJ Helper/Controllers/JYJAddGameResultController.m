@@ -60,7 +60,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = [self identifierForRowAtIndexPath:indexPath];
     if([identifier isEqualToString:@"datePickerCell"])
-        return 162.0f;
+        return 216.0f;
     else
         return 44.0f;
 }
@@ -167,7 +167,7 @@
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     else if(indexPath.section == 1) {
-        self.record.numWinnerCups = @(indexPath.row);
+        self.record.numWinnerCups = @(indexPath.row+3);
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     else if(indexPath.section == 2) {
@@ -176,7 +176,13 @@
     }
     else if(indexPath.section == 3) {
         self.showingDatePicker = ! self.showingDatePicker;
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [UIView animateWithDuration:0.2 animations:^{
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationAutomatic];
+
+        } completion:^(BOOL finished) {
+            if(self.showingDatePicker)
+                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:3] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        }];
     }
     
 }
