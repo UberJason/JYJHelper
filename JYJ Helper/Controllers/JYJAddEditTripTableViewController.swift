@@ -25,7 +25,7 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
     let RETURNING_DATEPICKER_ROW = 3;
     
     weak var delegate : AddEditTripDelegate?
-    let context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
+    let context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! JYJAppDelegate).managedObjectContext;
     var trip: Trip!
     var type: TripViewType = .New;
     
@@ -58,7 +58,7 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
         self.tableView.registerNib(UINib(nibName: "JYJFlightTableViewCell", bundle: nil), forCellReuseIdentifier: "flightCell");
         
         if(self.type == TripViewType.New) {
-            self.trip = NSEntityDescription.insertNewObjectForEntityForName("Trip", inManagedObjectContext: self.context) as Trip;
+            self.trip = NSEntityDescription.insertNewObjectForEntityForName("Trip", inManagedObjectContext: self.context) as! Trip;
             self.trip.flights = NSOrderedSet();
             self.trip.startDate = NSDate();
             self.trip.endDate = NSDate();
@@ -88,7 +88,7 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
         NSNotificationCenter.defaultCenter().removeObserver(self);
     }
     
-    func positionForBar(bar: UIBarPositioning!) -> UIBarPosition {
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
         return UIBarPosition.TopAttached;
     }
     
@@ -127,7 +127,7 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
 
 extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, DatePickerDelegate {
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String! {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch(section) {
         case 0: return "Trip Details";
         case 1: return "Flight Information";
@@ -148,7 +148,7 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
         }
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
         return 2;
     }
@@ -172,13 +172,13 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
         switch identifier {
             
         case "titleCell":
-            var cell: LabelAndTextFieldTableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as LabelAndTextFieldTableViewCell;
+            var cell: LabelAndTextFieldTableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as! LabelAndTextFieldTableViewCell;
             cell.textField.delegate = self;
             //            println(cell.textField.delegate.description);
             cell.textField.text = self.trip.name;
             return cell;
         case "timeCell":
-            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as TwoLabelTableViewCell;
+            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! TwoLabelTableViewCell;
             let leftLabel = self.leftLabelForRow(indexPath.row);
             cell.leftLabel.text = leftLabel;
             cell.rightLabel.text = {
@@ -201,7 +201,7 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             }
             return cell;
         case "datePickerCell":
-            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as DatePickerCell;
+            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! DatePickerCell;
             cell.delegate = self;
             if(indexPath.row == DEPARTING_DATEPICKER_ROW) {
                 cell.tag = DEPARTING_DATEPICKER_CELL_TAG;
@@ -217,8 +217,8 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             }
             return cell;
         case "flightCell":
-            var cell: JYJFlightTableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as JYJFlightTableViewCell;
-            var flight = self.trip.flights[indexPath.row] as Flight;
+            var cell: JYJFlightTableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as! JYJFlightTableViewCell;
+            var flight = self.trip.flights[indexPath.row] as! Flight;
             cell.flightLabel.text = "\(flight.airlineCode) \(flight.flightNumber)";
             
             var formatter = NSDateFormatter();
@@ -235,7 +235,7 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             
             return cell;
         case "addFlightCell":
-            var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as UITableViewCell;
+            var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as! UITableViewCell;
             return cell;
         default:
             return UITableViewCell();
@@ -287,7 +287,7 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let identifier = self.identifierForRowAtIndexPath(indexPath);
         if(identifier == "flightCell") {
-            self.performSegueWithIdentifier("editFlightSegue", sender: self.trip.flights[indexPath.row] as Flight);
+            self.performSegueWithIdentifier("editFlightSegue", sender: self.trip.flights[indexPath.row] as! Flight);
         }
         if(identifier == "timeCell") {
             
@@ -335,17 +335,17 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         //        println("should return?");
         textField.resignFirstResponder();
         return true;
     }
     
-    func textFieldDidBeginEditing(textField: UITextField!) {
+    func textFieldDidBeginEditing(textField: UITextField) {
         self.activeTextField = textField;
     }
     
-    func textFieldDidEndEditing(textField: UITextField!) {
+    func textFieldDidEndEditing(textField: UITextField) {
         self.activeTextField = nil;
         self.trip.name = textField.text;
     }
@@ -379,7 +379,7 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             //            println("departure time changed");
             self.trip.startDate = datePicker.date;
             
-            let departureCell = self.view.viewWithTag(DEPARTING_TIME_CELL_TAG) as TwoLabelTableViewCell;
+            let departureCell = self.view.viewWithTag(DEPARTING_TIME_CELL_TAG) as! TwoLabelTableViewCell;
             departureCell.rightLabel.text = {
                 let formatter = NSDateFormatter();
                 formatter.dateStyle = NSDateFormatterStyle.LongStyle;
@@ -389,7 +389,7 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             if(self.trip.startDate.compare(self.trip.endDate) == NSComparisonResult.OrderedDescending) {
                 self.trip.endDate = self.trip.startDate;
                 
-                let arrivalCell = self.view.viewWithTag(RETURNING_TIME_CELL_TAG) as TwoLabelTableViewCell;
+                let arrivalCell = self.view.viewWithTag(RETURNING_TIME_CELL_TAG) as! TwoLabelTableViewCell;
                 arrivalCell.rightLabel.text = {
                     let formatter = NSDateFormatter();
                     formatter.dateStyle = NSDateFormatterStyle.LongStyle;
@@ -401,7 +401,7 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             //            println("arrival time changed");
             self.trip.endDate = datePicker.date;
             
-            let arrivalCell = self.view.viewWithTag(RETURNING_TIME_CELL_TAG) as TwoLabelTableViewCell;
+            let arrivalCell = self.view.viewWithTag(RETURNING_TIME_CELL_TAG) as! TwoLabelTableViewCell;
             arrivalCell.rightLabel.text = {
                 let formatter = NSDateFormatter();
                 formatter.dateStyle = NSDateFormatterStyle.LongStyle;
@@ -411,7 +411,7 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             if(self.trip.endDate.compare(self.trip.startDate) == NSComparisonResult.OrderedAscending) {
                 self.trip.startDate = self.trip.endDate;
                 
-                let departureCell = self.view.viewWithTag(DEPARTING_TIME_CELL_TAG) as TwoLabelTableViewCell;
+                let departureCell = self.view.viewWithTag(DEPARTING_TIME_CELL_TAG) as! TwoLabelTableViewCell;
                 departureCell.rightLabel.text = {
                     let formatter = NSDateFormatter();
                     formatter.dateStyle = NSDateFormatterStyle.LongStyle;
@@ -428,12 +428,12 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
 extension JYJAddEditTripTableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "addNewFlightSegue") {
-            let controller = segue.destinationViewController as JYJAddEditFlightController;
+            let controller = segue.destinationViewController as! JYJAddEditFlightController;
             controller.delegate = self;
         }
         else if(segue.identifier == "editFlightSegue") {
-            let controller = segue.destinationViewController as JYJAddEditFlightController;
-            controller.flight = sender as Flight;
+            let controller = segue.destinationViewController as! JYJAddEditFlightController;
+            controller.flight = sender as! Flight;
             controller.type = FlightViewType.Edit;
             controller.delegate = self;
         }

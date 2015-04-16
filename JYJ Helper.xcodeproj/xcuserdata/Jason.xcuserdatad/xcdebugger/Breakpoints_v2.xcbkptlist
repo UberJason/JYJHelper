@@ -99,22 +99,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990365.183726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "savePressed(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "JYJ Helper/Controllers/JYJFlightsTableViewController.swift"
             timestampString = "431989917.024315"
             startingColumnNumber = "9223372036854775807"
@@ -130,6 +114,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "JYJ_Helper.JYJFlightsTableViewController.prepareForSegue (JYJ_Helper.JYJFlightsTableViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIStoryboardSegue&gt;, sender : Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ()"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJFlightsTableViewController.swift"
                   timestampString = "429065746.415655"
                   startingColumnNumber = "9223372036854775807"
@@ -144,6 +129,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "JYJ_Helper.JYJFlightsTableViewController.prepareForSegue (JYJ_Helper.JYJFlightsTableViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIStoryboardSegue&gt;, sender : Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ()"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJFlightsTableViewController.swift"
                   timestampString = "429065746.416081"
                   startingColumnNumber = "9223372036854775807"
@@ -161,22 +147,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431745474.985036"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "JYJ Helper/Controllers/JYJFlightsTableViewController.swift"
             timestampString = "431989917.024315"
             startingColumnNumber = "9223372036854775807"
@@ -184,272 +154,6 @@
             startingLineNumber = "116"
             endingLineNumber = "116"
             landmarkName = "didFinishCreatingOrEditingATrip()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990365.183726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JYJ_Helper.JYJAddEditTripTableViewController.tableView (JYJ_Helper.JYJAddEditTripTableViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableView&gt;, cellForRowAtIndexPath : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSIndexPath&gt;) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableViewCell&gt;"
-                  moduleName = "JYJ Helper"
-                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddEditTripTableViewController.swift"
-                  timestampString = "429069127.006797"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "185"
-                  endingLineNumber = "185"
-                  offsetFromSymbolStart = "2501">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JYJ_Helper.JYJAddEditTripTableViewController.tableView (JYJ_Helper.JYJAddEditTripTableViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableView&gt;, cellForRowAtIndexPath : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSIndexPath&gt;) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableViewCell&gt;"
-                  moduleName = "JYJ Helper"
-                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddEditTripTableViewController.swift"
-                  timestampString = "429069127.006974"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "185"
-                  endingLineNumber = "185"
-                  offsetFromSymbolStart = "2513">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990365.183726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990365.183726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990365.183726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990365.183726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990365.183726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JYJ_Helper.JYJAddEditTripTableViewController.tableView (JYJ_Helper.JYJAddEditTripTableViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableView&gt;, cellForRowAtIndexPath : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSIndexPath&gt;) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableViewCell&gt;"
-                  moduleName = "JYJ Helper"
-                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddEditTripTableViewController.swift"
-                  timestampString = "429069198.303656"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "189"
-                  endingLineNumber = "189"
-                  offsetFromSymbolStart = "13736">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JYJ_Helper.JYJAddEditTripTableViewController.tableView (JYJ_Helper.JYJAddEditTripTableViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableView&gt;, cellForRowAtIndexPath : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSIndexPath&gt;) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableViewCell&gt;"
-                  moduleName = "JYJ Helper"
-                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddEditTripTableViewController.swift"
-                  timestampString = "429069198.303882"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "189"
-                  endingLineNumber = "189"
-                  offsetFromSymbolStart = "13790">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990365.183726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JYJ_Helper.JYJAddEditTripTableViewController.tableView (JYJ_Helper.JYJAddEditTripTableViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableView&gt;, cellForRowAtIndexPath : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSIndexPath&gt;) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableViewCell&gt;"
-                  moduleName = "JYJ Helper"
-                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddEditTripTableViewController.swift"
-                  timestampString = "429069198.305683"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "190"
-                  endingLineNumber = "190"
-                  offsetFromSymbolStart = "14251">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JYJ_Helper.JYJAddEditTripTableViewController.tableView (JYJ_Helper.JYJAddEditTripTableViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableView&gt;, cellForRowAtIndexPath : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSIndexPath&gt;) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITableViewCell&gt;"
-                  moduleName = "JYJ Helper"
-                  urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddEditTripTableViewController.swift"
-                  timestampString = "429069198.305906"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "190"
-                  endingLineNumber = "190"
-                  offsetFromSymbolStart = "14302">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990365.183726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990365.183726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990213.811936"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "cancelPressed(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990213.811936"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "cancelPressed(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -475,38 +179,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990213.811936"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "cancelPressed(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990365.183726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "savePressed(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "JYJ Helper/Controllers/JYJAddEditFlightViewController.swift"
             timestampString = "431990213.811936"
             startingColumnNumber = "9223372036854775807"
@@ -522,6 +194,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "JYJ_Helper.JYJAddEditFlightController.cellDidChangeDate (JYJ_Helper.JYJAddEditFlightController)(JYJ_Helper.DatePickerCell, datePicker : ObjectiveC.UIDatePicker) -&gt; ()"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddEditFlightViewController.swift"
                   timestampString = "429148841.279165"
                   startingColumnNumber = "9223372036854775807"
@@ -536,6 +209,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "JYJ_Helper.JYJAddEditFlightController.cellDidChangeDate (JYJ_Helper.JYJAddEditFlightController)(JYJ_Helper.DatePickerCell, datePicker : ObjectiveC.UIDatePicker) -&gt; ()"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddEditFlightViewController.swift"
                   timestampString = "429148841.279389"
                   startingColumnNumber = "9223372036854775807"
@@ -550,6 +224,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "JYJ_Helper.JYJAddEditFlightController.cellDidChangeDate (JYJ_Helper.JYJAddEditFlightController)(JYJ_Helper.DatePickerCell, datePicker : ObjectiveC.UIDatePicker) -&gt; ()"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddEditFlightViewController.swift"
                   timestampString = "429148841.279485"
                   startingColumnNumber = "9223372036854775807"
@@ -582,6 +257,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "JYJ_Helper.JYJAddEditFlightController.cellDidChangeDate (JYJ_Helper.JYJAddEditFlightController)(JYJ_Helper.DatePickerCell, datePicker : ObjectiveC.UIDatePicker) -&gt; ()"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddEditFlightViewController.swift"
                   timestampString = "429148869.386414"
                   startingColumnNumber = "9223372036854775807"
@@ -596,6 +272,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "JYJ_Helper.JYJAddEditFlightController.cellDidChangeDate (JYJ_Helper.JYJAddEditFlightController)(JYJ_Helper.DatePickerCell, datePicker : ObjectiveC.UIDatePicker) -&gt; ()"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddEditFlightViewController.swift"
                   timestampString = "429148869.386585"
                   startingColumnNumber = "9223372036854775807"
@@ -620,54 +297,6 @@
             startingLineNumber = "69"
             endingLineNumber = "69"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990365.183726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "350"
-            endingLineNumber = "350"
-            landmarkName = "textFieldDidEndEditing(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990365.183726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "349"
-            endingLineNumber = "349"
-            landmarkName = "textFieldDidEndEditing(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JYJ Helper/Controllers/JYJAddEditTripTableViewController.swift"
-            timestampString = "431990388.853939"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "savePressed(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -740,6 +369,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "JYJ_Helper.DatePickerCell.datePicker.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIDatePicker&gt;"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/UI%20Subclasses/DatePickerCell.swift"
                   timestampString = "437204671.725801"
                   startingColumnNumber = "9223372036854775807"
@@ -754,6 +384,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "JYJ_Helper.DatePickerCell.datePicker.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIDatePicker&gt;"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/UI%20Subclasses/DatePickerCell.swift"
                   timestampString = "437204671.725977"
                   startingColumnNumber = "9223372036854775807"
@@ -768,6 +399,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "JYJ_Helper.DatePickerCell.init (JYJ_Helper.DatePickerCell.Type)(style : C.UITableViewCellStyle, reuseIdentifier : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;) -&gt; JYJ_Helper.DatePickerCell"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/UI%20Subclasses/DatePickerCell.swift"
                   timestampString = "437204671.726128"
                   startingColumnNumber = "9223372036854775807"
@@ -782,6 +414,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "JYJ_Helper.DatePickerCell.init (JYJ_Helper.DatePickerCell.Type)(coder : ObjectiveC.NSCoder) -&gt; JYJ_Helper.DatePickerCell"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/UI%20Subclasses/DatePickerCell.swift"
                   timestampString = "437204671.726236"
                   startingColumnNumber = "9223372036854775807"
@@ -796,6 +429,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "JYJ_Helper.DatePickerCell.datePicker.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIDatePicker&gt;"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/UI%20Subclasses/DatePickerCell.swift"
                   timestampString = "437204671.726351"
                   startingColumnNumber = "9223372036854775807"
@@ -826,6 +460,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[JYJAddGameResultController navigationBar]"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddGameResultController.h"
                   timestampString = "437204952.82821"
                   startingColumnNumber = "9223372036854775807"
@@ -840,6 +475,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[JYJAddGameResultController setNavigationBar:]"
                   moduleName = "JYJ Helper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/Developer/iOS/JYJHelper/JYJ%20Helper/Controllers/JYJAddGameResultController.h"
                   timestampString = "437204952.828427"
                   startingColumnNumber = "9223372036854775807"

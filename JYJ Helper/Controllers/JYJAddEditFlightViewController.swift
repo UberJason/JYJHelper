@@ -31,7 +31,7 @@ class JYJAddEditFlightController: UIViewController {
     var activeTextField : UITextField?
     
     weak var delegate: JYJAddEditTripTableViewController?;
-    let context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
+    let context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! JYJAppDelegate).managedObjectContext;
     var flight: Flight!;
     var type: FlightViewType = FlightViewType.New;
     
@@ -52,7 +52,7 @@ class JYJAddEditFlightController: UIViewController {
         self.navigationBar.delegate = self;
         
         if(self.type == FlightViewType.New) {
-            self.flight = NSEntityDescription.insertNewObjectForEntityForName("Flight", inManagedObjectContext: self.context) as Flight;
+            self.flight = NSEntityDescription.insertNewObjectForEntityForName("Flight", inManagedObjectContext: self.context) as! Flight;
             self.flight.trip = self.delegate!.trip;
             self.flight.arrivalTime = NSDate();
             self.flight.departureTime = NSDate();
@@ -119,7 +119,7 @@ class JYJAddEditFlightController: UIViewController {
 extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSource, UINavigationBarDelegate, UITextFieldDelegate, UIActionSheetDelegate, DatePickerDelegate {
     // #pragma mark - Table view data source
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Flight Details";
     }
     
@@ -143,7 +143,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
         let identifier = self.identifierForRowAtIndexPath(indexPath);
         switch(identifier) {
         case "textFieldCell":
-            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as LabelAndTextFieldTableViewCell;
+            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! LabelAndTextFieldTableViewCell;
             cell.titleLabel.text = self.leftLabelForRow(indexPath.row);
             cell.textField.placeholder = self.rightPlaceholderTextForRow(indexPath.row);
             cell.textField.text = self.rightTextForRow(indexPath.row);
@@ -156,7 +156,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
             cell.textField.tag = indexPath.row;
             return cell;
         case "timeCell":
-            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as TwoLabelTableViewCell;
+            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! TwoLabelTableViewCell;
             let leftLabel = self.leftLabelForRow(indexPath.row);
             cell.leftLabel.text = leftLabel;
 //            cell.rightLabel.text = self.rightPlaceholderTextForRow(indexPath!.row);
@@ -179,7 +179,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
             }
             return cell;
         case "datePickerCell":
-            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as DatePickerCell;
+            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! DatePickerCell;
             cell.delegate = self;
             if(indexPath.row == DEPARTURE_DATEPICKER_ROW) {
                 cell.tag = DEPARTURE_DATEPICKER_TABLEVIEW_CELL_TAG;
@@ -373,15 +373,15 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
     }
     
     
-    func positionForBar(bar: UIBarPositioning!) -> UIBarPosition {
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
         return UIBarPosition.TopAttached;
     }
     
-    func textFieldDidBeginEditing(textField:UITextField!) {
+    func textFieldDidBeginEditing(textField:UITextField) {
         self.activeTextField = textField;
     }
     
-    func textFieldDidEndEditing(textField: UITextField!) {
+    func textFieldDidEndEditing(textField: UITextField) {
         self.activeTextField = nil;
 //        println("textfield \(textField.tag) ended editing");
         switch(textField.tag) {
@@ -432,7 +432,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
 //            println("departure time changed");
             self.flight.departureTime = datePicker.date;
             
-            let departureCell = self.view.viewWithTag(DEPARTURE_TIME_CELL_TAG) as TwoLabelTableViewCell;
+            let departureCell = self.view.viewWithTag(DEPARTURE_TIME_CELL_TAG)as! TwoLabelTableViewCell;
             departureCell.rightLabel.text = {
                 let formatter = NSDateFormatter();
                 formatter.dateFormat = "M/d/y, h:mm a";
@@ -442,7 +442,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
             if(self.flight.departureTime.compare(self.flight.arrivalTime) == NSComparisonResult.OrderedDescending) {
                 self.flight.arrivalTime = self.flight.departureTime;
                 
-                let arrivalCell = self.view.viewWithTag(ARRIVAL_TIME_CELL_TAG) as TwoLabelTableViewCell;
+                let arrivalCell = self.view.viewWithTag(ARRIVAL_TIME_CELL_TAG) as! TwoLabelTableViewCell;
                 arrivalCell.rightLabel.text = {
                     let formatter = NSDateFormatter();
                     formatter.dateFormat = "M/d/y, h:mm a";
@@ -455,7 +455,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
 //            println("arrival time changed");
             self.flight.arrivalTime = datePicker.date;
             
-            let arrivalCell = self.view.viewWithTag(ARRIVAL_TIME_CELL_TAG) as TwoLabelTableViewCell;
+            let arrivalCell = self.view.viewWithTag(ARRIVAL_TIME_CELL_TAG)as! TwoLabelTableViewCell;
             arrivalCell.rightLabel.text = {
                 let formatter = NSDateFormatter();
                 formatter.dateFormat = "M/d/y, h:mm a";
@@ -465,7 +465,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
             if(self.flight.arrivalTime.compare(self.flight.departureTime) == NSComparisonResult.OrderedAscending) {
                 self.flight.departureTime = self.flight.arrivalTime;
                 
-                let departureCell = self.view.viewWithTag(DEPARTURE_TIME_CELL_TAG) as TwoLabelTableViewCell;
+                let departureCell = self.view.viewWithTag(DEPARTURE_TIME_CELL_TAG)as! TwoLabelTableViewCell;
                 departureCell.rightLabel.text = {
                     let formatter = NSDateFormatter();
                     formatter.dateFormat = "M/d/y, h:mm a";

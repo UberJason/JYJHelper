@@ -15,9 +15,9 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var segToolbar: UIToolbar!
     @IBOutlet weak var segControl: UISegmentedControl!
     var myTrips: [Trip] = {
-        var managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
+        var managedObjectContext = (UIApplication.sharedApplication().delegate as! JYJAppDelegate).managedObjectContext;
         var fetchRequest = NSFetchRequest(entityName: "Trip");
-        return managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as [Trip];
+        return managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as! [Trip];
     }();
 
     required init(coder aDecoder: NSCoder)
@@ -52,15 +52,15 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     // #pragma mark - Table view data source
 
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String! {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "My Trips";
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 88;
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
         return 1;
     }
@@ -73,7 +73,7 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cellIdentifier = "tripCell";
         
-        var cell: JYJTripTableViewCell = tableView.dequeueReusableCellWithIdentifier("tripCell", forIndexPath: indexPath) as JYJTripTableViewCell;
+        var cell: JYJTripTableViewCell = tableView.dequeueReusableCellWithIdentifier("tripCell", forIndexPath: indexPath) as! JYJTripTableViewCell;
 
         let trip = self.myTrips[indexPath.row];
         
@@ -111,7 +111,7 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
         if(editingStyle == UITableViewCellEditingStyle.Delete) {
             self.tableView.beginUpdates();
             let trip = self.myTrips[indexPath.row];
-            let managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
+            let managedObjectContext = (UIApplication.sharedApplication().delegate as! JYJAppDelegate).managedObjectContext;
             managedObjectContext.deleteObject(trip);
             managedObjectContext.save(nil);
             self.myTrips.removeAtIndex(indexPath.row);
@@ -120,19 +120,19 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
-    func positionForBar(bar: UIBarPositioning!) -> UIBarPosition {
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
         return UIBarPosition.TopAttached;
     }
     
     func reloadCoreData() {
-        var managedObjectContext = (UIApplication.sharedApplication().delegate as JYJAppDelegate).managedObjectContext;
+        var managedObjectContext = (UIApplication.sharedApplication().delegate as! JYJAppDelegate).managedObjectContext;
         var fetchRequest = NSFetchRequest(entityName: "Trip");
         var sortDescriptor = NSSortDescriptor(key: "startDate", ascending: true);
         fetchRequest.sortDescriptors = [sortDescriptor];
         let predicate = (self.segControl.selectedSegmentIndex == 0) ? NSPredicate(format: "SELF.endDate >= %@", NSDate()) : NSPredicate(format: "SELF.endDate <= %@", NSDate());
         fetchRequest.predicate = predicate;
         
-        myTrips = managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as [Trip];
+        myTrips = managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as! [Trip];
         self.tableView.reloadData();
     }
     @IBAction func segControlPressed(sender: AnyObject) {
@@ -144,12 +144,12 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
 extension JYJTripsTableViewController: AddEditTripDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)  {
         if(segue.identifier == "addNewTripSegue") {
-            let destinationVC: JYJAddEditTripTableViewController = segue.destinationViewController as JYJAddEditTripTableViewController;
+            let destinationVC: JYJAddEditTripTableViewController = segue.destinationViewController as! JYJAddEditTripTableViewController;
             destinationVC.delegate = self;
         }
         else if(segue.identifier == "pushFlightsVC") {
-            let flightsVC: JYJFlightsTableViewController = segue.destinationViewController as JYJFlightsTableViewController;
-            flightsVC.trip = self.myTrips[self.tableView.indexPathForCell(sender as UITableViewCell)!.row];
+            let flightsVC: JYJFlightsTableViewController = segue.destinationViewController as! JYJFlightsTableViewController;
+            flightsVC.trip = self.myTrips[self.tableView.indexPathForCell(sender as! UITableViewCell)!.row];
         }
         
     }

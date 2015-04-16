@@ -39,7 +39,7 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
     
     // #pragma mark - Table view data source
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return section == 0 ? "Trip Details" : "Flights";
     }
     
@@ -47,7 +47,7 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
         return 88;
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
         return 2;
     }
@@ -62,7 +62,7 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
         var cellIdentifier = self.identifierForRowAtIndexPath(indexPath);
         
         if(cellIdentifier == "tripCell") {
-            let cell: JYJTripTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as JYJTripTableViewCell;
+            let cell: JYJTripTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! JYJTripTableViewCell;
             let formatter = NSDateFormatter();
             formatter.dateFormat = "MMMM d";
             if(trip.storedTimeZone != nil) {
@@ -78,9 +78,9 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
             return cell;
         }
         else {
-            var cell: JYJFlightTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as JYJFlightTableViewCell;
+            var cell: JYJFlightTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! JYJFlightTableViewCell;
             
-            var flight: Flight = self.trip.flights[indexPath.row] as Flight;
+            var flight: Flight = self.trip.flights[indexPath.row] as! Flight;
             
             var formatter = NSDateFormatter();
             formatter.dateStyle = NSDateFormatterStyle.LongStyle;
@@ -118,7 +118,7 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "editTripSegue") {
-            let destinationVC = segue.destinationViewController as JYJAddEditTripTableViewController;
+            let destinationVC = segue.destinationViewController as! JYJAddEditTripTableViewController;
             destinationVC.trip = self.trip;
             destinationVC.type = TripViewType.Edit;
             destinationVC.delegate = self;
