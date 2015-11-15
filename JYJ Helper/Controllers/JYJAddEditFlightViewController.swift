@@ -101,7 +101,10 @@ class JYJAddEditFlightController: UIViewController {
         self.view.endEditing(true);
 
         if(self.flight.arrivalTime.compare(self.flight.departureTime) == NSComparisonResult.OrderedAscending) {
-            UIAlertView.showWithTitle("Error", message: "Arrival time must be after departure time.", cancelButtonTitle: "OK", otherButtonTitles: nil, tapBlock: nil);
+            let alert = UIAlertController(title: "Error", message: "Arrival time must be after departure time.", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil));
+            
+            self.presentViewController(alert, animated: true, completion: nil);
         }
         else {
             self.flight.storedTimeZone = NSTimeZone.systemTimeZone().name;
@@ -109,7 +112,10 @@ class JYJAddEditFlightController: UIViewController {
             if(self.cachedFlight != nil) {
                 self.context.deleteObject(self.cachedFlight!);
             }
-            self.context.save(nil);
+            do {
+                try self.context.save()
+            } catch _ {
+            };
             self.delegate!.didFinishAddingOrEditingAFlight();
         }
     }
@@ -143,7 +149,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
         let identifier = self.identifierForRowAtIndexPath(indexPath);
         switch(identifier) {
         case "textFieldCell":
-            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! LabelAndTextFieldTableViewCell;
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! LabelAndTextFieldTableViewCell;
             cell.titleLabel.text = self.leftLabelForRow(indexPath.row);
             cell.textField.placeholder = self.rightPlaceholderTextForRow(indexPath.row);
             cell.textField.text = self.rightTextForRow(indexPath.row);
@@ -156,7 +162,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
             cell.textField.tag = indexPath.row;
             return cell;
         case "timeCell":
-            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! TwoLabelTableViewCell;
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! TwoLabelTableViewCell;
             let leftLabel = self.leftLabelForRow(indexPath.row);
             cell.leftLabel.text = leftLabel;
 //            cell.rightLabel.text = self.rightPlaceholderTextForRow(indexPath!.row);
@@ -179,7 +185,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
             }
             return cell;
         case "datePickerCell":
-            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! DatePickerCell;
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! DatePickerCell;
             cell.delegate = self;
             if(indexPath.row == DEPARTURE_DATEPICKER_ROW) {
                 cell.tag = DEPARTURE_DATEPICKER_TABLEVIEW_CELL_TAG;
@@ -367,8 +373,8 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
             tableView.endUpdates();
             
         }
-        if(self.tableView.indexPathForSelectedRow() != nil) {
-            tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow()!, animated: true);
+        if(self.tableView.indexPathForSelectedRow != nil) {
+            tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow!, animated: true);
         }
     }
     
@@ -388,7 +394,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
         case 0:
             self.flight.airlineCode = textField.text;
         case 1:
-            self.flight.flightNumber = (textField.text as NSString).integerValue;
+            self.flight.flightNumber = (textField.text! as NSString).integerValue;
         case 4:
             self.flight.originAirportCode = textField.text;
         case 5:
@@ -405,7 +411,7 @@ extension JYJAddEditFlightController : UITableViewDelegate, UITableViewDataSourc
     
     func keyboardWasShown(notification: NSNotification) {
         let info = notification.userInfo as Dictionary!;
-        let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size;
+        let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue.size;
         
         self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0);
         self.tableView.scrollIndicatorInsets = self.tableView.contentInset;

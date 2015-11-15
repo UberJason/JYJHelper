@@ -18,7 +18,7 @@ class TwoLabelTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    required init(coder:NSCoder) {
+    required init?(coder:NSCoder) {
         super.init(coder:coder);
     }
 

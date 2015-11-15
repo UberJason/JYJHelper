@@ -26,7 +26,7 @@ class DatePickerCell: UITableViewCell {
         self.datePicker.calendar = calendar;
     }
 
-    required init(coder:NSCoder) {
+    required init?(coder:NSCoder) {
         super.init(coder:coder);
     }
     

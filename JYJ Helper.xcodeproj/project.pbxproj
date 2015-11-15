@@ -22,11 +22,6 @@
 		96248D58181B720100101651 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96248D56181B720100101651 /* Main.storyboard */; };
 		96248D5B181B720100101651 /* JYJMainBusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D5A181B720100101651 /* JYJMainBusViewController.m */; };
 		96248D5D181B720100101651 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96248D5C181B720100101651 /* Images.xcassets */; };
-		96248D64181B720100101651 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D63181B720100101651 /* XCTest.framework */; };
-		96248D65181B720100101651 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D44181B720100101651 /* Foundation.framework */; };
-		96248D66181B720100101651 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96248D48181B720100101651 /* UIKit.framework */; };
-		96248D6E181B720100101651 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96248D6C181B720100101651 /* InfoPlist.strings */; };
-		96248D70181B720100101651 /* JYJ_HelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D6F181B720100101651 /* JYJ_HelperTests.m */; };
 		96248D7B181B769000101651 /* JYJNextBusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96248D7A181B769000101651 /* JYJNextBusViewController.m */; };
 		96248D83181B8A1E00101651 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 96248D7D181B8A1E00101651 /* .gitignore */; };
 		96248D84181B8A1E00101651 /* FlatUIColor.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 96248D7E181B8A1E00101651 /* FlatUIColor.podspec */; };
@@ -38,7 +33,6 @@
 		963CFBB81947E28400AB871B /* airplane-horizontal-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */; };
 		963EF08A194A812B0069D5EA /* JYJTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EF088194A812B0069D5EA /* JYJTripTableViewCell.swift */; };
 		963EF08B194A812B0069D5EA /* JYJTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963EF089194A812B0069D5EA /* JYJTripTableViewCell.xib */; };
-		96541EEE19576DC9006B8578 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 96541EED19576DC9006B8578 /* UIActionSheet+Blocks.m */; };
 		965653F019D76C990094963B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965653EF19D76C990094963B /* LaunchScreen.xib */; };
 		965762801992EC6F00E297D4 /* AddEditTripDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657627F1992EC6F00E297D4 /* AddEditTripDelegate.swift */; };
 		966892561947EFD6006A9029 /* Trip+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 966892551947EFD6006A9029 /* Trip+Helpers.m */; };
@@ -57,6 +51,7 @@
 		96A673E019947204007B022D /* UINavigationBar+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A673DF19947204007B022D /* UINavigationBar+Addition.m */; };
 		96B29ED9194E5C93005D5967 /* TwoLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B29ED8194E5C93005D5967 /* TwoLabelTableViewCell.swift */; };
 		96B29EDB194E5E76005D5967 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B29EDA194E5E76005D5967 /* DatePickerCell.swift */; };
+		96B506471BF94C2C00E2F083 /* Bus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B506451BF94C2C00E2F083 /* Bus.storyboard */; };
 		96B710231947EE61008D08B9 /* JYJ_Helper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96B710211947EE61008D08B9 /* JYJ_Helper.xcdatamodeld */; };
 		96C19B531A0F535B004FAF0C /* JYJBalloonCupHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C19B521A0F535B004FAF0C /* JYJBalloonCupHistoryController.m */; };
 		96C19B591A0F6F8F004FAF0C /* cube-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C19B581A0F6F8F004FAF0C /* cube-50@2x.png */; };
@@ -67,20 +62,9 @@
 		96E0422D1947C64B000902CF /* jyj_flat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422B1947C64B000902CF /* jyj_flat@2x.png */; };
 		96E0422E1947C64B000902CF /* jyj@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422C1947C64B000902CF /* jyj@2x.png */; };
 		96E042301947CB85000902CF /* airplane-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0422F1947CB85000902CF /* airplane-48@2x.png */; };
-		96E95166195765AC00E6CFFB /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E95165195765AC00E6CFFB /* UIAlertView+Blocks.m */; };
 		96FF7DA1195BB691005F234D /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FF7DA0195BB691005F234D /* Flight.m */; };
 		96FF7DA4195BBBD5005F234D /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FF7DA3195BBBD5005F234D /* Trip.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		96248D67181B720100101651 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96248D39181B720100101651 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 96248D40181B720100101651;
-			remoteInfo = "JYJ Helper";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		961521181947CF810046A550 /* JYJ Helper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "JYJ Helper-Bridging-Header.h"; path = "Supporting Files/JYJ Helper-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -109,11 +93,7 @@
 		96248D59181B720100101651 /* JYJMainBusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JYJMainBusViewController.h; path = Controllers/JYJMainBusViewController.h; sourceTree = "<group>"; };
 		96248D5A181B720100101651 /* JYJMainBusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JYJMainBusViewController.m; path = Controllers/JYJMainBusViewController.m; sourceTree = "<group>"; };
 		96248D5C181B720100101651 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		96248D62181B720100101651 /* JYJ HelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JYJ HelperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96248D63181B720100101651 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		96248D6B181B720100101651 /* JYJ HelperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JYJ HelperTests-Info.plist"; sourceTree = "<group>"; };
-		96248D6D181B720100101651 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		96248D6F181B720100101651 /* JYJ_HelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYJ_HelperTests.m; sourceTree = "<group>"; };
 		96248D79181B769000101651 /* JYJNextBusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJNextBusViewController.h; path = Controllers/JYJNextBusViewController.h; sourceTree = "<group>"; };
 		96248D7A181B769000101651 /* JYJNextBusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJNextBusViewController.m; path = Controllers/JYJNextBusViewController.m; sourceTree = "<group>"; };
 		96248D7D181B8A1E00101651 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -127,8 +107,6 @@
 		963CFBB71947E28400AB871B /* airplane-horizontal-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane-horizontal-48@2x.png"; sourceTree = "<group>"; };
 		963EF088194A812B0069D5EA /* JYJTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JYJTripTableViewCell.swift; path = Views/JYJTripTableViewCell.swift; sourceTree = "<group>"; };
 		963EF089194A812B0069D5EA /* JYJTripTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JYJTripTableViewCell.xib; path = Views/JYJTripTableViewCell.xib; sourceTree = "<group>"; };
-		96541EEC19576DC9006B8578 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIActionSheet+Blocks.h"; path = "Supporting Files/UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
-		96541EED19576DC9006B8578 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIActionSheet+Blocks.m"; path = "Supporting Files/UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
 		965653EF19D76C990094963B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		9657627F1992EC6F00E297D4 /* AddEditTripDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditTripDelegate.swift; sourceTree = "<group>"; };
 		966892541947EFD6006A9029 /* Trip+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Trip+Helpers.h"; path = "Core Data/Trip+Helpers.h"; sourceTree = "<group>"; };
@@ -153,6 +131,7 @@
 		96A673DF19947204007B022D /* UINavigationBar+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+Addition.m"; path = "Supporting Files/UINavigationBar+Addition.m"; sourceTree = "<group>"; };
 		96B29ED8194E5C93005D5967 /* TwoLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwoLabelTableViewCell.swift; path = "UI Subclasses/TwoLabelTableViewCell.swift"; sourceTree = "<group>"; };
 		96B29EDA194E5E76005D5967 /* DatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerCell.swift; path = "UI Subclasses/DatePickerCell.swift"; sourceTree = "<group>"; };
+		96B506461BF94C2C00E2F083 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Bus.storyboard; sourceTree = "<group>"; };
 		96B710221947EE61008D08B9 /* JYJ_Helper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JYJ_Helper.xcdatamodel; sourceTree = "<group>"; };
 		96C19B511A0F535B004FAF0C /* JYJBalloonCupHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJBalloonCupHistoryController.h; path = Controllers/JYJBalloonCupHistoryController.h; sourceTree = "<group>"; };
 		96C19B521A0F535B004FAF0C /* JYJBalloonCupHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJBalloonCupHistoryController.m; path = Controllers/JYJBalloonCupHistoryController.m; sourceTree = "<group>"; };
@@ -166,8 +145,6 @@
 		96E0422B1947C64B000902CF /* jyj_flat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jyj_flat@2x.png"; sourceTree = "<group>"; };
 		96E0422C1947C64B000902CF /* jyj@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jyj@2x.png"; sourceTree = "<group>"; };
 		96E0422F1947CB85000902CF /* airplane-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane-48@2x.png"; sourceTree = "<group>"; };
-		96E95164195765AC00E6CFFB /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Blocks.h"; path = "Supporting Files/UIAlertView+Blocks.h"; sourceTree = "<group>"; };
-		96E95165195765AC00E6CFFB /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Blocks.m"; path = "Supporting Files/UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		96FF7D9F195BB691005F234D /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flight.h; path = "Core Data/Flight.h"; sourceTree = "<group>"; };
 		96FF7DA0195BB691005F234D /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Flight.m; path = "Core Data/Flight.m"; sourceTree = "<group>"; };
 		96FF7DA2195BBBD5005F234D /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Trip.h; path = "Core Data/Trip.h"; sourceTree = "<group>"; };
@@ -182,16 +159,6 @@
 				96248D47181B720100101651 /* CoreGraphics.framework in Frameworks */,
 				96248D49181B720100101651 /* UIKit.framework in Frameworks */,
 				96248D45181B720100101651 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		96248D5F181B720100101651 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				96248D64181B720100101651 /* XCTest.framework in Frameworks */,
-				96248D66181B720100101651 /* UIKit.framework in Frameworks */,
-				96248D65181B720100101651 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +205,6 @@
 			children = (
 				96248D7C181B8A1E00101651 /* CocoaFlatUIColor */,
 				96248D4A181B720100101651 /* JYJ Helper */,
-				96248D69181B720100101651 /* JYJ HelperTests */,
 				96248D43181B720100101651 /* Frameworks */,
 				96248D42181B720100101651 /* Products */,
 			);
@@ -248,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				96248D41181B720100101651 /* JYJ Helper.app */,
-				96248D62181B720100101651 /* JYJ HelperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				96248D56181B720100101651 /* Main.storyboard */,
+				96B506451BF94C2C00E2F083 /* Bus.storyboard */,
 				965653EF19D76C990094963B /* LaunchScreen.xib */,
 				96C19B501A0F2C87004FAF0C /* Models */,
 				969F66081947F9F300F9A48F /* Views */,
@@ -285,12 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				961521181947CF810046A550 /* JYJ Helper-Bridging-Header.h */,
-				96541EEC19576DC9006B8578 /* UIActionSheet+Blocks.h */,
-				96541EED19576DC9006B8578 /* UIActionSheet+Blocks.m */,
 				96A673DE19947204007B022D /* UINavigationBar+Addition.h */,
 				96A673DF19947204007B022D /* UINavigationBar+Addition.m */,
-				96E95164195765AC00E6CFFB /* UIAlertView+Blocks.h */,
-				96E95165195765AC00E6CFFB /* UIAlertView+Blocks.m */,
 				96248D53181B720100101651 /* JYJAppDelegate.h */,
 				96248D54181B720100101651 /* JYJAppDelegate.m */,
 				96248D5C181B720100101651 /* Images.xcassets */,
@@ -298,24 +260,6 @@
 				96248D4D181B720100101651 /* InfoPlist.strings */,
 				96248D50181B720100101651 /* main.m */,
 				96248D52181B720100101651 /* JYJ Helper-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		96248D69181B720100101651 /* JYJ HelperTests */ = {
-			isa = PBXGroup;
-			children = (
-				96248D6F181B720100101651 /* JYJ_HelperTests.m */,
-				96248D6A181B720100101651 /* Supporting Files */,
-			);
-			path = "JYJ HelperTests";
-			sourceTree = "<group>";
-		};
-		96248D6A181B720100101651 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				96248D6B181B720100101651 /* JYJ HelperTests-Info.plist */,
-				96248D6C181B720100101651 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -472,24 +416,6 @@
 			productReference = 96248D41181B720100101651 /* JYJ Helper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		96248D61181B720100101651 /* JYJ HelperTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 96248D76181B720100101651 /* Build configuration list for PBXNativeTarget "JYJ HelperTests" */;
-			buildPhases = (
-				96248D5E181B720100101651 /* Sources */,
-				96248D5F181B720100101651 /* Frameworks */,
-				96248D60181B720100101651 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				96248D68181B720100101651 /* PBXTargetDependency */,
-			);
-			name = "JYJ HelperTests";
-			productName = "JYJ HelperTests";
-			productReference = 96248D62181B720100101651 /* JYJ HelperTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -497,14 +423,13 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = JYJ;
-				LastUpgradeCheck = 0510;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Jason Ji";
 				TargetAttributes = {
 					96248D40181B720100101651 = {
 						DevelopmentTeam = 2GPQ8GE99T;
-					};
-					96248D61181B720100101651 = {
-						TestTargetID = 96248D40181B720100101651;
 					};
 				};
 			};
@@ -522,7 +447,6 @@
 			projectRoot = "";
 			targets = (
 				96248D40181B720100101651 /* JYJ Helper */,
-				96248D61181B720100101651 /* JYJ HelperTests */,
 			);
 		};
 /* End PBXProject section */
@@ -539,6 +463,7 @@
 				96248D84181B8A1E00101651 /* FlatUIColor.podspec in Resources */,
 				969A73B519493C20001C6F70 /* JYJFlightTableViewCell.xib in Resources */,
 				96248D83181B8A1E00101651 /* .gitignore in Resources */,
+				96B506471BF94C2C00E2F083 /* Bus.storyboard in Resources */,
 				96248D86181B8A1E00101651 /* README.md in Resources */,
 				96E0422D1947C64B000902CF /* jyj_flat@2x.png in Resources */,
 				96A0EA7B186F7E1A005711E5 /* list-48@2x.png in Resources */,
@@ -554,14 +479,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96248D60181B720100101651 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				96248D6E181B720100101651 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -571,7 +488,6 @@
 			files = (
 				96B710231947EE61008D08B9 /* JYJ_Helper.xcdatamodeld in Sources */,
 				96C6316E1946A84E00CDAF6F /* JYJBusSettingsViewController.m in Sources */,
-				96E95166195765AC00E6CFFB /* UIAlertView+Blocks.m in Sources */,
 				96248D87181B8A1E00101651 /* UIColor+FlatUI.m in Sources */,
 				96B29EDB194E5E76005D5967 /* DatePickerCell.swift in Sources */,
 				965762801992EC6F00E297D4 /* AddEditTripDelegate.swift in Sources */,
@@ -589,7 +505,6 @@
 				962219021A0F2A8B00D18C6C /* JYJBalloonCupModel.m in Sources */,
 				962218F91A0F292500D18C6C /* JYJAddGameResultController.m in Sources */,
 				96720B7D19495C5900B8D52F /* JYJAbstractPageContentViewController.swift in Sources */,
-				96541EEE19576DC9006B8578 /* UIActionSheet+Blocks.m in Sources */,
 				962218F01A0F262E00D18C6C /* JYJBalloonCupController.m in Sources */,
 				96D7B73C194E2E9C00DCD035 /* LabelAndTextFieldTableViewCell.swift in Sources */,
 				96FF7DA4195BBBD5005F234D /* Trip.m in Sources */,
@@ -608,23 +523,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96248D5E181B720100101651 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				96248D70181B720100101651 /* JYJ_HelperTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		96248D68181B720100101651 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 96248D40181B720100101651 /* JYJ Helper */;
-			targetProxy = 96248D67181B720100101651 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		96248D4D181B720100101651 /* InfoPlist.strings */ = {
@@ -643,12 +542,12 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		96248D6C181B720100101651 /* InfoPlist.strings */ = {
+		96B506451BF94C2C00E2F083 /* Bus.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				96248D6D181B720100101651 /* en */,
+				96B506461BF94C2C00E2F083 /* Base */,
 			);
-			name = InfoPlist.strings;
+			name = Bus.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -672,6 +571,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -686,7 +586,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -718,7 +618,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -735,7 +635,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JYJ Helper/Supporting Files/JYJ Helper-Prefix.pch";
 				INFOPLIST_FILE = "JYJ Helper/Supporting Files/JYJ Helper-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JYJApps.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "JYJ Helper/Supporting Files/JYJ Helper-Bridging-Header.h";
@@ -755,51 +657,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JYJ Helper/Supporting Files/JYJ Helper-Prefix.pch";
 				INFOPLIST_FILE = "JYJ Helper/Supporting Files/JYJ Helper-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JYJApps.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "JYJ Helper/Supporting Files/JYJ Helper-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		96248D77181B720100101651 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JYJ Helper.app/JYJ Helper";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JYJ Helper/JYJ Helper-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "JYJ HelperTests/JYJ HelperTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		96248D78181B720100101651 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JYJ Helper.app/JYJ Helper";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JYJ Helper/JYJ Helper-Prefix.pch";
-				INFOPLIST_FILE = "JYJ HelperTests/JYJ HelperTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -820,15 +684,6 @@
 			buildConfigurations = (
 				96248D74181B720100101651 /* Debug */,
 				96248D75181B720100101651 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		96248D76181B720100101651 /* Build configuration list for PBXNativeTarget "JYJ HelperTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				96248D77181B720100101651 /* Debug */,
-				96248D78181B720100101651 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

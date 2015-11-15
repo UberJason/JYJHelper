@@ -14,14 +14,14 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var tableView: UITableView!
     var trip: Trip!;
     
-    required init(coder aDecoder: NSCoder)
+    required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("viewDidLoad");
+        print("viewDidLoad");
         
         self.tableView.registerNib(UINib(nibName:"JYJFlightTableViewCell", bundle: nil), forCellReuseIdentifier: "flightCell");
         self.tableView.registerNib(UINib(nibName: "JYJTripTableViewCell", bundle: nil), forCellReuseIdentifier: "tripCell");
@@ -34,7 +34,7 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated);
-        println("viewDidAppear");
+        print("viewDidAppear");
     }
     
     // #pragma mark - Table view data source
@@ -59,7 +59,7 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cellIdentifier = self.identifierForRowAtIndexPath(indexPath);
+        let cellIdentifier = self.identifierForRowAtIndexPath(indexPath);
         
         if(cellIdentifier == "tripCell") {
             let cell: JYJTripTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! JYJTripTableViewCell;
@@ -78,11 +78,11 @@ class JYJFlightsTableViewController: UIViewController, UITableViewDelegate, UITa
             return cell;
         }
         else {
-            var cell: JYJFlightTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! JYJFlightTableViewCell;
+            let cell: JYJFlightTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! JYJFlightTableViewCell;
             
-            var flight: Flight = self.trip.flights[indexPath.row] as! Flight;
+            let flight: Flight = self.trip.flights[indexPath.row] as! Flight;
             
-            var formatter = NSDateFormatter();
+            let formatter = NSDateFormatter();
             formatter.dateStyle = NSDateFormatterStyle.LongStyle;
             if(flight.storedTimeZone != nil) {
                 formatter.timeZone = NSTimeZone(name: flight.storedTimeZone);

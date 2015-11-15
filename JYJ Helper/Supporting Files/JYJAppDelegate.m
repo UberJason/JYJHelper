@@ -33,8 +33,8 @@
 -(NSDateComponents *)currentDateComponents {
     if(!_currentDateComponents) {
         NSDate *today = [NSDate date];
-        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-        _currentDateComponents = [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:today];
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        _currentDateComponents = [gregorian components:(NSCalendarUnitDay | NSCalendarUnitWeekday | NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:today];
         
     }
     
@@ -58,7 +58,7 @@
     // A hack to quickly set a value for bool key if it exists - value is stored internally as NSNumber
     // http://stackoverflow.com/questions/9971811/how-do-i-test-if-bool-exists-in-nsuserdefaults-user-settings
     if(![[NSUserDefaults standardUserDefaults] objectForKey:@"autoShowBus"])
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"autoShowBus"];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"autoShowBus"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"autoShowBus"]) {
@@ -131,7 +131,7 @@
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     return _managedObjectContext;

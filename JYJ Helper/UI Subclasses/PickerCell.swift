@@ -17,7 +17,7 @@ class PickerCell: UITableViewCell {
         // Initialization code
     }
     
-    required init(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("NSCoding not supported");
     }
 

@@ -17,10 +17,10 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
     var myTrips: [Trip] = {
         var managedObjectContext = (UIApplication.sharedApplication().delegate as! JYJAppDelegate).managedObjectContext;
         var fetchRequest = NSFetchRequest(entityName: "Trip");
-        return managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as! [Trip];
+        return (try! managedObjectContext.executeFetchRequest(fetchRequest)) as! [Trip];
     }();
 
-    required init(coder aDecoder: NSCoder)
+    required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
@@ -71,9 +71,8 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cellIdentifier = "tripCell";
         
-        var cell: JYJTripTableViewCell = tableView.dequeueReusableCellWithIdentifier("tripCell", forIndexPath: indexPath) as! JYJTripTableViewCell;
+        let cell: JYJTripTableViewCell = tableView.dequeueReusableCellWithIdentifier("tripCell", forIndexPath: indexPath) as! JYJTripTableViewCell;
 
         let trip = self.myTrips[indexPath.row];
         
@@ -98,8 +97,8 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
 
         self.performSegueWithIdentifier("pushFlightsVC", sender: self.tableView.cellForRowAtIndexPath(indexPath));
         
-        if(self.tableView.indexPathForSelectedRow() != nil) {
-            self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow()!, animated: true);
+        if(self.tableView.indexPathForSelectedRow != nil) {
+            self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow!, animated: true);
         }
     }
     
@@ -113,7 +112,10 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
             let trip = self.myTrips[indexPath.row];
             let managedObjectContext = (UIApplication.sharedApplication().delegate as! JYJAppDelegate).managedObjectContext;
             managedObjectContext.deleteObject(trip);
-            managedObjectContext.save(nil);
+            do {
+                try managedObjectContext.save()
+            } catch _ {
+            };
             self.myTrips.removeAtIndex(indexPath.row);
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic);
             self.tableView.endUpdates();
@@ -125,14 +127,14 @@ class JYJTripsTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func reloadCoreData() {
-        var managedObjectContext = (UIApplication.sharedApplication().delegate as! JYJAppDelegate).managedObjectContext;
-        var fetchRequest = NSFetchRequest(entityName: "Trip");
-        var sortDescriptor = NSSortDescriptor(key: "startDate", ascending: true);
+        let managedObjectContext = (UIApplication.sharedApplication().delegate as! JYJAppDelegate).managedObjectContext;
+        let fetchRequest = NSFetchRequest(entityName: "Trip");
+        let sortDescriptor = NSSortDescriptor(key: "startDate", ascending: true);
         fetchRequest.sortDescriptors = [sortDescriptor];
         let predicate = (self.segControl.selectedSegmentIndex == 0) ? NSPredicate(format: "SELF.endDate >= %@", NSDate()) : NSPredicate(format: "SELF.endDate <= %@", NSDate());
         fetchRequest.predicate = predicate;
         
-        myTrips = managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as! [Trip];
+        myTrips = (try! managedObjectContext.executeFetchRequest(fetchRequest)) as! [Trip];
         self.tableView.reloadData();
     }
     @IBAction func segControlPressed(sender: AnyObject) {

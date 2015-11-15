@@ -40,7 +40,7 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
     var departingPickerShowing = false;
     var returningPickerShowing = false;
     
-    required init(coder aDecoder: NSCoder)  {
+    required init?(coder aDecoder: NSCoder)  {
         super.init(coder: aDecoder);
     }
     
@@ -77,8 +77,8 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
         
-        if(self.tableView.indexPathForSelectedRow() != nil) {
-            self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow()!, animated: false);
+        if(self.tableView.indexPathForSelectedRow != nil) {
+            self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow!, animated: false);
         }
     }
     
@@ -95,7 +95,10 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
     @IBAction func cancelPressed(sender : AnyObject) {
         if(self.type == TripViewType.New) {
             self.context.deleteObject(self.trip);
-            self.context.save(nil);
+            do {
+                try self.context.save()
+            } catch _ {
+            };
         }
         else {
             self.trip.name = self.cachedTrip!.name;
@@ -109,15 +112,21 @@ class JYJAddEditTripTableViewController: UIViewController, UINavigationBarDelega
     
     @IBAction func savePressed(sender : UIBarButtonItem) {
         self.view.endEditing(true);
-        println("trip name: \(self.trip.name)");
+        print("trip name: \(self.trip.name)");
         if(self.trip.name == nil || self.trip.name == "") {
-            UIAlertView.showWithTitle("Error", message: "You must specify a name for this trip.", cancelButtonTitle: "OK", otherButtonTitles: nil, tapBlock: nil);
+            let alert = UIAlertController(title: "Error", message: "You must specify a name for this trip.", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil));
+            
+            self.presentViewController(alert, animated: true, completion: nil);
         }
         else {
             if(self.cachedTrip != nil) {
                 self.context.deleteObject(self.cachedTrip!);
             }
-            self.context.save(nil);
+            do {
+                try self.context.save()
+            } catch _ {
+            };
             self.delegate!.didFinishCreatingOrEditingATrip();
         }
     }
@@ -172,13 +181,13 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
         switch identifier {
             
         case "titleCell":
-            var cell: LabelAndTextFieldTableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as! LabelAndTextFieldTableViewCell;
+            let cell: LabelAndTextFieldTableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as! LabelAndTextFieldTableViewCell;
             cell.textField.delegate = self;
             //            println(cell.textField.delegate.description);
             cell.textField.text = self.trip.name;
             return cell;
         case "timeCell":
-            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! TwoLabelTableViewCell;
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! TwoLabelTableViewCell;
             let leftLabel = self.leftLabelForRow(indexPath.row);
             cell.leftLabel.text = leftLabel;
             cell.rightLabel.text = {
@@ -201,7 +210,7 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             }
             return cell;
         case "datePickerCell":
-            var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! DatePickerCell;
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! DatePickerCell;
             cell.delegate = self;
             if(indexPath.row == DEPARTING_DATEPICKER_ROW) {
                 cell.tag = DEPARTING_DATEPICKER_CELL_TAG;
@@ -217,11 +226,11 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             }
             return cell;
         case "flightCell":
-            var cell: JYJFlightTableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as! JYJFlightTableViewCell;
-            var flight = self.trip.flights[indexPath.row] as! Flight;
+            let cell: JYJFlightTableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as! JYJFlightTableViewCell;
+            let flight = self.trip.flights[indexPath.row] as! Flight;
             cell.flightLabel.text = "\(flight.airlineCode) \(flight.flightNumber)";
             
-            var formatter = NSDateFormatter();
+            let formatter = NSDateFormatter();
             formatter.dateStyle = NSDateFormatterStyle.LongStyle;
             if(flight.storedTimeZone != nil) {
                 formatter.timeZone = NSTimeZone(name: flight.storedTimeZone);
@@ -235,7 +244,7 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
             
             return cell;
         case "addFlightCell":
-            var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) as! UITableViewCell;
+            let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier)! as UITableViewCell;
             return cell;
         default:
             return UITableViewCell();
@@ -330,8 +339,8 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
                 
             }
         }
-        if(tableView.indexPathForSelectedRow() != nil) {
-            tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow()!, animated: true);
+        if(tableView.indexPathForSelectedRow != nil) {
+            tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow!, animated: true);
         }
     }
     
@@ -352,7 +361,7 @@ extension JYJAddEditTripTableViewController: UITableViewDelegate, UITableViewDat
     
     func keyboardWasShown(notification: NSNotification) {
         let info = notification.userInfo as Dictionary!;
-        let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size;
+        let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue.size;
         
         self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0);
         self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
