@@ -52,6 +52,8 @@
 		96B29ED9194E5C93005D5967 /* TwoLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B29ED8194E5C93005D5967 /* TwoLabelTableViewCell.swift */; };
 		96B29EDB194E5E76005D5967 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B29EDA194E5E76005D5967 /* DatePickerCell.swift */; };
 		96B506471BF94C2C00E2F083 /* Bus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B506451BF94C2C00E2F083 /* Bus.storyboard */; };
+		96B5064A1BF94EC700E2F083 /* OldTabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B506481BF94EC700E2F083 /* OldTabs.storyboard */; };
+		96B5064D1BF94F2600E2F083 /* Flights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B5064B1BF94F2600E2F083 /* Flights.storyboard */; };
 		96B710231947EE61008D08B9 /* JYJ_Helper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96B710211947EE61008D08B9 /* JYJ_Helper.xcdatamodeld */; };
 		96C19B531A0F535B004FAF0C /* JYJBalloonCupHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C19B521A0F535B004FAF0C /* JYJBalloonCupHistoryController.m */; };
 		96C19B591A0F6F8F004FAF0C /* cube-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C19B581A0F6F8F004FAF0C /* cube-50@2x.png */; };
@@ -132,6 +134,8 @@
 		96B29ED8194E5C93005D5967 /* TwoLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwoLabelTableViewCell.swift; path = "UI Subclasses/TwoLabelTableViewCell.swift"; sourceTree = "<group>"; };
 		96B29EDA194E5E76005D5967 /* DatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerCell.swift; path = "UI Subclasses/DatePickerCell.swift"; sourceTree = "<group>"; };
 		96B506461BF94C2C00E2F083 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Bus.storyboard; sourceTree = "<group>"; };
+		96B506491BF94EC700E2F083 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OldTabs.storyboard; sourceTree = "<group>"; };
+		96B5064C1BF94F2600E2F083 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Flights.storyboard; sourceTree = "<group>"; };
 		96B710221947EE61008D08B9 /* JYJ_Helper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JYJ_Helper.xcdatamodel; sourceTree = "<group>"; };
 		96C19B511A0F535B004FAF0C /* JYJBalloonCupHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYJBalloonCupHistoryController.h; path = Controllers/JYJBalloonCupHistoryController.h; sourceTree = "<group>"; };
 		96C19B521A0F535B004FAF0C /* JYJBalloonCupHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYJBalloonCupHistoryController.m; path = Controllers/JYJBalloonCupHistoryController.m; sourceTree = "<group>"; };
@@ -233,8 +237,10 @@
 			isa = PBXGroup;
 			children = (
 				96248D56181B720100101651 /* Main.storyboard */,
+				96B5064B1BF94F2600E2F083 /* Flights.storyboard */,
 				96B506451BF94C2C00E2F083 /* Bus.storyboard */,
 				965653EF19D76C990094963B /* LaunchScreen.xib */,
+				96B506481BF94EC700E2F083 /* OldTabs.storyboard */,
 				96C19B501A0F2C87004FAF0C /* Models */,
 				969F66081947F9F300F9A48F /* Views */,
 				96E9ABA41947ECC1005BE367 /* Controllers */,
@@ -470,11 +476,13 @@
 				96248D5D181B720100101651 /* Images.xcassets in Resources */,
 				963EF08B194A812B0069D5EA /* JYJTripTableViewCell.xib in Resources */,
 				96248D4F181B720100101651 /* InfoPlist.strings in Resources */,
+				96B5064D1BF94F2600E2F083 /* Flights.storyboard in Resources */,
 				96248D90181B8BCF00101651 /* bus-48@2x.png in Resources */,
 				96C19B591A0F6F8F004FAF0C /* cube-50@2x.png in Resources */,
 				969A73AB19493975001C6F70 /* j2_flat@2x.png in Resources */,
 				963CFBB81947E28400AB871B /* airplane-horizontal-48@2x.png in Resources */,
 				965653F019D76C990094963B /* LaunchScreen.xib in Resources */,
+				96B5064A1BF94EC700E2F083 /* OldTabs.storyboard in Resources */,
 				96248D58181B720100101651 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,6 +556,22 @@
 				96B506461BF94C2C00E2F083 /* Base */,
 			);
 			name = Bus.storyboard;
+			sourceTree = "<group>";
+		};
+		96B506481BF94EC700E2F083 /* OldTabs.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96B506491BF94EC700E2F083 /* Base */,
+			);
+			name = OldTabs.storyboard;
+			sourceTree = "<group>";
+		};
+		96B5064B1BF94F2600E2F083 /* Flights.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96B5064C1BF94F2600E2F083 /* Base */,
+			);
+			name = Flights.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

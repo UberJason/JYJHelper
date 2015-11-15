@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "JYJAddCell.h"
 
-@interface JYJTrackingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, UINavigationBarDelegate>
+@interface JYJTrackingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,UINavigationBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

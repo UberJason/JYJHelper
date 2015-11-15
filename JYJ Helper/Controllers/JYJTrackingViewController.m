@@ -131,50 +131,60 @@ typedef enum {
     }
 }
 
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//
-//    if(indexPath.section < self.trackedObjectsList.count)
-//        return;
-//    
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Section" message:@"Enter new section name:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-//    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-//    alert.tag = AlertViewSelectionNewSection;
-//    [alert show];
-//    [tableView cellForRowAtIndexPath:indexPath].selected = NO;
-//}
-
 - (IBAction)addSection:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Section" message:@"Enter new section name:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    alert.tag = AlertViewSelectionNewSection;
-    [alert show];
-}
-
-
-#pragma mark - UIAlertView delegate method
-
--(void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if(alertView.tag == AlertViewSelectionNewSection) {
-        if(buttonIndex == 0)
-            return;
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"New Section" message:@"Enter new section name" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         
-        NSString *title = [alertView textFieldAtIndex:0].text;
+    }];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSString *title = alert.textFields[0].text;
         if(!title || [title isEqualToString:@""])
             return;
-        NSLog(@"title: %@", title);
-        
         [self.trackedObjectsList addObject:@{@"title" : title, @"queue" : [NSMutableArray new]}];
         [self.tableView reloadData];
         [[NSUserDefaults standardUserDefaults] setObject:self.trackedObjectsList forKey:@"trackedObjectList"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-    else if(alertView.tag == AlertViewSelectionAreYouSure) {
-        
-        if(buttonIndex == 0) {
-            self.currentSectionAboutToBeDeleted = -1;
-            return;
-        }
-        
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark - target action methods
+
+- (void)addJason:(JYJAddCell *)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    
+    [self.trackedObjectsList[indexPath.section][@"queue"] addObject:@"Jason"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.trackedObjectsList forKey:@"trackedObjectList"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView endUpdates];
+}
+- (void)addKevin:(JYJAddCell *)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    [self.trackedObjectsList[indexPath.section][@"queue"] addObject:@"Kevin"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.trackedObjectsList forKey:@"trackedObjectList"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView endUpdates];
+}
+- (void)deleteSection:(JYJAddCell *)sender {
+
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    
+    self.currentSectionAboutToBeDeleted = indexPath.section;
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Delete this section?" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        self.currentSectionAboutToBeDeleted = -1;
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [self.trackedObjectsList removeObjectAtIndex:self.currentSectionAboutToBeDeleted];
         [[NSUserDefaults standardUserDefaults] setObject:self.trackedObjectsList forKey:@"trackedObjectList"];
         [[NSUserDefaults standardUserDefaults] synchronize];
@@ -185,53 +195,9 @@ typedef enum {
         [self.tableView reloadData];
         
         self.currentSectionAboutToBeDeleted = -1;
-    }
-}
-
-#pragma mark - target action methods
-
-- (void)addJason:(JYJAddCell *)sender {
-//    NSLog(@"add Jason");
-//    UITableViewCell *cell = (UITableViewCell *)sender.superview.superview.superview;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-//    if(!indexPath)
-//        indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    NSLog(@"indexPath = (section,row) = (%ld, %ld)", (long)indexPath.section, (long)indexPath.row);
+    }]];
     
-    [self.trackedObjectsList[indexPath.section][@"queue"] addObject:@"Jason"];
-    [[NSUserDefaults standardUserDefaults] setObject:self.trackedObjectsList forKey:@"trackedObjectList"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [self.tableView beginUpdates];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    [self.tableView endUpdates];
-//    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.trackedObjectsList[indexPath.section][@"queue"] count] inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationFade];
-}
-- (void)addKevin:(JYJAddCell *)sender {
-//    NSLog(@"add Kevin");
-//    UITableViewCell *cell = (UITableViewCell *)sender.superview.superview.superview;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-//    if(!indexPath)
-//        indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    NSLog(@"indexPath = (section,row) = (%ld, %ld)", indexPath.section, (long)indexPath.row);
-    [self.trackedObjectsList[indexPath.section][@"queue"] addObject:@"Kevin"];
-    [[NSUserDefaults standardUserDefaults] setObject:self.trackedObjectsList forKey:@"trackedObjectList"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [self.tableView beginUpdates];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self.tableView endUpdates];
-//    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.trackedObjectsList[indexPath.section][@"queue"] count] inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationFade];
-}
-- (void)deleteSection:(JYJAddCell *)sender {
-
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    
-    self.currentSectionAboutToBeDeleted = indexPath.section;
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Delete this section?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-    alert.tag = AlertViewSelectionAreYouSure;
-    [alert show];
+    [self presentViewController:alert animated:YES completion:nil];
 
 }
 @end
